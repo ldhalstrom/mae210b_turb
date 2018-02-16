@@ -1,0 +1,17 @@
+Turbulence Research Project
+
+Requirements:
+    Length: 3-5 pages
+    15 minute presentation
+    Research topic due: Week 5
+
+Structure:
+    Problem Statement (address some problem in turbulence)
+    Metric used (how it applies to problem)
+    Resuts (either your own or liturature study)
+    Explain how code works (e.g. limitations/assumptions, turb. models)
+
+Other Comments:
+    well defined topic
+    good analysis
+    compare to reality
