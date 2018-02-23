@@ -1,0 +1,21 @@
+POTENTIAL ARTICLE SECTIONS:
+    (Indicate assignment to each section with author's initials)
+
+Abstract (LH&FZ)
+Nomenclature (LH&FZ)
+
+Introduction (FZ)
+    Real World Applications
+    Driving Physical Phenomena
+    Historical Study
+
+Experimental Methods and Results (FZ)
+
+Computational Methods and Results (LH)
+    Turbulence Modeling Aspects
+
+Current State (LH)
+    Current State of Knowledge
+    Remaining Challenges
+
+Conclusion (LH&FZ)
