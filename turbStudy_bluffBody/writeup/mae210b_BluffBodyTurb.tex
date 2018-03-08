@@ -278,21 +278,60 @@ grid for LES shown above (actual simulations were DES)
 
 
 
+%%% CYLINDER WITH VARIOUS TYPES OF NUMERICAL MODELING
+%%\vspace{-2em}
+% \begin{figure}[htb]
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.3\textwidth]{Images/logan/spalart2009detachededdy_CylinderVariousTurbModels.jpeg}
+\caption{ cylinder simulation with RANS, 2DURANS, 3DURANS, SSTDES, SADES \cite{spalart2009detachededdy} }
+\label{fig:cylinderturbmodels}
+\end{center}
+\end{figure}
+%%\vspace{-2em}
+
+Vorticity isosurfaces by a circular cylinder: ReD = 5 × 104, laminar separation. Experimental drag
+coefficient Cd = 1.15–1.25. (a) Shear-stress transport (SST) turbulence model steady Reynolds-averaged
+Navier-Stokes (RANS), Cd = 0.78; (b) SST 2D unsteady RANS, Cd = 1.73; (c) SST 3D unsteady RANS,
+Cd = 1.24; (d ) Spalart-Allmaras (SA) detached-eddy simulation (DES), coarse grid, Cd = 1.16; (e) SA DES,
+fine grid, Cd = 1.26; ( f ) SST DES, fine grid, Cd = 1.28. Figure courtesy of A. Travin
+
+
+
+illustrates the response of DES to grid refinement in its LES region.
+
+DES solutions with different base RANS models are not sensitive to
+model choice in the LES region (as opposed to the RANS region, particularly if separation occurs).
+
 
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%% F15 DES GRID
+%%% F15 DES
 %%\vspace{-2em}
 % \begin{figure}[htb]
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.5\textwidth]{Images/logan/forsythe2004detachededdy_f15grid.pdf}
-\includegraphics[width=0.5\textwidth]{Images/logan/spalart2009detachededdy_f15des.pdf}
+\includegraphics[width=0.45\textwidth]{Images/logan/forsythe2004detachededdy_f15grid.pdf}
+\includegraphics[width=0.45\textwidth]{Images/logan/spalart2009detachededdy_f15des.pdf}
 \caption{ F-15 DES grid (left) \cite{forsythe2004detachededdy} vorticity isocontours (right) \cite{spalart2009detachededdy} }
-\label{fig:f15desgrid}
+\label{fig:f15des}
+\end{center}
+\end{figure}
+%%\vspace{-2em}
+
+
+
+%%% CAR DES
+%%\vspace{-2em}
+% \begin{figure}[htb]
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{Images/logan/spalart2009detachededdy_carDES.pdf}
+\caption{ car DES isocontours \cite{mendonca2002towards} }
+\label{fig:cardes}
 \end{center}
 \end{figure}
 %%\vspace{-2em}
