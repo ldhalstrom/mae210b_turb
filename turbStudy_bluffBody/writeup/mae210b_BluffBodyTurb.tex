@@ -165,15 +165,36 @@ Richardson (1922) \cite{richardson1922weather}
 \textcolor{red}{\emph{LH}}
 
 \begin{itemize}
+    \item \underline{Brief} turbulence model description
+    \begin{itemize}
+        \item RANS vs URANS
+        \item DNS
+        \item LES (uses DNS) and DES (=Hybrid RANS/LES)
+    \end{itemize}
     \item Compare turbulence model performance for sphere/cylinder
     \begin{itemize}
-        \item SA
-        \item SST
-        \item SAS
+        \item DES > URANS > RANS
+        \item DES = functional LES
+        \item SAS vs DES?
+        \item DNS: limited Re
+    \end{itemize}
+    \item Shortcomings of each model (and how to address them)
+    \begin{itemize}
         \item URANS
-        \item LES
-        \item DES
-        \item DNS?
+        \item DES: only good at sharp separation
+        \begin{itemize}
+            \item ``An order of accuracy has not even been proposed for a simulation using both modes within DES'' -Spalart about hybrid method
+            \item grid induced separation (maybe not an issue for bluff bodies)
+            \item DES can default to RANS if grid adaptation misses a shear layer
+    \end{itemize}
+    \end{itemize}
+    \item Advanced geometries
+    \begin{itemize}
+        \item f-15
+        \item car
+        \item building
+        \item capsule
+        \item chute, landing gear, helicopter, wind turbine
     \end{itemize}
 \end{itemize}
 
@@ -324,7 +345,27 @@ diamonds denote experiments, whereas the dotted and dashed lines denote detached
 b courtesy of K. Squires. (c) Phase-averaged vorticity contours for a cylinder. Color gradations denote DES conducted by Mockett et al.
 (2008), and the solid line denotes experiments by the same authors.
 
-NOTE: DES could be used to emulate the dimples on a golf ball by setting the boundary layer separation point, but true simulation of flow in golf ball dimples requires DNS
+NOTE: DES could be used to emulate the dimples on a golf ball by setting the boundary layer separation point, but true simulation of flow in golf ball dimples requires DNS due to the range of scales
+
+
+
+
+%%% GRID INDUCED SEPARATION FROM DES
+%%\vspace{-2em}
+% \begin{figure}[htb]
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{Images/logan/spalart2009detachededdy_GridInducedSeparation.pdf}
+\caption{ Example of DES grid induced separation from \cite{spalart2009detachededdy}, source: \cite{menter2004adaptation} }
+\label{fig:desgridinducedseparation}
+\end{center}
+\end{figure}
+%%\vspace{-2em}
+
+Vorticity contours over an airfoil: (a) Reynolds-averaged Navier-Stokes and (b) detached-eddy simulation.
+Arrows indicate separation. Figure taken from Menter \& Kuntz 2002.
+
+Potential con of using DES. EXPLAIN HOW GRID INDUCED SEPARATION WORKS.
 
 
 
