@@ -333,6 +333,7 @@ the Karman vortex street forms in the central gap
             \item ``An order of accuracy has not even been proposed for a simulation using both modes within DES'' -Spalart about hybrid method
             \item grid induced separation (maybe not an issue for bluff bodies)
             \item DES can default to RANS if grid adaptation misses a shear layer
+            \item more computational cost than RANS
     \end{itemize}
     \end{itemize}
     \item Advanced geometries
@@ -513,6 +514,86 @@ Vorticity contours over an airfoil: (a) Reynolds-averaged Navier-Stokes and (b) 
 Arrows indicate separation. Figure taken from Menter \& Kuntz 2002.
 
 Potential con of using DES. EXPLAIN HOW GRID INDUCED SEPARATION WORKS.
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% CAPSULE DES VS RANS VS WIND TUNNEL
+%%\vspace{-2em}
+% \begin{figure}[htb]
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{Images/logan/schwing2015detachededdy_grid.pdf}
+\caption{ Orion capsule grid \cite{schwing2015detachededdy} }
+\label{fig:oriongrid}
+\end{center}
+\end{figure}
+%%\vspace{-2em}
+
+
+%%\vspace{-2em}
+% \begin{figure}[htb]
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{Images/logan/schwing2015detachededdy_flow.pdf}
+\caption{ Orion capsule mach number instantaneous (left) time-averaged (ight) (DES, M=0.5) \cite{schwing2015detachededdy} }
+\label{fig:orionflow}
+\end{center}
+\end{figure}
+%%\vspace{-2em}
+
+Plots of Mach number for an instantaneous and time-averaged solution.
+For an illustration of the amount of unsteadiness this removed, refer to Fig. 6. It shows a slice of Mach number through the pitch plane (fi   0 deg) for a DES–KEC solution at Mach 0.50, AoA   170 deg.
+
+
+
+RANS did ok compared to WTT/DES for some cases but in others, DES outperformed
+
+
+%CAPSULE SURFACE Pressure
+%%\vspace{-2em}
+% \begin{figure}[htb]
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{Images/logan/schwing2015detachededdy_surfacepressure.pdf}
+\caption{ surface pressure comparison of RANS, DES, WTT, M=0.5 \cite{schwing2015detachededdy} }
+\label{fig:orionpressure}
+\end{center}
+\end{figure}
+%%\vspace{-2em}
+
+Freckle plots of pressure tap data, viewed from fi  180 deg, for Mach 0.50, AoA   155 deg case
+
+
+%PRESSURE TAPS
+%%\vspace{-2em}
+% \begin{figure}[htb]
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{Images/logan/schwing2015detachededdy_surfacetaps.pdf}
+\caption{ surface pressure tap comparison of RANS, DES, WTT, M=0.5 \cite{schwing2015detachededdy} }
+\label{fig:orionpressuretaps}
+\end{center}
+\end{figure}
+%%\vspace{-2em}
+
+Line plots of pressure tap for data Mach 0.50, AoA   155 deg case.
+
+
+
+RANS fails to predict suction peak, surface pressures in wake.  Gets best lift integration compared to DES due to separation prediction, worse drag due to wake pressure prediction.
+
+
+
+
+
+
+
+
 
 
 
