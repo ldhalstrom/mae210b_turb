@@ -30,7 +30,7 @@
 
 
 
-\title{Review of Analysis and Modeling Techniques for Incompressible, Turbulent Bluff-Body Wakes}
+\title{Review of Incompressible, Turbulent Bluff-Body Wakes and Analysis and Modeling Techniques for These Flows}
 
 \author{Logan D. Halstrom\footnote{Graduate Student, Mechanical And Aerospace Engineering Department, One Shields Avenue} and Federico Zabaleta\footnote{Graduate Student, Civil and Environmental Engineering Department, One Shields Avenue}}
 \affil{University of California, Davis, California, 95616}
@@ -84,13 +84,45 @@ DNS & Direct Numerical Simulation \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+% \lettrine{B}{luff-bodies} (equivalently known as blunt-bodies) are a fundamental, generic body shape in aerodynamics, and they are classified as bodies where pressure drag makes up the majority of
+
+\lettrine{W}{hen} a body moves in a fluid, it experiences two types of forces: shear force due to friction and normal force due to pressure. Integration of the distribution of these forces along the surface of the body results in an overall force vector on the body, which can be expressed in components such as the familiar combination of lift and drag. The drag force can be thought of as a summation of the net surface shear and net surface pressure difference in the direction of the body's velocity.
+
+The shear drag, commonly called friction drag, occurs due to a difference in velocity in the surface of the body and the mean flow. This friction is associated with the development of boundary layers and is it scales with the Reynolds number. Alternatively, the drag due to pressure differences along the surface of the body is called pressure drag or viscous induced pressure drag, as this drag is usually associated with separation of the flow and the formation of a wake downstream the body. In real flows, drag is composed by the combination of both. The contribution of friction drag is usually dominant in attached flows while the pressure drag prevails in separated flows.
+
+The differences between friction and pressure drag can be illustrated by considering the flow around a flat plate. If the flat plate is oriented in the direction of the flow, then the boundary layer will remain attached and friction drag will dominate while the pressure drag will be almost negligible. Conversely, if the flat plate is oriented perpendicularly to the flow, the boundary layer will separate at the edges and the low pressure in the separated, aft region will create a difference in pressure between both sides of the plate.  This net pressure drag will be much more significant than the friction drag acting in the minuscule regions of attached boundary layer.
+
+These definitions of drag are necessary to define the concept of a bluff-body (equivalently known as a blunt-body), which is a fundamental, generic body shape in aerodynamics and the central concept discussed in this paper. A bluff-body is defined as a body where the major contribution to total drag is pressure drag, as in the case of the perpendicular flat plate \cite{anderson2010fundamentals}.  Conversely, the drag of a streamlined body will be composed primarily of friction drag, as in the case of the streamwise-oriented plate.  An illustration of the differences in shape and flow behavior between these two body shapes can be found in Fig~\ref{fig:bluffvsstreamlined}.
+
+%%% BLUFF VS STREAMLINED
+%%\vspace{-2em}
+\begin{figure}[htb]
+% \begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{Images/logan/bluntVSstreamline.png}
+\caption{ Demonstration of the flow differences between a bluff-body with massive separation \cite{richards2015modelling} and a streamlined body with primarily attached flow }
+\label{fig:bluffvsstreamlined}
+\end{center}
+\end{figure}
+%%\vspace{-2em}
 
 
-\lettrine{B}{odies} When a body moves in a fluid, it experience different forces, such as lift and drag. Drag can occur due to a difference in velocity in the surface of the body and the mean flow, in which case we call it friction drag. This friction is associated with the development of boundary layers and is it scales with the Reynolds number. If the drag is due to a difference in pressure trough the surface of the body, then we call it pressure drag or viscous induced drag. This drag is usually associated with separation of the flow and the formation of a wake downstream the body. In real flows, drag is composed by the combination of both. The effect of frictional drag is usually more relevant for attached flows while the pressure drag prevails in separated flows.
 
-We can analyze the effect of friction and pressure drag by analyzing the flow around a flat plate. If the flat plate is oriented in the direction of the flow, then the friction drag will be important while the pressure drag will be almost negligible. On the other side, if the orient the flat plate perpendicular to the flow, then the difference of pressure between both sides of the plate will be much more important than the effect of the friction, and so the pressure drag will be dominant.
+
+% A bluff-body (equivalently known as a blunt-body) is a fundamental, generic body shape in aerodynamics and is classified as a body where pressure drag makes up the majority of
+
+%  different forces, such as lift and drag. Drag can occur due to a difference in velocity in the surface of the body and the mean flow, in which case we call it friction drag. This friction is associated with the development of boundary layers and is it scales with the Reynolds number. If the drag is due to a difference in pressure trough the surface of the body, then we call it pressure drag or viscous induced drag. This drag is usually associated with separation of the flow and the formation of a wake downstream the body. In real flows, drag is composed by the combination of both. The effect of frictional drag is usually more relevant for attached flows while the pressure drag prevails in separated flows.
+
+% We can analyze the effect of friction and pressure drag by analyzing the flow around a flat plate. If the flat plate is oriented in the direction of the flow, then the friction drag will be important while the pressure drag will be almost negligible. On the other side, if the orient the flat plate perpendicular to the flow, then the difference of pressure between both sides of the plate will be much more important than the effect of the friction, and so the pressure drag will be dominant.
+
+
 
 When the drag of a body is dominated by viscous drag, we define the body as a streamlined body. Flat plates (oriented in the direction of the flow) or  airfoils with a small angle of attack are examples of those. When the flow is dominated by pressure drag, we define the body as a bluff or blunt body. Examples or these are squares, cylinders, spheres or airfoil at large angle of attack. Whether a body is considered bluff or streamlined is only a function of its shape and its orientation with respect to the flow.
+
+
+
+
+
 
 \begin{center}
 \textcolor{red}{INSERT FIGURE}
