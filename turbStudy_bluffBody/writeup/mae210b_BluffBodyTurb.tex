@@ -57,15 +57,24 @@
 \section*{Nomenclature} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\textcolor{red}{\emph{LH\&FZ}}
-
 {\renewcommand\arraystretch{1.0}
 \noindent\begin{longtable*}{@{}l @{\quad=\quad} l@{}}
+$\alpha$ & Angle of Attack, deg\\
 $\rho$ & density, $kg/m^3$\\
+$Re$   & Reynolds Number, N.D. \\
 \multicolumn{2}{@{}l}{Subscripts}\\
 $()_{\infty}$ & freestream quantity\\
+$D$     & Diameter as reference length\\
 \multicolumn{2}{@{}l}{Acronyms}\\
 CFD & Computational Fluid Dynamics\\
+RANS & Reynolds-Averaged Navier-Stokes \\
+URANS & Unsteady Reynolds-Averaged Navier-Stokes \\
+SAS & Scale-Adaptive Simulation \\
+LES & Large Eddy Simulation \\
+DES & Detached Eddy Simulation \\
+ZDES & Zonal Detached Eddy Simulation \\
+DDES & Delayed Detached Eddy Simulation \\
+DNS & Direct Numerical Simulation \\
 \end{longtable*}}
 
 
@@ -86,6 +95,29 @@ When the drag of a body is dominated by viscous drag, we define the body as a st
 \begin{center}
 \textcolor{red}{INSERT FIGURE}
 \end{center}
+
+
+\begin{itemize}
+    \item Driving Physical Phenomena \textcolor{red}{\emph{FZ}}
+
+    \begin{itemize}
+        \item differences from potential flow
+        \item blunt/bluff body definition, differences from streamlined body flow
+        \item massively separated flow
+        \item base pressure
+        \item wake
+    \end{itemize}
+    \item Real World Applications \textcolor{red}{\emph{LH}}
+    \begin{itemize}
+        \item parachute
+        \item reentry capsule
+        \item vehicles
+        \item buildings
+        \item show similarity between cylinder/sphere wake and more complex bluff body
+        \item relevance: stability, acoustics, buffeting/unsteady loads, mixing
+    \end{itemize}
+\end{itemize}
+
 
 
 
@@ -117,7 +149,7 @@ Unsteady loading and buffeting can also be a potentially catastrophic bluff-body
 % \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.48\textwidth]{Images/logan/martinbaker_EjectionSeat.jpg}
-\includegraphics[width=0.48\textwidth]{Images/logan/ross2013comprehensive_CapsuleWakeShadowgraph.pdf}
+\includegraphics[width=0.41\textwidth]{Images/logan/ross2013comprehensive_CapsuleWakeShadowgraph.pdf}
 \caption{ Left: Mk-16 ejection seat rocket sled test (Martin-Baker), Right: Shadowgraph wake of Orion capsule model ($M=0.3, \alpha=29.25^o, Re_D = 5.3\times10^6$) \cite{ross2013comprehensive}}
 \label{fig:orionwakeandejectionseat}
 \end{center}
@@ -126,17 +158,34 @@ Unsteady loading and buffeting can also be a potentially catastrophic bluff-body
 
 Dynamic stability can also be adversely affected by bluff-body wake behavior.  The drogue parachute in Fig~\ref{fig:orionwakeandejectionseat} and the model Orion capsule in Fig~\ref{fig:orionwakeandejectionseat} are both situations where dynamic instability of the bluff-body could lead to potentially fatal situations for the humans involved.
 
-% %%% ORION WAKE
-% %%\vspace{-2em}
-% \begin{figure}[htb]
-% % \begin{figure}[H]
-% \begin{center}
-% \includegraphics[width=0.5\textwidth]{Images/logan/ross2013comprehensive_CapsuleWakeShadowgraph.pdf}
-% \caption{ Shadowgraph wake of Orion capsule model ($M=0.3, \alpha=29.25^o, Re_D = 5.3\times10^6$) \cite{ross2013comprehensive} }
-% \label{fig:orionwakeandejectionseat}
-% \end{center}
-% \end{figure}
-% %%\vspace{-2em}
+Acoustics can also be a design concern either due to unsteady loading as in the case of a launch vehicle or due to noise concerns or restrictions such as those for aircraft noise. Even passenger vehicles such as that shown in Fig~\ref{fig:carwake} can create a separated wake which could lead to acoustic disturbance of the passengers inside.
+
+%%% CAR WAKE
+%%\vspace{-2em}
+\begin{figure}[htb]
+% \begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{Images/logan/james_CarWakePIV.jpg}
+\caption{ Streamlines and separated flow over a car in a wind tunnel (NASA/Eric James) }
+\label{fig:carwake}
+\end{center}
+\end{figure}
+%%\vspace{-2em}
+
+There are even applications for bluff-bodies outside the concepts of loading and acoustics. In industrial applications where a high-speed mixture must be ignited, it is necessary to both reduce the speed and mix the flow around an ignition source to allow a flame to stabilize. This effect can be created by placing a triangular bluff-body directly upstream of an ignitor such that its recirculation region entrains slower-moving mixture at the ignitor's location (Fig~\ref{fig:flameholder}) \cite{li2011large}.
+
+%%% BLUFF BODY FLAME HOLDER
+%%\vspace{-2em}
+\begin{figure}[htb]
+% \begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{Images/logan/tanaka2013bluff_FlameHolder.pdf}
+\caption{ Image of a stabilized flame held in the wake of a bluff-body flame holder \cite{tanaka2013bluff} }
+\label{fig:flameholder}
+\end{center}
+\end{figure}
+%%\vspace{-2em}
+
 
 
 
@@ -153,20 +202,6 @@ Richardson (1922) \cite{richardson1922weather}
 
 
 
-%%% BLUFF BODY FLAME HOLDER
-%%\vspace{-2em}
-% \begin{figure}[htb]
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.5\textwidth]{Images/logan/tanaka2013bluff_FlameHolder.pdf}
-\caption{ Bluff-body flame holder \cite{tanaka2013bluff} }
-\label{fig:flameholder}
-\end{center}
-\end{figure}
-%%\vspace{-2em}
-
-
-Bluff body stabilized flame is widely used in various industrial systems in which the flow speed is much higher than the flame speed. Without a continuous ignition source the flame would be blown out. Hence the gutter/bluff body is usually placed with its axis perpendicular to the flow direction. The gutter traps the hot gas downstream of the recirculation zone. The trapped hot gas acts as a continuous ignition source to hold and stabilize the flame. The gutter is usually called as a flame holder or a flame stabilizer \cite{li2011large}.
 
 
 
@@ -183,17 +218,6 @@ Bluff body stabilized flame is widely used in various industrial systems in whic
 
 
 
-%%% CAR WAKE
-%%\vspace{-2em}
-% \begin{figure}[htb]
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.5\textwidth]{Images/logan/james_CarWakePIV.jpg}
-\caption{ Streamlines and separated flow over a car in a wind tunnel (NASA/Eric James) }
-\label{fig:carwake}
-\end{center}
-\end{figure}
-%%\vspace{-2em}
 
 
 
@@ -209,26 +233,6 @@ Bluff body stabilized flame is widely used in various industrial systems in whic
 
 
 
-\begin{itemize}
-    \item Driving Physical Phenomena \textcolor{red}{\emph{FZ}}
-
-    \begin{itemize}
-        \item differences from potential flow
-        \item blunt/bluff body definition, differences from streamlined body flow
-        \item massively separated flow
-        \item base pressure
-        \item wake
-    \end{itemize}
-    \item Real World Applications \textcolor{red}{\emph{LH}}
-    \begin{itemize}
-        \item parachute
-        \item reentry capsule
-        \item vehicles
-        \item buildings
-        \item show similarity between cylinder/sphere wake and more complex bluff body
-        \item relevance: stability, acoustics, buffeting/unsteady loads, mixing
-    \end{itemize}
-\end{itemize}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
