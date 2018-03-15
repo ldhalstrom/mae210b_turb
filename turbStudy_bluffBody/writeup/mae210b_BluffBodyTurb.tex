@@ -93,7 +93,7 @@ When the drag of a body is dominated by viscous drag, we define the body as a st
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %REAL WORLD APPLICATIONS
 
-Bluff-body flow is applicable to a plethora of real-world applications.  Massively separated wakes are characterized by complex, unsteady, and sometime unstable turbulent phenomena, which can lead to design concerns throughout the fields of engineering. A few examples of bluff-body flow in engineering applications include wall-mounted cubes representative of a high-rise buildings \cite{elkhoury2016assessment}, bridge spans \cite{yuan2017investigation} as modeled in Fig~\ref{fig:tacomanarrowswake}, ground vehicles \cite{mendonca2002towards} like the passenger sedan shown in Fig~\ref{fig:carwake}, atmospheric reentry vehicles \cite{ross2013comprehensive} like the Orion wind tunnel model in Fig~\ref{fig:orionwakeshadowgraph}, humans in ejection seats and parachutes, both demonstrated in Fig~\ref{fig:ejectionseat}, aircraft protuberances such as landing-gear trucks, space launch vehicles, and flame holders \cite{tanaka2013bluff} in combustors Fig~\ref{fig:flameholder}.
+Bluff-body flow is applicable to a plethora of real-world applications.  Massively separated wakes are characterized by complex, unsteady, and sometime unstable turbulent phenomena, which can lead to design concerns throughout the fields of engineering. A few examples of bluff-body flow in engineering applications include wall-mounted cubes representative of a high-rise buildings \cite{elkhoury2016assessment}, bridge spans \cite{yuan2017investigation} as modeled in Fig~\ref{fig:tacomanarrowswake}, ground vehicles \cite{mendonca2002towards} like the passenger sedan shown in Fig~\ref{fig:carwake}, atmospheric reentry vehicles \cite{ross2013comprehensive} like the Orion wind tunnel model in Fig~\ref{fig:orionwakeandejectionseat}, humans in ejection seats and parachutes, both demonstrated in Fig~\ref{fig:orionwakeandejectionseat}, aircraft protuberances such as landing-gear trucks, space launch vehicles, and flame holders \cite{tanaka2013bluff} in combustors Fig~\ref{fig:flameholder}.
 
 Bluff-bodies are common in civil engineering applications, where engineers might be concerned in predicting unsteady wind loading leading to structural resonance, which was a major design flaw for the Tacoma Narrows Bridge.  Fig~\ref{fig:tacomanarrowswake} demonstrates a model bridge span undergoing wake-induced vibration due to the vortex shedding caused by the gap in the center \cite{yuan2017investigation}.
 
@@ -103,16 +103,40 @@ Bluff-bodies are common in civil engineering applications, where engineers might
 % \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{Images/logan/yuan2017investigation_TacomaNarrowsWake.pdf}
-\caption{ Instantaneous PIV flow field of bridge model similar to Tacoma Narrows bridge Re=587 \cite{yuan2017investigation} }
+\caption{ Instantaneous PIV flow field of bridge model similar to Tacoma Narrows bridge (Re=587) \cite{yuan2017investigation} }
 \label{fig:tacomanarrowswake}
 \end{center}
 \end{figure}
 %%\vspace{-2em}
 
+Unsteady loading and buffeting can also be a potentially catastrophic bluff-body wake effect for mechanical and aerospace engineering applications.  The dynamic situation of a cockpit emergency egress system as depicted in Fig~\ref{fig:orionwakeandejectionseat} requires precise understanding of the unsteady forces on the ejection seat and human in order to mitigate any injuries the escaping pilot might experience.
 
+%%% EJECTION SEAT and ORION WAKE
+%%\vspace{-2em}
+\begin{figure}[htb]
+% \begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.48\textwidth]{Images/logan/martinbaker_EjectionSeat.jpg}
+\includegraphics[width=0.48\textwidth]{Images/logan/ross2013comprehensive_CapsuleWakeShadowgraph.pdf}
+\caption{ Left: Mk-16 ejection seat rocket sled test (Martin-Baker), Right: Shadowgraph wake of Orion capsule model ($M=0.3, \alpha=29.25^o, Re_D = 5.3\times10^6$) \cite{ross2013comprehensive}}
+\label{fig:orionwakeandejectionseat}
+\end{center}
+\end{figure}
+%%\vspace{-2em}
 
+Dynamic stability can also be adversely affected by bluff-body wake behavior.  The drogue parachute in Fig~\ref{fig:orionwakeandejectionseat} and the model Orion capsule in Fig~\ref{fig:orionwakeandejectionseat} are both situations where dynamic instability of the bluff-body could lead to potentially fatal situations for the humans involved.
 
-
+% %%% ORION WAKE
+% %%\vspace{-2em}
+% \begin{figure}[htb]
+% % \begin{figure}[H]
+% \begin{center}
+% \includegraphics[width=0.5\textwidth]{Images/logan/ross2013comprehensive_CapsuleWakeShadowgraph.pdf}
+% \caption{ Shadowgraph wake of Orion capsule model ($M=0.3, \alpha=29.25^o, Re_D = 5.3\times10^6$) \cite{ross2013comprehensive} }
+% \label{fig:orionwakeandejectionseat}
+% \end{center}
+% \end{figure}
+% %%\vspace{-2em}
 
 
 
@@ -148,20 +172,7 @@ Bluff body stabilized flame is widely used in various industrial systems in whic
 
 
 
-%%% ORION WAKE
-%%\vspace{-2em}
-% \begin{figure}[htb]
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.5\textwidth]{Images/logan/ross2013comprehensive_CapsuleWakeShadowgraph.pdf}
-\caption{ Shadowgraph wake of orion capsule model M=0.3 \cite{ross2013comprehensive} }
-\label{fig:orionwakeshadowgraph}
-\end{center}
-\end{figure}
-%%\vspace{-2em}
 
-Single frame of high-speed shadowgraph
-video; M 0.3, AoA = 29.25 deg, ReD = 5.3x106.
 
 
 
@@ -186,17 +197,7 @@ video; M 0.3, AoA = 29.25 deg, ReD = 5.3x106.
 
 
 
-%%% EJECTION SEAT
-%%\vspace{-2em}
-% \begin{figure}[htb]
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.5\textwidth]{Images/logan/martinbaker_EjectionSeat.jpg}
-\caption{ Mk-16 ejection seat rocket sled test (Martin-Baker) }
-\label{fig:ejectionseat}
-\end{center}
-\end{figure}
-%%\vspace{-2em}
+
 
 
 
