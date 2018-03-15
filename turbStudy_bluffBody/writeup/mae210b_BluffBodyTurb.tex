@@ -89,84 +89,32 @@ When the drag of a body is dominated by viscous drag, we define the body as a st
 
 
 
-\section{Flow around a bluff body and transition}
 
-\begin{figure}[H]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%REAL WORLD APPLICATIONS
+
+Bluff-body flow is applicable to a plethora of real-world applications.  Massively separated wakes are characterized by complex, unsteady, and sometime unstable turbulent phenomena, which can lead to design concerns throughout the fields of engineering. A few examples of bluff-body flow in engineering applications include wall-mounted cubes representative of a high-rise buildings \cite{elkhoury2016assessment}, bridge spans \cite{yuan2017investigation} as modeled in Fig~\ref{fig:tacomanarrowswake}, ground vehicles \cite{mendonca2002towards} like the passenger sedan shown in Fig~\ref{fig:carwake}, atmospheric reentry vehicles \cite{ross2013comprehensive} like the Orion wind tunnel model in Fig~\ref{fig:orionwakeshadowgraph}, humans in ejection seats and parachutes, both demonstrated in Fig~\ref{fig:ejectionseat}, aircraft protuberances such as landing-gear trucks, space launch vehicles, and flame holders \cite{tanaka2013bluff} in combustors Fig~\ref{fig:flameholder}.
+
+Bluff-bodies are common in civil engineering applications, where engineers might be concerned in predicting unsteady wind loading leading to structural resonance, which was a major design flaw for the Tacoma Narrows Bridge.  Fig~\ref{fig:tacomanarrowswake} demonstrates a model bridge span undergoing wake-induced vibration due to the vortex shedding caused by the gap in the center \cite{yuan2017investigation}.
+
+%%% TACOMA NARROWS WAKE
+%%\vspace{-2em}
+\begin{figure}[htb]
+% \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.7\textwidth]{Images/federico/Figure01}
-\caption{ Regions of disturbed flow. Extracted from \cite{hunt1990} }
-\label{fig:RegionsFlow}
+\includegraphics[width=0.7\textwidth]{Images/logan/yuan2017investigation_TacomaNarrowsWake.pdf}
+\caption{ Instantaneous PIV flow field of bridge model similar to Tacoma Narrows bridge Re=587 \cite{yuan2017investigation} }
+\label{fig:tacomanarrowswake}
 \end{center}
 \end{figure}
-
-\subsection{Steady laminar wake}
-
-\subsection{Periodic Laminar Regime}
+%%\vspace{-2em}
 
 
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=1\textwidth]{Images/federico/Figure02}
-\caption{Kárman-Bénard eddy street at \textbf{\textit{Re = 100}}. Extracted from \cite{Zdravkovich1968} }
-\label{fig:Laminar}
-\end{center}
-\end{figure}
-
-\subsection{Transition in wake state}
-
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=1\textwidth]{Images/federico/Figure03}
-\caption{Transition in wake at \textbf{\textit{Re = 190}}. Extracted from \cite{Zdravkovich1968} }
-\label{fig:TrW1}
-\end{center}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.5\textwidth]{Images/federico/Figure04}
-\caption{Transition in wake at \textbf{\textit{Re = 344}}. Extracted from \cite{Gerrard1978} }
-\label{fig:TrW2}
-\end{center}
-\end{figure}
-
-\subsection{Transition in shear layers state}
-
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=1\textwidth]{Images/federico/Figure05}
-\caption{Transition in free shear layer. Left: \textbf{\textit{Re = 1083}}. Extracted from \cite{Gerrard1978}. Right: \textbf{\textit{Re = 8000}}. Extracted from \cite{Zdravkovich1997}}
-\label{fig:TrSL}
-\end{center}
-\end{figure}
-
-\subsection{Transition in boundary layer}
-
-\subsection{Fully turbulent state}
 
 
-\section{Free stream turbulence and non-uniform free stream}
 
-\begin{itemize}
-    \item Driving Physical Phenomena \textcolor{red}{\emph{FZ}}
 
-    \begin{itemize}
-        \item differences from potential flow
-        \item blunt/bluff body definition, differences from streamlined body flow
-        \item massively separated flow
-        \item base pressure
-        \item wake
-    \end{itemize}
-    \item Real World Applications \textcolor{red}{\emph{LH}}
-    \begin{itemize}
-        \item parachute
-        \item reentry capsule
-        \item vehicles
-        \item buildings
-        \item show similarity between cylinder/sphere wake and more complex bluff body
-        \item relevance: stability, acoustics, buffeting/unsteady loads, mixing
-    \end{itemize}
-\end{itemize}
+
 
 
 
@@ -179,7 +127,7 @@ Richardson (1922) \cite{richardson1922weather}
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 %%% BLUFF BODY FLAME HOLDER
 %%\vspace{-2em}
@@ -219,24 +167,7 @@ video; M 0.3, AoA = 29.25 deg, ReD = 5.3x106.
 
 
 
-%%% TACOMA NARROWS WAKE
-%%\vspace{-2em}
-% \begin{figure}[htb]
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.5\textwidth]{Images/logan/yuan2017investigation_TacomaNarrowsWake.pdf}
-\caption{ PIV flow field of bride model similar to tacoma narrows bridge Re=587 \cite{yuan2017investigation} }
-\label{fig:tacomanarrowswake}
-\end{center}
-\end{figure}
-%%\vspace{-2em}
 
-
-Fig. 11. Instantaneous flow fields around the dynamic model. The corresponding inflow velocities are 0.66 m/s, 0.95 m/s, 1.14 m/s and 1.80 m/s for V1, T1, V2 and
-T2.
-
-Wake-induced vibration commences in V1 when the shear layer rolls up and
-the Karman vortex street forms in the central gap
 
 
 
@@ -252,6 +183,132 @@ the Karman vortex street forms in the central gap
 \end{center}
 \end{figure}
 %%\vspace{-2em}
+
+
+
+%%% EJECTION SEAT
+%%\vspace{-2em}
+% \begin{figure}[htb]
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{Images/logan/martinbaker_EjectionSeat.jpg}
+\caption{ Mk-16 ejection seat rocket sled test (Martin-Baker) }
+\label{fig:ejectionseat}
+\end{center}
+\end{figure}
+%%\vspace{-2em}
+
+
+
+
+
+
+
+
+
+
+
+\begin{itemize}
+    \item Driving Physical Phenomena \textcolor{red}{\emph{FZ}}
+
+    \begin{itemize}
+        \item differences from potential flow
+        \item blunt/bluff body definition, differences from streamlined body flow
+        \item massively separated flow
+        \item base pressure
+        \item wake
+    \end{itemize}
+    \item Real World Applications \textcolor{red}{\emph{LH}}
+    \begin{itemize}
+        \item parachute
+        \item reentry capsule
+        \item vehicles
+        \item buildings
+        \item show similarity between cylinder/sphere wake and more complex bluff body
+        \item relevance: stability, acoustics, buffeting/unsteady loads, mixing
+    \end{itemize}
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Flow around a bluff body and transition}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{Images/federico/Figure01}
+\caption{ Regions of disturbed flow. Extracted from \cite{hunt1990} }
+\label{fig:RegionsFlow}
+\end{center}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Steady laminar wake}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Periodic Laminar Regime}
+
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{Images/federico/Figure02}
+\caption{Kárman-Bénard eddy street at \textbf{\textit{Re = 100}}. Extracted from \cite{Zdravkovich1968} }
+\label{fig:Laminar}
+\end{center}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Transition in wake state}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{Images/federico/Figure03}
+\caption{Transition in wake at \textbf{\textit{Re = 190}}. Extracted from \cite{Zdravkovich1968} }
+\label{fig:TrW1}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{Images/federico/Figure04}
+\caption{Transition in wake at \textbf{\textit{Re = 344}}. Extracted from \cite{Gerrard1978} }
+\label{fig:TrW2}
+\end{center}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Transition in shear layers state}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{Images/federico/Figure05}
+\caption{Transition in free shear layer. Left: \textbf{\textit{Re = 1083}}. Extracted from \cite{Gerrard1978}. Right: \textbf{\textit{Re = 8000}}. Extracted from \cite{Zdravkovich1997}}
+\label{fig:TrSL}
+\end{center}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Transition in boundary layer}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Fully turbulent state}
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Free stream turbulence and non-uniform free stream}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
 
 
 
