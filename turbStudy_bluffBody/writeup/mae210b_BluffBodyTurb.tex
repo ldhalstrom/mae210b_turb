@@ -63,7 +63,8 @@ Each full-length paper must have a summary-type abstract of 100 to 200 (maximum)
 \noindent\begin{longtable*}{@{}l @{\quad=\quad} l@{}}
 $\alpha$ & Angle of attack, deg\\
 $\rho$ & Density, $kg/m^3$\\
-$Re$   & Reynolds Number, N.D. \\
+$M$   & Mach number, N.D. \\
+$Re$   & Reynolds number, N.D. \\
 $C_d$   & 2-Dimensional drag coefficient, N.D. \\
 $\nabla$   & Gradient function \\
 $V$   & Velocity, $m/s$ \\
@@ -514,6 +515,11 @@ The results of this study suggest that the undisputed superiority of LES over UR
 
 
 
+
+
+
+
+
 %%% CAPSULE DES VS RANS VS WIND TUNNEL
 %%\vspace{-2em}
 % \begin{figure}[htb]
@@ -521,30 +527,33 @@ The results of this study suggest that the undisputed superiority of LES over UR
 \begin{center}
 \includegraphics[width=0.95\textwidth]{Images/logan/schwing2015detachededdy_grid.pdf}
 \includegraphics[width=0.95\textwidth]{Images/logan/schwing2015detachededdy_flow.pdf}
-\caption{ Orion capsule grid and Mach number instantaneous (left) time-averaged (right) (DES, M=0.5) \cite{schwing2015detachededdy} }
+\caption{ Orion capsule and wind tunnel sting unstructured grid and instantaneous (left) time-averaged (right) Mach number (DES, $M_{\infty
+}=0.5$) \cite{schwing2015detachededdy} }
 \label{fig:oriongridflow}
 \end{center}
 \end{figure}
 %%\vspace{-2em}
 
+Next, the functionality of DES (a close sibling to LES with less computational cost) will be compared to URANS for the applied bluff-body case of an atmospheric reentry capsule during the subsonic portion of its trajectory at notably high $Re=5.0 \times 10^6$.  The study by Schwing et al. (2009) \cite{schwing2015detachededdy} compared DES and URANS simulations of the Orion capsule at subsonic and transonic Mach numbers to wind tunnel pressure data. Analysis of the prediction both the instantaneous and mean turbulence features was performed in the study, but this analysis will focus on the accuracy of the simulations with regards to the time-averaged results during subsonic flight.
 
-% %%\vspace{-2em}
-% % \begin{figure}[htb]
-% \begin{figure}[H]
-% \begin{center}
-% \includegraphics[width=0.45\textwidth]{Images/logan/schwing2015detachededdy_flow.pdf}
-% \caption{ Orion capsule mach number instantaneous (left) time-averaged (ight) (DES, M=0.5) \cite{schwing2015detachededdy} }
-% \label{fig:orionflow}
-% \end{center}
-% \end{figure}
-% %%\vspace{-2em}
-
-Plots of Mach number for an instantaneous and time-averaged solution.
-For an illustration of the amount of unsteadiness this removed, refer to Fig. 6. It shows a slice of Mach number through the pitch plane (fi   0 deg) for a DES–KEC solution at Mach 0.50, AoA   170 deg.
+The mean surface pressure results for each CFD method are presented in the top image of Fig~\ref{fig:orionpressure} for $\alpha=155^o$ and are compared to the mean pressures measured by the taps in the wind tunnel test. In this example, it is obvious that the DES-KES method (which will be referred to as DES for the remainder of this section) predicts the backshell pressure distribution with vastly superior accuracy to its URANS equivalent. This advantage does not occur in all tested conditions, however, as there are many cases where the less-expensive URANS formulation produces compatible pressure distributions to DES.
 
 
 
-RANS did ok compared to WTT/DES for some cases but in others, DES outperformed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 %CAPSULE SURFACE PRESSURE
@@ -554,7 +563,7 @@ RANS did ok compared to WTT/DES for some cases but in others, DES outperformed
 \begin{center}
 \includegraphics[width=0.95\textwidth]{Images/logan/schwing2015detachededdy_surfacepressure.pdf}
 \includegraphics[width=0.95\textwidth]{Images/logan/schwing2015detachededdy_surfacetaps.pdf}
-\caption{ surface pressure and pressure tap comparison of RANS, DES, WTT, M=0.5 \cite{schwing2015detachededdy} }
+\caption{ Top: Mean simulation surface pressure contours compared to wind tunnel test (WTT) freckle plot. Bottom: Line plots of pressure tap data along a surface cross-section ($M_{\infty}=0.5,\;\alpha=155^o$) \cite{schwing2015detachededdy} }
 \label{fig:orionpressure}
 \end{center}
 \end{figure}
@@ -577,6 +586,9 @@ RANS fails to predict suction peak, surface pressures in wake.  Gets best lift i
 
 
 
+DES is less computational demanding than LES, can do high Re capsule while LES couldnt do cylinder
+
+DES can be better than RANS, but lots of situations where they're the same and its not worth it
 
 
 
