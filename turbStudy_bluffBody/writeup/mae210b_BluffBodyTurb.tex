@@ -568,7 +568,9 @@ The results of this study demonstrate that CFD techniques are mature enough to a
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Comparison of DES and SAS Methodologies for Bluff-Bodies} \label{subsec:desvssas}
 
+It has been established in the previous sections that higher-fidelity CFD methods like LES and DES are capable of producing more realistic predictions of turbulent effects than URANS methods but that this superiority comes at the cost of significantly increased computational demand and other potential sources of inaccuracy like Grid Induced Separation, which will be discussed later. Scale-Adaptive Simulation was developed in an attempt to avoid some of these issues, so it is relevant in this study to compare the accuracy and performance of these methods in their application to bluff-bodies.
 
+A study by Zheng et al. (2016) \cite{zheng2016comparative} compared DES and SAS simulations of flow over a circular cylinder at $Re_D = 1.4 \times 10^5$. Computations with each method were performed with the same grid resolution, and results for time-averaged streamwise velocity along the wake centerline for each method and an experimental comparison are provided in Fig~\ref{fig:cylinderdesvssas}. The results demonstrate that, in this application, SAS produces predicts flow phenomena in the near wake more similarly to the experiment that DES, while DES becomes more accurate further downstream since SAS is more dissipative in this region. Both methods produce accurate results in the far wake. This single comparison does not necessarily demonstrate that either SAS or DES is superior to the other but rather highlights that both methods can be consider to have comparable accuracy and each will have a unique and specific set of applications where it is superior.
 
 
 
@@ -579,22 +581,14 @@ The results of this study demonstrate that CFD techniques are mature enough to a
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.49\textwidth]{Images/logan/zheng2016comparative_WakeVelocity.pdf}
-% \includegraphics[width=0.49\textwidth]{Images/logan/catalano2003numerical_CylinderDrag.pdf}
-\caption{ cylinder des vs sas time-averaged wake velocity \cite{zheng2016comparative} }
+\caption{ Time-averaged streamwise velocity along the wake centerline for a circular cylinder $Re_D = 1.4 \times 10^5$ \cite{zheng2016comparative} }
 \label{fig:cylinderdesvssas}
 \end{center}
 \end{figure}
 %%\vspace{-2em}
 
-$Re_D = 1.4 \times 10^5$, same grid for both solvers, SAS shows good agreement in mean flow properties of near wake, convergence of both solvers in far wake. SAS can have some advantages at same computational cost, SAS is more dissipative,
+It is also relevant to consider the differences in computational cost between the two methods, as this is often a limiting factor for realistic engineering tasks. A preliminary study by Wang et al. (2017) compared the simulation of flow over a high-speed train computed by URANS, SAS, and Delayed DES (an even more cost-intensive version of DES) to wind tunnel results \cite{wang2017performance}. The study found that the ratio of computational cost of the three methods URANS:SAS:DDES was on the order of 1:10:20. URANS was found to have inferior accuracy to the other two methods, and DDES was found to have slightly improved results compared to SAS. This study represents an extreme case of cost differences between SAS and DES, but shows that SAS can be used as a cost-saving alternative to DES in the correct applications.
 
-
-
-Preliminary study, Slipstream analysis of high-speed train, DDES was most like experiment but SAS was comparable. Independent grid and time step refinement.
-
-computational cost:
-URANS:SAS:DDES = 1:10:20
-\cite{wang2017performance}
 
 
 
