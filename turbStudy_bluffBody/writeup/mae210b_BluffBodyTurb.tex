@@ -416,7 +416,7 @@ Finally, Scale Adaptive Simulation (SAS) is a RANS-like method developed by Ment
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Simulation Comparisons: Simple Geometry}
+\subsection{Initial Methodology Comparisons for a Circular Cylinder} \label{subsec:initialcompare}
 
 LES = DES
 
@@ -480,6 +480,14 @@ SAS cylinder: Resolved structures for cylinder in crossflow using different cons
 
 
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Comparison of RANS and LES/DES for Bluff-Bodies} \label{subsec:desvsrans}
+
+
+
+
 %%% LES VS RANS CYLINDER FLOW
 %%\vspace{-2em}
 % \begin{figure}[htb]
@@ -521,63 +529,8 @@ Drag coefficient as a function of the Reynolds number. (—) Achenbach (1968); (
 
 
 
-%%% CYLINDER DES VS SAS VALIDATION
-%%\vspace{-2em}
-% \begin{figure}[htb]
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.49\textwidth]{Images/logan/zheng2016comparative_WakeVelocity.pdf}
-% \includegraphics[width=0.49\textwidth]{Images/logan/catalano2003numerical_CylinderDrag.pdf}
-\caption{ cylinder des vs sas time-averaged wake velocity \cite{zheng2016comparative} }
-\label{fig:cylinderdesvssas}
-\end{center}
-\end{figure}
-%%\vspace{-2em}
-
-$Re_D = 1.4 \times 10^5$, same grid for both solvers, SAS shows good agreement in mean flow properties of near wake, convergence of both solvers in far wake. SAS can have some advantages at same computational cost, SAS is more dissipative,
 
 
-
-Preliminary study, Slipstream analysis of high-speed train, DDES was most like experiment but SAS was comparable. Independent grid and time step refinement.
-
-computational cost:
-URANS:SAS:DDES = 1:10:20
-\cite{wang2017performance}
-
-
-
-
-%%% DES SPHERE DEMONSTRATING COMPARISON TO EXPERIMENT
-%%\vspace{-2em}
-% \begin{figure}[htb]
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.8\textwidth]{Images/logan/spalart2009detachededdy_SphereSeparation.jpeg}
-\caption{ DES validation from \cite{spalart2009detachededdy}. Sphere transition and drag crisis from \cite{squires2004detachededdy}.  Vorticity validation from \cite{mockett2008demonstration} }
-\label{fig:desspherevalidation}
-\end{center}
-\end{figure}
-%%\vspace{-2em}
-
-Simple bluff bodies. (a) Flow visualizations and (b) pressure distributions for a sphere. Re = 105 and 1.1 × 106. Open circles and
-diamonds denote experiments, whereas the dotted and dashed lines denote detached-eddy simulation (DES) on two grids. Panels a and
-b courtesy of K. Squires. (c) Phase-averaged vorticity contours for a cylinder. Color gradations denote DES conducted by Mockett et al.
-(2008), and the solid line denotes experiments by the same authors.
-
-NOTE: DES could be used to emulate the dimples on a golf ball by setting the boundary layer separation point, but true simulation of flow in golf ball dimples requires DNS due to the range of scales
-
-
-
-
-
-
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Simulation Comparisons: Complex Geometry}
 
 
 
@@ -640,6 +593,82 @@ RANS fails to predict suction peak, surface pressures in wake.  Gets best lift i
 
 
 
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Comparison of DES and SAS for Bluff-Bodies} \label{subsec:desvssas}
+
+
+
+
+
+
+%%% CYLINDER DES VS SAS VALIDATION
+%%\vspace{-2em}
+% \begin{figure}[htb]
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.49\textwidth]{Images/logan/zheng2016comparative_WakeVelocity.pdf}
+% \includegraphics[width=0.49\textwidth]{Images/logan/catalano2003numerical_CylinderDrag.pdf}
+\caption{ cylinder des vs sas time-averaged wake velocity \cite{zheng2016comparative} }
+\label{fig:cylinderdesvssas}
+\end{center}
+\end{figure}
+%%\vspace{-2em}
+
+$Re_D = 1.4 \times 10^5$, same grid for both solvers, SAS shows good agreement in mean flow properties of near wake, convergence of both solvers in far wake. SAS can have some advantages at same computational cost, SAS is more dissipative,
+
+
+
+Preliminary study, Slipstream analysis of high-speed train, DDES was most like experiment but SAS was comparable. Independent grid and time step refinement.
+
+computational cost:
+URANS:SAS:DDES = 1:10:20
+\cite{wang2017performance}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Complex Bluff-Body Flows with DES} \label{subsec:complexdes}
+
+
+%%% DES SPHERE DEMONSTRATING COMPARISON TO EXPERIMENT
+%%\vspace{-2em}
+% \begin{figure}[htb]
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{Images/logan/spalart2009detachededdy_SphereSeparation.jpeg}
+\caption{ DES validation from \cite{spalart2009detachededdy}. Sphere transition and drag crisis from \cite{squires2004detachededdy}.  Vorticity validation from \cite{mockett2008demonstration} }
+\label{fig:desspherevalidation}
+\end{center}
+\end{figure}
+%%\vspace{-2em}
+
+Simple bluff bodies. (a) Flow visualizations and (b) pressure distributions for a sphere. Re = 105 and 1.1 × 106. Open circles and
+diamonds denote experiments, whereas the dotted and dashed lines denote detached-eddy simulation (DES) on two grids. Panels a and
+b courtesy of K. Squires. (c) Phase-averaged vorticity contours for a cylinder. Color gradations denote DES conducted by Mockett et al.
+(2008), and the solid line denotes experiments by the same authors.
+
+NOTE: DES could be used to emulate the dimples on a golf ball by setting the boundary layer separation point, but true simulation of flow in golf ball dimples requires DNS due to the range of scales
 
 
 
