@@ -430,7 +430,13 @@ The fundamental differences between the CFD methodologies previously described i
 
 In this instance, we are observing simulations for a diameter-based Reynolds number of $Re_D = 5 \times 10^4$, which corresponds to laminar separation, and we are comparing the time-averaged result for drag coefficient $C_d$ from each simulation to the range of instantaneous $C_d=1.15-1.25$ observed in experiment at a similar Reynolds number \cite{travin2000detachededdy}.
 
-The simplest of all of these models is the steady RANS case, where
+The simplest of all of these models is the steady RANS case (a), where the wake vorticity isocontours demonstrate that only the two-dimensional separated shear layer is predicted. This very low-fidelity wake results in a correspondingly inaccurate $C_d$ compared to the wind tunnel range. RANS simulations can be significantly improved, however, by modeling time-accurate changes in the mean and allowing three-dimensional flow effects to develop, as is the case for 3D URANS.  In this simulation, the flow is significantly more realistic than steady RANS, though much of the three-dimensionality is still suppressed \cite{spalart2009detachededdy}.  Averaging and integration of this wake behavior results in a $C_d$ that is just within the upper range of the wind tunnel values, which is a significant improvement upon steady RANS.
+
+Even higher-fidelity results may be obtained from LES-based methods such as DES, for which three cases are shown in Fig~\ref{fig:cylinderturbmodels}. For all three cases, it is obvious that the application of DNS to the larger turbulence scales results in a more three-dimensional and life-like simulation of turbulent wake effects. This improvement in modeling can be useful for engineering design cases that require unsteady loading or acoustic profile data. The time-averaged $C_d$ values for each DES case, however, remain on the fringes of the experimental range, suggesting that the increased computational cost of DES may not always be compensated for by higher accuracy in time-averaged results. Still, it is important to note that these comparisons are highly dependent on the method and window of averaging and a single metric such as $C_d$ is insufficient on its own to determine the superiority of a CFD method \cite{travin2000detachededdy}.
+
+The three DES results can also be used to illustrate uncertainties in the method due to discretization and turbulence modeling. The DES-SA (Spalart-Allmaras) cases demonstrate that grid refinement in the LES-regions allows resolution of fine turbulent scales and can significantly alter the time-averaged results. The comparison of the SA and Shear-Stress Transport (SST) RANS models demonstrates that the choice of RANS model has little effect on the LES-regions of the DES solution, but can noticeably influence the separation prediction in the RANS-regions.
+
+Lastly,
 
 
 %%% CYLINDER WITH VARIOUS TYPES OF NUMERICAL MODELING
@@ -440,7 +446,7 @@ The simplest of all of these models is the steady RANS case, where
 \begin{center}
 \includegraphics[width=1.0\textwidth]{Images/logan/spalart2009detachededdy_cylindersCD.pdf}
 \includegraphics[width=0.65\textwidth]{Images/logan/menter2005scaleadaptive_cylinderwake.pdf}
-\caption{ Comparison of wind tunnel test of a circular cylinder with drag fluctuating coefficient ranging from $C_d=1.15-1.25$ compared with time-averaged $C_d$ values from simulations using RANS (a), 2D URANS (b), 3D URANS (c), SADES on a coarse grid (d), SADES on a fine grid (f), and SSTDES on a fine grid (e) \cite{spalart2009detachededdy} in black and white and SAS simulations with null (left) and finite (right) adjustable length-scales in color \cite{menter2005scaleadaptive} }
+\caption{ Comparison of wind tunnel test of a circular cylinder with drag fluctuating coefficient ranging from $C_d=1.15-1.25$ compared with time-averaged $C_d$ values from simulations using RANS (a), 2D URANS (b), 3D URANS (c), DES-SA on a coarse grid (d), DES-SA on a fine grid (f), and DES-SST on a fine grid (e) \cite{spalart2009detachededdy} in black and white and SAS simulations with null (left) and finite (right) adjustable length-scales in color \cite{menter2005scaleadaptive}. Visualizations are isocontours of vorticity }
 \label{fig:cylinderturbmodels}
 \end{center}
 \end{figure}
@@ -513,6 +519,30 @@ Mean pressure distribution on the cylinder: (—) LES at ReD 1⁄4 1 106; (- - -
 Drag coefficient as a function of the Reynolds number. (—) Achenbach (1968); (circle) LES; (square) URANS.
 
 
+
+
+%%% CYLINDER DES VS SAS VALIDATION
+%%\vspace{-2em}
+% \begin{figure}[htb]
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.49\textwidth]{Images/logan/zheng2016comparative_WakeVelocity.pdf}
+% \includegraphics[width=0.49\textwidth]{Images/logan/catalano2003numerical_CylinderDrag.pdf}
+\caption{ cylinder des vs sas time-averaged wake velocity \cite{zheng2016comparative} }
+\label{fig:cylinderdesvssas}
+\end{center}
+\end{figure}
+%%\vspace{-2em}
+
+$Re_D = 1.4 \times 10^5$, same grid for both solvers, SAS shows good agreement in mean flow properties of near wake, convergence of both solvers in far wake. SAS can have some advantages at same computational cost, SAS is more dissipative,
+
+
+
+Preliminary study, Slipstream analysis of high-speed train, DDES was most like experiment but SAS was comparable. Independent grid and time step refinement.
+
+computational cost:
+URANS:SAS:DDES = 1:10:20
+\cite{wang2017performance}
 
 
 
