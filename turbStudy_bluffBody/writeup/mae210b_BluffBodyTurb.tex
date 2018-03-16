@@ -30,7 +30,7 @@
 
 
 
-\title{Review of Incompressible, Turbulent Bluff-Body Wakes and Analysis and Modeling Techniques for These Flows}
+\title{Review of Incompressible, Turbulent Bluff-Body Wake Analysis and Modeling Techniques}
 
 \author{Logan D. Halstrom\footnote{Graduate Student, Mechanical And Aerospace Engineering Department, One Shields Avenue} and Federico Zabaleta\footnote{Graduate Student, Civil and Environmental Engineering Department, One Shields Avenue}}
 \affil{University of California, Davis, California, 95616}
@@ -48,6 +48,8 @@
 
 \textcolor{red}{abstract here}
 \textcolor{red}{\emph{LH\&FZ}}
+
+Each full-length paper must have a summary-type abstract of 100 to 200 (maximum) words in one paragraph, without numerical references, acronyms, or abbreviations. The abstract indicates the subjects dealt with in the paper and states the objectives of the investigation.
 
 \end{abstract}
 
@@ -92,15 +94,20 @@ The shear drag, commonly called friction drag, occurs due to a difference in vel
 
 The differences between friction and pressure drag can be illustrated by considering the flow around a flat plate. If the flat plate is oriented in the direction of the flow, then the boundary layer will remain attached and friction drag will dominate while the pressure drag will be almost negligible. Conversely, if the flat plate is oriented perpendicularly to the flow, the boundary layer will separate at the edges and the low pressure in the separated, aft region will create a difference in pressure between both sides of the plate.  This net pressure drag will be much more significant than the friction drag acting in the minuscule regions of attached boundary layer.
 
-These definitions of drag are necessary to define the concept of a bluff-body (equivalently known as a blunt-body), which is a fundamental, generic body shape in aerodynamics and the central concept discussed in this paper. A bluff-body is defined as a body where the major contribution to total drag is pressure drag, as in the case of the perpendicular flat plate \cite{anderson2010fundamentals}.  Conversely, the drag of a streamlined body will be composed primarily of friction drag, as in the case of the streamwise-oriented plate.  An illustration of the differences in shape and flow behavior between these two body shapes can be found in Fig~\ref{fig:bluffvsstreamlined}.
+These definitions of drag are necessary to define the concept of a bluff-body (equivalently known as a blunt-body), which is a fundamental, generic body shape in aerodynamics and the central concept discussed in this paper. A bluff-body is defined as a body where the major contribution to total drag is pressure drag, as in the case of the perpendicular flat plate \cite{anderson2010fundamentals}.  Conversely, the drag of a streamlined body will be composed primarily of friction drag, as in the case of the streamwise-oriented plate.
+
+An illustration of the differences in shape and flow behavior between these two body shapes can be found in Fig~\ref{fig:bluffvsstreamlined}. From the figure, the origin of the streamlined body's name is obvious: The streamlines of the surrounding flow follow the shape of the body smoothly, which indicates that the boundary layer is attached and the dominant form of drag is from friction.  Above the streamlined airfoil, flow over a square cylinder is shown to demonstrate the stark differences of bluff-body flow. Other examples of bluff-bodies include circular cylinders, cubes, spheres, and airfoils at large angle of attack. The flow for all of these bluff-bodies can be characterized by the four common flow features annotated in Fig~\ref{fig:bluffvsstreamlined}: an attached boundary layer (minimal for the square), a separated shear layer that may or may not reattach, a recirculation zone behind the blunt face of the bluff-body where flow is entrained after which it coalesces into a coherent wake \cite{elkhoury2016assessment}.
+
+For the sake of terminology commonly found in the literature pertaining to bluff-bodies, it is also relevant to define the concept of base pressure \cite{tanner1998theories}. Because the flow over bluff-bodies is characterized by massive separation and a detached shear layer, it follows that there will be no pressure recovery along the surface of the body in the separated region. Thus, the surface pressure along the aft of a bluff-body remains at a nearly constant value, which is commonly described as a ``base pressure''.  This base pressure value is lower than that which would be found in an equivalent but non-physical ``inviscid'' flow, as is illustrated by Frank White in the right of Fig~\ref{fig:bluffvsstreamlined}, where attached flow would allow the pressure to rise again to stagnation values at the back of the sphere.  Base pressure is thus the primary contributor the the dominating pressure drag of the bluff-body. It is also important to note that bluff-body flows may be called ``base flows'' in reference to the base pressure.
 
 %%% BLUFF VS STREAMLINED
 %%\vspace{-2em}
 \begin{figure}[htb]
 % \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.5\textwidth]{Images/logan/bluntVSstreamline.png}
-\caption{ Demonstration of the flow differences between a bluff-body with massive separation \cite{richards2015modelling} and a streamlined body with primarily attached flow }
+\includegraphics[width=0.45\textwidth]{Images/logan/bluntVSstreamline.png}
+\includegraphics[width=0.49\textwidth]{Images/logan/white2011fluid_BluffBodyInviscidVSViscous.pdf}
+\caption{ Demonstration of the flow differences between a bluff-body with massive separation \cite{richards2015modelling} and a streamlined body with primarily attached flow (left) and illustration of non-physical, inviscid flow over a bluff-body with no separation and realistic, viscous flow with massive separation (right) \cite{white2011fluid} }
 \label{fig:bluffvsstreamlined}
 \end{center}
 \end{figure}
@@ -109,46 +116,7 @@ These definitions of drag are necessary to define the concept of a bluff-body (e
 
 
 
-% A bluff-body (equivalently known as a blunt-body) is a fundamental, generic body shape in aerodynamics and is classified as a body where pressure drag makes up the majority of
 
-%  different forces, such as lift and drag. Drag can occur due to a difference in velocity in the surface of the body and the mean flow, in which case we call it friction drag. This friction is associated with the development of boundary layers and is it scales with the Reynolds number. If the drag is due to a difference in pressure trough the surface of the body, then we call it pressure drag or viscous induced drag. This drag is usually associated with separation of the flow and the formation of a wake downstream the body. In real flows, drag is composed by the combination of both. The effect of frictional drag is usually more relevant for attached flows while the pressure drag prevails in separated flows.
-
-% We can analyze the effect of friction and pressure drag by analyzing the flow around a flat plate. If the flat plate is oriented in the direction of the flow, then the friction drag will be important while the pressure drag will be almost negligible. On the other side, if the orient the flat plate perpendicular to the flow, then the difference of pressure between both sides of the plate will be much more important than the effect of the friction, and so the pressure drag will be dominant.
-
-
-
-When the drag of a body is dominated by viscous drag, we define the body as a streamlined body. Flat plates (oriented in the direction of the flow) or  airfoils with a small angle of attack are examples of those. When the flow is dominated by pressure drag, we define the body as a bluff or blunt body. Examples or these are squares, cylinders, spheres or airfoil at large angle of attack. Whether a body is considered bluff or streamlined is only a function of its shape and its orientation with respect to the flow.
-
-
-
-
-
-
-\begin{center}
-\textcolor{red}{INSERT FIGURE}
-\end{center}
-
-
-\begin{itemize}
-    \item Driving Physical Phenomena \textcolor{red}{\emph{FZ}}
-
-    \begin{itemize}
-        \item differences from potential flow
-        \item blunt/bluff body definition, differences from streamlined body flow
-        \item massively separated flow
-        \item base pressure
-        \item wake
-    \end{itemize}
-    \item Real World Applications \textcolor{red}{\emph{LH}}
-    \begin{itemize}
-        \item parachute
-        \item reentry capsule
-        \item vehicles
-        \item buildings
-        \item show similarity between cylinder/sphere wake and more complex bluff body
-        \item relevance: stability, acoustics, buffeting/unsteady loads, mixing
-    \end{itemize}
-\end{itemize}
 
 
 
@@ -223,7 +191,9 @@ There are even applications for bluff-bodies outside the concepts of loading and
 
 
 
+STATE WHY WE DID THIS REVIEW, WHAT PURPOSE IT SERVES, WHY IT IS DIFFERENT THAN PREVIOUS WORKS
 
+Bring together basic concepts (bluff body, base pressure), preserve history, determine state of the art
 
 
 \emph{Big whorls have little whorls, which feed on their velocity, and little whorls have lesser whorls, and so on to viscosity (in the molecular sense).}
@@ -883,6 +853,8 @@ Fig. 10. Instantaneous isosurfaces of $\lambda_2=-2$ colored with $y$. Perspecti
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \textcolor{red}{\emph{LH\&FZ}}
+
+Conclusions provide a detailed discussion of study findings. Do not introduce concepts not presented in text; do not refer to other work.
 
 
 
