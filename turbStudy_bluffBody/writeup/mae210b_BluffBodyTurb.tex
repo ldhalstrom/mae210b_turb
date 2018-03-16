@@ -61,25 +61,26 @@ Each full-length paper must have a summary-type abstract of 100 to 200 (maximum)
 
 {\renewcommand\arraystretch{1.0}
 \noindent\begin{longtable*}{@{}l @{\quad=\quad} l@{}}
-$\alpha$ & Angle of Attack, deg\\
-$\rho$ & density, $kg/m^3$\\
+$\alpha$ & Angle of attack, deg\\
+$\rho$ & Density, $kg/m^3$\\
 $Re$   & Reynolds Number, N.D. \\
+$C_d$   & 2-Dimensional drag coefficient, N.D. \\
+$\nabla$   & Gradient function \\
+$V$   & Velocity, $m/s$ \\
+$u$   & Einstein notation velocity, $m/s$ \\
+$x$   & Einstein notation dimension, $m$ \\
+$P$   & Pressure, $Pa$ \\
+$\mu$   & Dynamic viscosity, $Pa \cdot s$ \\
+$t$   & Time, $s$ \\
 \multicolumn{2}{@{}l}{Subscripts}\\
-$()_{\infty}$ & freestream quantity\\
+$()_{\infty}$ & Freestream quantity\\
+$\vec{()}$ & Vector quantity\\
+$\overline{()}$ & Mean quantity (time-averaged)\\
+$()'$      & Perturbation quantity\\
 $()_D$     & Diameter as reference length\\
-\multicolumn{2}{@{}l}{Acronyms}\\
-CFD & Computational Fluid Dynamics\\
-RANS & Reynolds-Averaged Navier-Stokes \\
-URANS & Unsteady Reynolds-Averaged Navier-Stokes \\
-SAS & Scale-Adaptive Simulation \\
-LES & Large Eddy Simulation \\
-DES & Detached Eddy Simulation \\
-ZDES & Zonal Detached Eddy Simulation \\
-DDES & Delayed Detached Eddy Simulation \\
-DNS & Direct Numerical Simulation \\
+$()_i$     & Einstein notation index \\
+$()_j$     & Einstein notation index \\
 \end{longtable*}}
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction} \label{sec:intro}
@@ -398,7 +399,7 @@ The Navier-Stokes equations can be reduced to a form that is solvable by todays 
 
 A slight variation of RANS is Unsteady RANS (URANS), which is a time-accurate method that requires all grid cells to be fixed to the same global time step.  This allows URANS to capture unsteady behavior of the mean flow.
 
-In recent year, the advantages of DNS in resolving fine turbulent behavior have been brought into use through the compromising strategy of Large Eddy Simulation (LES), where turbulent structures that are large enough to be resolved on the chosen computational grid are solved with DNS, and smaller turbulent scales are solved with a turbulence model called a Subgrid-Scale (SGS) model.
+In recent years, the advantages of DNS in resolving fine turbulent behavior have been brought into use through the compromising strategy of Large Eddy Simulation (LES), where turbulent structures that are large enough to be resolved on the chosen computational grid are solved with DNS, and smaller turbulent scales are solved with a turbulence model called a Subgrid-Scale (SGS) model. This methodology results in much higher fidelity turbulence spectra and unsteady behavior but comes at the cost of more computational time required.
 
 This method was enhanced by Spalart to operate with RANS as the Subgrid Scale Model, effectively combing the two methods into a hybrid RANS/LES method coined Detached Eddy Simulation (DES) \cite{spalart2009detachededdy}.
 
@@ -418,10 +419,18 @@ Finally, Scale Adaptive Simulation (SAS) is a RANS-like method developed by Ment
 \subsection{Simulation Comparisons: Simple Geometry}
 
 LES = DES
+
 discuss RANS vs DES cost
+
 discuss RANS vs DES accuracy
 
-The fundamental differences between the CFD methodologies previously described in Section~\ref{subsec:turbulencemodeling} can result in noticeable variations in simulation results, especially for massively separated wakes. A first look at these differences is offered in Fig~\ref{fig:cylinderturbmodels}.
+DES choice of RANS model important for determining separation
+
+The fundamental differences between the CFD methodologies previously described in Section~\ref{subsec:turbulencemodeling} can result in noticeable variations in simulation results; especially for massively separated wakes. A first look at these differences is offered in Fig~\ref{fig:cylinderturbmodels}, which is a comparison of flow over a circular cylinder calculated using various RANS and DES methods from Spalart and Travin \cite{spalart2009detachededdy} and comparable SAS cases from Menter \cite{menter2005scaleadaptive}. The circular cylinder is arguably the simplest bluff-body shape and therefore offers a relatively unbiased platform upon which to compare these different solvers.
+
+In this instance, we are observing simulations for a diameter-based Reynolds number of $Re_D = 5 \times 10^4$, which corresponds to laminar separation, and we are comparing the time-averaged result for drag coefficient $C_d$ from each simulation to the range of instantaneous $C_d=1.15-1.25$ observed in experiment at a similar Reynolds number \cite{travin2000detachededdy}.
+
+The simplest of all of these models is the steady RANS case, where
 
 
 %%% CYLINDER WITH VARIOUS TYPES OF NUMERICAL MODELING
@@ -431,7 +440,7 @@ The fundamental differences between the CFD methodologies previously described i
 \begin{center}
 \includegraphics[width=1.0\textwidth]{Images/logan/spalart2009detachededdy_cylindersCD.pdf}
 \includegraphics[width=0.65\textwidth]{Images/logan/menter2005scaleadaptive_cylinderwake.pdf}
-\caption{ cylinder simulation with RANS, 2DURANS, 3DURANS, SSTDES, SADES \cite{spalart2009detachededdy}, SAS vs URANS cylinder \cite{menter2005scaleadaptive} }
+\caption{ Comparison of wind tunnel test of a circular cylinder with drag fluctuating coefficient ranging from $C_d=1.15-1.25$ compared with time-averaged $C_d$ values from simulations using RANS (a), 2D URANS (b), 3D URANS (c), SADES on a coarse grid (d), SADES on a fine grid (f), and SSTDES on a fine grid (e) \cite{spalart2009detachededdy} in black and white and SAS simulations with null (left) and finite (right) adjustable length-scales in color \cite{menter2005scaleadaptive} }
 \label{fig:cylinderturbmodels}
 \end{center}
 \end{figure}
