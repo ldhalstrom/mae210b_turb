@@ -405,154 +405,12 @@ This method was enhanced by Spalart to operate with RANS as the Subgrid Scale Mo
 Finally, Scale Adaptive Simulation (SAS) is a RANS-like method developed by Menter \cite{menter2005scaleadaptive} that uses a dynamic von Karman length-scale in its turbulence model, which allows the resolution of the full turbulent spectrum and results in LES-like results.
 
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \subsection{Turbulence Modeling Overview} \label{subsec:turbulencemodeling}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Qualitative Model Comparisons}
 
-
-
-
-
-
-
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \subsection{Turbulence Modeling Aspects} \label{subsec:turbulencemodeling}
-
-\textcolor{red}{\emph{LH}}
-
-\begin{itemize}
-    \item \underline{Brief} turbulence model description
-    \begin{itemize}
-        \item RANS vs URANS
-        \item DNS
-        \item LES (uses DNS) and DES (=Hybrid RANS/LES)
-    \end{itemize}
-    \item Compare turbulence model performance for sphere/cylinder
-    \begin{itemize}
-        \item DES > URANS > RANS
-        \item DES = functional LES
-        \item SAS vs DES?
-        \item DNS: limited Re
-    \end{itemize}
-    \item Shortcomings of each model (and how to address them)
-    \begin{itemize}
-        \item URANS
-        \item DES: only good at sharp separation
-        \begin{itemize}
-            \item ``An order of accuracy has not even been proposed for a simulation using both modes within DES'' -Spalart about hybrid method
-            \item grid induced separation (maybe not an issue for bluff bodies)
-            \item DES can default to RANS if grid adaptation misses a shear layer
-            \item more computational cost than RANS
-    \end{itemize}
-    \end{itemize}
-    \item Advanced geometries
-    \begin{itemize}
-        \item f-15
-        \item car
-        \item building
-        \item capsule
-        \item chute, landing gear, helicopter, wind turbine
-    \end{itemize}
-\end{itemize}
-
-
-LIST ALL FIGURES HERE, REORDER AND DESCRIBE LATER
-
-
-%%% SAS CYLINDER
-%%\vspace{-2em}
-% \begin{figure}[htb]
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.5\textwidth]{Images/logan/menter2005scaleadaptive_cylinderwake2.pdf}
-\caption{ SAS vs URANS cylinder \cite{menter2005scaleadaptive} }
-\label{fig:sasvsuranscylinder}
-\end{center}
-\end{figure}
-%%\vspace{-2em}
-
-Figure 5: Resolved structures for cylinder in crossflow using different constants FSAS Re=3.6e6
-
-
-
-
-%%% LES VS RANS CYLINDER
-%%\vspace{-2em}
-% \begin{figure}[htb]
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.5\textwidth]{Images/logan/catalano_2003numerical_UnsteadyURANSvsLES.pdf}
-\caption{ cylinder les vs urans instantaneous \cite{catalano2003numerical} }
-\label{fig:lesvsuranscylinderinstant}
-\end{center}
-\end{figure}
-%%\vspace{-2em}
-
-Instantaneous vorticity magnitude at a given spanwise cut for flow over a circular cylinder at ReD 1⁄4 1   106. 25 contour levels from xD=U1 1⁄4 1 to xD=U1 1⁄4 575 (exponential distribution) are plotted.
-
-
-%%% LES VS RANS CYLINDER
-%%\vspace{-2em}
-% \begin{figure}[htb]
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.5\textwidth]{Images/logan/catalano_2003numerical_SteadyURANSvsLES.pdf}
-\caption{ cylinder les vs urans averaged \cite{catalano2003numerical} }
-\label{fig:lesvsuranscylinderaveraged}
-\end{center}
-\end{figure}
-%%\vspace{-2em}
-
-Fig. 5. Mean streamwise velocity distribution predicted by LES and URANS. 45 contour levels from U=U1 1⁄4  0:2 to U=U1 1⁄4 1:7 are plotted.
-
-%%% LES VS RANS CYLINDER
-%%\vspace{-2em}
-% \begin{figure}[htb]
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.5\textwidth]{Images/logan/catalano_2003numerical_VelocityProfiles.pdf}
-\caption{ cylinder les vs urans velocity profiles \cite{catalano2003numerical} }
-\label{fig:lesvsuranscylindervelprofile}
-\end{center}
-\end{figure}
-%%\vspace{-2em}
-
-Fig. 6. Mean streamwise and vertical velocities at x=D 1⁄4 0:75 (upper figures) and x=D 1⁄4 1:50 (lower figures): (—) LES; (– –) URANS
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%% LES VS RANS CYLINDER GRID
-%%\vspace{-2em}
-% \begin{figure}[htb]
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.5\textwidth]{Images/logan/travin2000detachededdy_grid.pdf}
-\caption{ cylinder les vs rans grid \cite{travin2000detachededdy} }
-\label{fig:lesvsranscylindergrid}
-\end{center}
-\end{figure}
-%%\vspace{-2em}
-
-Figure1. Medium computational grid, CaseTS2.Innerblock150×36,wakeblock74×36, outer block 59 × 30. The three blocks meet near x = 1.06, y = 1.03.  Grid for spalart cylinders.
-
-
-%%% LES VS RANS CYLINDER
-%%\vspace{-2em}
-% \begin{figure}[htb]
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.5\textwidth]{Images/logan/spalart2000strategies_CylinderLESvsRANS.pdf}
-\caption{ cylinder les vs rans \cite{spalart2000strategies} }
-\label{fig:lesvsranscylinder}
-\end{center}
-\end{figure}
-%%\vspace{-2em}
-
-
-grid for LES shown above (actual simulations were DES)
-
+LES = DES
+discuss RANS vs DES cost
+discuss RANS vs DES accuracy
 
 
 
@@ -561,12 +419,14 @@ grid for LES shown above (actual simulations were DES)
 % \begin{figure}[htb]
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.3\textwidth]{Images/logan/spalart2009detachededdy_CylinderVariousTurbModels.jpeg}
-\caption{ cylinder simulation with RANS, 2DURANS, 3DURANS, SSTDES, SADES \cite{spalart2009detachededdy} }
+\includegraphics[width=1.0\textwidth]{Images/logan/spalart2009detachededdy_cylindersCD.pdf}
+\includegraphics[width=0.65\textwidth]{Images/logan/menter2005scaleadaptive_cylinderwake.pdf}
+\caption{ cylinder simulation with RANS, 2DURANS, 3DURANS, SSTDES, SADES \cite{spalart2009detachededdy}, SAS vs URANS cylinder \cite{menter2005scaleadaptive} }
 \label{fig:cylinderturbmodels}
 \end{center}
 \end{figure}
 %%\vspace{-2em}
+
 
 Vorticity isosurfaces by a circular cylinder: ReD = 5 × 104, laminar separation. Experimental drag
 coefficient Cd = 1.15–1.25. (a) Shear-stress transport (SST) turbulence model steady Reynolds-averaged
@@ -585,7 +445,61 @@ model choice in the LES region (as opposed to the RANS region, particularly if s
 
 
 
-%%% DES SPHERE DEMONSTRATING CORRECT TRANSION, COMPARISON TO EXPERIMENT
+
+
+
+SAS cylinder: Resolved structures for cylinder in crossflow using different constants FSAS Re=3.6e6
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Model Accuracy: Simple Cases}
+
+
+
+%%% LES VS RANS CYLINDER FLOW
+%%\vspace{-2em}
+% \begin{figure}[htb]
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.49\textwidth]{Images/logan/catalano_2003numerical_UnsteadyURANSvsLES.pdf}
+\includegraphics[width=0.49\textwidth]{Images/logan/catalano_2003numerical_SteadyURANSvsLES.pdf}
+\caption{ cylinder les vs urans instantaneous and averaged \cite{catalano2003numerical} }
+\label{fig:cylinderransvslesflow}
+\end{center}
+\end{figure}
+%%\vspace{-2em}
+
+Instantaneous vorticity magnitude at a given spanwise cut for flow over a circular cylinder at ReD 1⁄4 1   106. 25 contour levels from xD=U1 1⁄4 1 to xD=U1 1⁄4 575 (exponential distribution) are plotted.
+
+Fig. 5. Mean streamwise velocity distribution predicted by LES and URANS. 45 contour levels from U=U1 1⁄4  0:2 to U=U1 1⁄4 1:7 are plotted.
+
+
+
+%%% CYLINDER RANS VS LES VALIDATION
+%%\vspace{-2em}
+% \begin{figure}[htb]
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.49\textwidth]{Images/logan/catalano2003numerical_CylinderCp.pdf}
+\includegraphics[width=0.49\textwidth]{Images/logan/catalano2003numerical_CylinderDrag.pdf}
+\caption{ rans vs les \cite{catalano2003numerical} }
+\label{fig:cylinderransvsdesvalidation}
+\end{center}
+\end{figure}
+%%\vspace{-2em}
+
+
+Mean pressure distribution on the cylinder: (—) LES at ReD 1⁄4 1 106; (- - -) RANS at ReD 1⁄41 106; (–.–) URANS at ReD 1⁄4 1   106 ; ( $o$ ) experiment by Warschauer and Leene (1971) at ReD 1⁄4 1:2   106 (spanwise averaged); ($\Delta$) experiment by Falchsbart (in Zdravko- vich, 1997) at ReD 1⁄4 6:7   105.
+
+
+Drag coefficient as a function of the Reynolds number. (—) Achenbach (1968); (circle) LES; (square) URANS.
+
+
+
+
+
+
+%%% DES SPHERE DEMONSTRATING COMPARISON TO EXPERIMENT
 %%\vspace{-2em}
 % \begin{figure}[htb]
 \begin{figure}[H]
@@ -607,24 +521,18 @@ NOTE: DES could be used to emulate the dimples on a golf ball by setting the bou
 
 
 
-%%% GRID INDUCED SEPARATION FROM DES
-%%\vspace{-2em}
-% \begin{figure}[htb]
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.6\textwidth]{Images/logan/spalart2009detachededdy_GridInducedSeparation.pdf}
-\caption{ Example of DES grid induced separation from \cite{spalart2009detachededdy}, source: \cite{menter2004adaptation} }
-\label{fig:desgridinducedseparation}
-\end{center}
-\end{figure}
-%%\vspace{-2em}
-
-Vorticity contours over an airfoil: (a) Reynolds-averaged Navier-Stokes and (b) detached-eddy simulation.
-Arrows indicate separation. Figure taken from Menter \& Kuntz 2002.
-
-Potential con of using DES. EXPLAIN HOW GRID INDUCED SEPARATION WORKS.
 
 
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Model Accuracy: Complex Cases}
+
+rans vs des capsule
+complex geometries
 
 
 
@@ -743,20 +651,84 @@ RANS fails to predict suction peak, surface pressures in wake.  Gets best lift i
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+% %%% LES VS RANS CYLINDER
+% %%\vspace{-2em}
+% % \begin{figure}[htb]
+% \begin{figure}[H]
+% \begin{center}
+% \includegraphics[width=0.5\textwidth]{Images/logan/catalano_2003numerical_VelocityProfiles.pdf}
+% \caption{ cylinder les vs urans velocity profiles \cite{catalano2003numerical} }
+% \label{fig:lesvsuranscylindervelprofile}
+% \end{center}
+% \end{figure}
+% %%\vspace{-2em}
+
+% Fig. 6. Mean streamwise and vertical velocities at x=D 1⁄4 0:75 (upper figures) and x=D 1⁄4 1:50 (lower figures): (—) LES; (– –) URANS
+
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% %%% LES VS RANS CYLINDER GRID
+% %%\vspace{-2em}
+% % \begin{figure}[htb]
+% \begin{figure}[H]
+% \begin{center}
+% \includegraphics[width=0.5\textwidth]{Images/logan/travin2000detachededdy_grid.pdf}
+% \caption{ cylinder les vs rans grid \cite{travin2000detachededdy} }
+% \label{fig:lesvsranscylindergrid}
+% \end{center}
+% \end{figure}
+% %%\vspace{-2em}
+
+% Figure1. Medium computational grid, CaseTS2.Innerblock150×36,wakeblock74×36, outer block 59 × 30. The three blocks meet near x = 1.06, y = 1.03.  Grid for spalart cylinders.
+
+
+% %%% LES VS RANS CYLINDER
+% %%\vspace{-2em}
+% % \begin{figure}[htb]
+% \begin{figure}[H]
+% \begin{center}
+% \includegraphics[width=0.5\textwidth]{Images/logan/spalart2000strategies_CylinderLESvsRANS.pdf}
+% \caption{ cylinder les vs rans \cite{spalart2000strategies} }
+% \label{fig:lesvsranscylinder}
+% \end{center}
+% \end{figure}
+% %%\vspace{-2em}
+
+
+% grid for LES shown above (actual simulations were DES)
+
+
+
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-%%% CURVE BACKSTEP VELOCITY PROFILE LES VS RANS
-%%\vspace{-2em}
-% \begin{figure}[htb]
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.5\textwidth]{Images/logan/durbin2018some_BackstepLESvsRANS.pdf}
-\caption{curve backstep velocity profile les vs rans \cite{durbin2018some}}
-\label{fig:lesvsransbackstep}
-\end{center}
-\end{figure}
-%%\vspace{-2em}
+% %%% CURVE BACKSTEP VELOCITY PROFILE LES VS RANS
+% %%\vspace{-2em}
+% % \begin{figure}[htb]
+% \begin{figure}[H]
+% \begin{center}
+% \includegraphics[width=0.5\textwidth]{Images/logan/durbin2018some_BackstepLESvsRANS.pdf}
+% \caption{curve backstep velocity profile les vs rans \cite{durbin2018some}}
+% \label{fig:lesvsransbackstep}
+% \end{center}
+% \end{figure}
+% %%\vspace{-2em}
 
 
 
@@ -764,69 +736,36 @@ RANS fails to predict suction peak, surface pressures in wake.  Gets best lift i
 
 
 
-%%% GOLF BALL DNS
-%%\vspace{-2em}
-% \begin{figure}[htb]
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.45\textwidth]{Images/logan/smith2010numerical_golfballgrid.pdf}
-\includegraphics[width=0.45\textwidth]{Images/logan/smith2010numerical_golfballvorticity.pdf}
-\caption{ DNS non-rotating golf ball with dimples grid (left) vorticity (right) \cite{smith2010numerical} }
-\label{fig:dnsgolfball}
-\end{center}
-\end{figure}
-%%\vspace{-2em}
 
 
-Example grid resolution in a dimple near 84° (measured from the stagnation point at the front of the golf ball). (a) Re = 2.5   104; (b) Re = 1.1   105.
 
-Contours of azimuthal vorticity. (a) Re = 2.5   104; (b) Re = 1.1   105
-
-NOTE: Recall sphere example from Spalart review and say that this is the analogous DNS experiment to his DES
-
-
-%%% RECTANCULAR CYLINDER DNS
-%%\vspace{-2em}
-% \begin{figure}[htb]
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.45\textwidth]{Images/logan/cimarelli2018direct_vortices.pdf}
-\caption{ DNS square cylinder vortex locations Re=3000 \cite{cimarelli2018direct} }
-\label{fig:dnsRectCylVortices}
-\end{center}
-\end{figure}
-%%\vspace{-2em}
+% %%% RECTANCULAR CYLINDER DNS
+% %%\vspace{-2em}
+% % \begin{figure}[htb]
+% \begin{figure}[H]
+% \begin{center}
+% \includegraphics[width=0.45\textwidth]{Images/logan/cimarelli2018direct_vortices.pdf}
+% \caption{ DNS square cylinder vortex locations Re=3000 \cite{cimarelli2018direct} }
+% \label{fig:dnsRectCylVortices}
+% \end{center}
+% \end{figure}
+% %%\vspace{-2em}
 
 
-Fig. 4. Streamlines of the mean velocity field (U,V) (x,y)  The green lines show the primary vortex, the red lines mark the secondary vortex and the black lines denote the wake vortex. The red dots denote the locations of the probes used for the computation of time spectra in section x5. (For interpretation of the references to color in this figure legend, the reader is referred to the Web version of this article.)
+% Fig. 4. Streamlines of the mean velocity field (U,V) (x,y)  The green lines show the primary vortex, the red lines mark the secondary vortex and the black lines denote the wake vortex. The red dots denote the locations of the probes used for the computation of time spectra in section x5. (For interpretation of the references to color in this figure legend, the reader is referred to the Web version of this article.)
 
-%%\vspace{-2em}
-% \begin{figure}[htb]
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.45\textwidth]{Images/logan/cimarelli2018direct_pressure.pdf}
-\caption{ DNS square cylinder mean pressure distribution Re=3000 \cite{cimarelli2018direct} }
-\label{fig:dnsRectCylPressure}
-\end{center}
-\end{figure}
-%%\vspace{-2em}
+% %%\vspace{-2em}
+% % \begin{figure}[htb]
+% \begin{figure}[H]
+% \begin{center}
+% \includegraphics[width=0.45\textwidth]{Images/logan/cimarelli2018direct_pressure.pdf}
+% \caption{ DNS square cylinder mean pressure distribution Re=3000 \cite{cimarelli2018direct} }
+% \label{fig:dnsRectCylPressure}
+% \end{center}
+% \end{figure}
+% %%\vspace{-2em}
 
-Fig. 5. Isocontours of the mean pressure field P(x,y). The dashed lines report the location of the primary vortex, secondary vortex and wake vortex.
-
-
-%%\vspace{-2em}
-% \begin{figure}[htb]
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.5\textwidth]{Images/logan/cimarelli2018direct_vorticity.pdf}
-\caption{ DNS square cylinder vorticity contours Re=3000 \cite{cimarelli2018direct} }
-\label{fig:dnsRectCylPressure}
-\end{center}
-\end{figure}
-%%\vspace{-2em}
-
-Fig. 10. Instantaneous isosurfaces of $\lambda_2=-2$ colored with $y$. Perspective, top and lateral views in (a), (b) and (c) plots, respectively.
-
+% Fig. 5. Isocontours of the mean pressure field P(x,y). The dashed lines report the location of the primary vortex, secondary vortex and wake vortex.
 
 
 
@@ -864,7 +803,128 @@ Fig. 10. Instantaneous isosurfaces of $\lambda_2=-2$ colored with $y$. Perspecti
 \begin{itemize}
     \item Current State of Knowledge
     \item Remaining Challenges
+    \item des GIS and order of accuracy
 \end{itemize}
+
+
+
+
+
+
+
+
+%%% GRID INDUCED SEPARATION FROM DES
+%%\vspace{-2em}
+% \begin{figure}[htb]
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{Images/logan/spalart2009detachededdy_GridInducedSeparation.pdf}
+\caption{ Example of DES grid induced separation from \cite{spalart2009detachededdy}, source: \cite{menter2004adaptation} }
+\label{fig:desgridinducedseparation}
+\end{center}
+\end{figure}
+%%\vspace{-2em}
+
+Vorticity contours over an airfoil: (a) Reynolds-averaged Navier-Stokes and (b) detached-eddy simulation.
+Arrows indicate separation. Figure taken from Menter \& Kuntz 2002.
+
+Potential con of using DES. EXPLAIN HOW GRID INDUCED SEPARATION WORKS.
+
+
+
+
+
+
+
+%%% GOLF BALL DNS
+%%\vspace{-2em}
+% \begin{figure}[htb]
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{Images/logan/smith2010numerical_golfballgrid.pdf}
+\includegraphics[width=0.45\textwidth]{Images/logan/smith2010numerical_golfballvorticity.pdf}
+\caption{ DNS non-rotating golf ball with dimples grid (left) vorticity (right) \cite{smith2010numerical} }
+\label{fig:dnsgolfball}
+\end{center}
+\end{figure}
+%%\vspace{-2em}
+
+
+Example grid resolution in a dimple near 84° (measured from the stagnation point at the front of the golf ball). (a) Re = 2.5   104; (b) Re = 1.1   105.
+
+Contours of azimuthal vorticity. (a) Re = 2.5   104; (b) Re = 1.1   105
+
+NOTE: Recall sphere example from Spalart review and say that this is the analogous DNS experiment to his DES
+
+%%\vspace{-2em}
+% \begin{figure}[htb]
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{Images/logan/cimarelli2018direct_vorticity.pdf}
+\caption{ DNS square cylinder vorticity contours Re=3000 \cite{cimarelli2018direct} }
+\label{fig:dnsRectCylPressure}
+\end{center}
+\end{figure}
+%%\vspace{-2em}
+
+Fig. 10. Instantaneous isosurfaces of $\lambda_2=-2$ colored with $y$. Perspective, top and lateral views in (a), (b) and (c) plots, respectively.
+
+
+
+
+
+
+
+\textcolor{red}{\emph{LH}}
+
+\begin{itemize}
+    \item \underline{Brief} turbulence model description
+    \begin{itemize}
+        \item RANS vs URANS
+        \item DNS
+        \item LES (uses DNS) and DES (=Hybrid RANS/LES)
+    \end{itemize}
+    \item Compare turbulence model performance for sphere/cylinder
+    \begin{itemize}
+        \item DES > URANS > RANS
+        \item DES = functional LES
+        \item SAS vs DES?
+        \item DNS: limited Re
+    \end{itemize}
+    \item Shortcomings of each model (and how to address them)
+    \begin{itemize}
+        \item URANS
+        \item DES: only good at sharp separation
+        \begin{itemize}
+            \item ``An order of accuracy has not even been proposed for a simulation using both modes within DES'' -Spalart about hybrid method
+            \item grid induced separation (maybe not an issue for bluff bodies)
+            \item DES can default to RANS if grid adaptation misses a shear layer
+            \item more computational cost than RANS
+    \end{itemize}
+    \end{itemize}
+    \item Advanced geometries
+    \begin{itemize}
+        \item f-15
+        \item car
+        \item building
+        \item capsule
+        \item chute, landing gear, helicopter, wind turbine
+    \end{itemize}
+\end{itemize}
+
+
+LIST ALL FIGURES HERE, REORDER AND DESCRIBE LATER
+
+
+
+
+
+
+
+
+
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
