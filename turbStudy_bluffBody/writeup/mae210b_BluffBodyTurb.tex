@@ -418,25 +418,17 @@ Finally, Scale Adaptive Simulation (SAS) is a RANS-like method developed by Ment
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Initial Methodology Comparisons for a Circular Cylinder} \label{subsec:initialcompare}
 
-LES = DES
-
-discuss RANS vs DES cost
-
-discuss RANS vs DES accuracy
-
-DES choice of RANS model important for determining separation
-
 The fundamental differences between the CFD methodologies previously described in Section~\ref{subsec:turbulencemodeling} can result in noticeable variations in simulation results; especially for massively separated wakes. A first look at these differences is offered in Fig~\ref{fig:cylinderturbmodels}, which is a comparison of flow over a circular cylinder calculated using various RANS and DES methods from Spalart and Travin \cite{spalart2009detachededdy} and comparable SAS cases from Menter \cite{menter2005scaleadaptive}. The circular cylinder is arguably the simplest bluff-body shape and therefore offers a relatively unbiased platform upon which to compare these different solvers.
 
 In this instance, we are observing simulations for a diameter-based Reynolds number of $Re_D = 5 \times 10^4$, which corresponds to laminar separation, and we are comparing the time-averaged result for drag coefficient $C_d$ from each simulation to the range of instantaneous $C_d=1.15-1.25$ observed in experiment at a similar Reynolds number \cite{travin2000detachededdy}.
 
 The simplest of all of these models is the steady RANS case (a), where the wake vorticity isocontours demonstrate that only the two-dimensional separated shear layer is predicted. This very low-fidelity wake results in a correspondingly inaccurate $C_d$ compared to the wind tunnel range. RANS simulations can be significantly improved, however, by modeling time-accurate changes in the mean and allowing three-dimensional flow effects to develop, as is the case for 3D URANS.  In this simulation, the flow is significantly more realistic than steady RANS, though much of the three-dimensionality is still suppressed \cite{spalart2009detachededdy}.  Averaging and integration of this wake behavior results in a $C_d$ that is just within the upper range of the wind tunnel values, which is a significant improvement upon steady RANS.
 
-Even higher-fidelity results may be obtained from LES-based methods such as DES, for which three cases are shown in Fig~\ref{fig:cylinderturbmodels}. For all three cases, it is obvious that the application of DNS to the larger turbulence scales results in a more three-dimensional and life-like simulation of turbulent wake effects. This improvement in modeling can be useful for engineering design cases that require unsteady loading or acoustic profile data. The time-averaged $C_d$ values for each DES case, however, remain on the fringes of the experimental range, suggesting that the increased computational cost of DES may not always be compensated for by higher accuracy in time-averaged results. Still, it is important to note that these comparisons are highly dependent on the method and window of averaging and a single metric such as $C_d$ is insufficient on its own to determine the superiority of a CFD method \cite{travin2000detachededdy}.
+Even higher-fidelity results may be obtained from LES-based methods such as DES, for which three cases are shown in Fig~\ref{fig:cylinderturbmodels}. For all three cases, it is obvious that the application of DNS to the larger turbulence scales results in a more three-dimensional and life-like simulation of turbulent wake effects. This improvement in modeling can be useful for engineering design cases that require unsteady loading or acoustic profile data. The time-averaged $C_d$ values for each DES case, however, remain on the fringes of the experimental range, suggesting that the increased computational cost of DES may not always be compensated for by higher accuracy in time-averaged results. Still, it is important to note that these comparisons are highly dependent on the method and window of averaging and a single metric such as $C_d$ is insufficient on its own to determine the superiority of a CFD method \cite{travin2000detachededdy}. Further comparison of the capabilities of RANS and LES-like methods will be made in Section~\ref{subsec:desvsrans}.
 
 The three DES results can also be used to illustrate uncertainties in the method due to discretization and turbulence modeling. The DES-SA (Spalart-Allmaras) cases demonstrate that grid refinement in the LES-regions allows resolution of fine turbulent scales and can significantly alter the time-averaged results. The comparison of the SA and Shear-Stress Transport (SST) RANS models demonstrates that the choice of RANS model has little effect on the LES-regions of the DES solution, but can noticeably influence the separation prediction in the RANS-regions.
 
-Lastly,
+Lastly, SAS simulations for a similar circular cylinder with $Re_D=3.6 \times 10^6$ are shown in the bottom of Fig~\ref{fig:cylinderturbmodels}, with the pure URANS case on the left and the dynamic length-scale turbulence model functionality on the right \cite{menter2005scaleadaptive}. Qualitative comparison shows that SAS can produce bluff-body flow features that are quite comparable to DES without any direct simulation. A more detailed comparison of accuracy and computational cost of these two methods can be found in Section~\ref{subsec:desvssas}.
 
 
 %%% CYLINDER WITH VARIOUS TYPES OF NUMERICAL MODELING
@@ -451,20 +443,6 @@ Lastly,
 \end{center}
 \end{figure}
 %%\vspace{-2em}
-
-
-Vorticity isosurfaces by a circular cylinder: ReD = 5 × 104, laminar separation. Experimental drag
-coefficient Cd = 1.15–1.25. (a) Shear-stress transport (SST) turbulence model steady Reynolds-averaged
-Navier-Stokes (RANS), Cd = 0.78; (b) SST 2D unsteady RANS, Cd = 1.73; (c) SST 3D unsteady RANS,
-Cd = 1.24; (d ) Spalart-Allmaras (SA) detached-eddy simulation (DES), coarse grid, Cd = 1.16; (e) SA DES,
-fine grid, Cd = 1.26; ( f ) SST DES, fine grid, Cd = 1.28. Figure courtesy of A. Travin
-
-
-
-illustrates the response of DES to grid refinement in its LES region.
-
-DES solutions with different base RANS models are not sensitive to
-model choice in the LES region (as opposed to the RANS region, particularly if separation occurs).
 
 
 
