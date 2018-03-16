@@ -347,25 +347,76 @@ The wakes of bluff-bodies are extremely complex, containing many scales of turbu
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Computational Methods and Results} \label{sec:computationalmethods}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\textcolor{red}{\emph{LH}}
+Due to the highly complex nature of bluff-body wake separation and behavior, the primary realistic method of simulation for these flows is discrete solution of the Navier-Stokes equations (Eqn~\ref{eqn:navierstokes}) or Computational Fluid Dynamics (CFD). Analytic, inviscid formulations such as potential flow methods yield the non-physical results depicted in the top image of Fig~\ref{fig:bluffvsstreamlined}, where there is separation or corresponding base pressure, making this fictional flow a non-bluff-body. The same deficiencies apply to numeric, inviscid formulations, such as panel method or Euler's equation. Within the field of CFD, there is a diverse set of techniques for handling the simulation of turbulence, and the detailed description of each of these is beyond the scope of this study. Instead, the key concept of each method relevant to bluff-body flow will be listed here to provide the basis for the comparisons to follow.
 
-\begin{itemize}
-    \item Historical Study
-    \item Computational techniques
-    \item Applications
-    \begin{itemize}
-        \item Simple cases: cylinder/sphere
-        \item Sharp vs bluff: sphere vs cube
-        \item Complex cases: capsule/building
-    \end{itemize}
-\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Turbulence Modeling Aspects} \label{subsec:turbulencemodeling}
+\subsection{Turbulence Modeling Overview} \label{subsec:turbulencemodeling}
+
+ Discrete solution of the full Navier-Stokes equations is referred to as Direct Numeric Simulation (DNS). The incompressible form of the continuity and momentum equations for this formulation are provided in Eqn~\ref{eqn:navierstokes}. No turbulence modeling is required for this simulation, so results will be as realistic as the domain discretization and continuum, Newtonian fluid constraints allow. The disadvantage of DNS lies in the requirement that all scales of turbulence must be resolved within the domain to achieve realistic results, which makes simulation of the majority of flows infeasible with the current state of computational technology.
+
+\begin{equation}
+\label{eqn:navierstokes}
+\begin{split}
+\vec{\nabla}\vec{V} &= 0 \\
+\rho \dfrac{D \vec{V}}{D t}
+    &= \rho\vec{g} - \vec{\nabla} P + \mu \vec{\nabla}^2 \vec{V}
+\end{split}
+\end{equation}
+
+The Navier-Stokes equations can be reduced to a form that is solvable by todays standards by separating them in to mean and fluctuation components via the process of Reynolds decomposition. This results in the Reynolds-Average Navier-Stokes (RANS) equations of which the incompressible momentum equation is provided for example in Eqn~\ref{eqn:rans}.
+
+
+
+\begin{equation}
+\label{eqn:rans}
+\rho \dfrac{D \overline{\vec{V}}}{D t}
+    = \rho\vec{g} - \vec{\nabla} \overline{P}
+    + \mu \vec{\nabla}^2 \overline{\vec{V}}
+    - \rho \dfrac{\partial}{\partial x_j} \left( \overline{u'_i u'_j} \right)
+\end{equation}
+
+\noindent where the overbar represents the time average and the vertical tick represents a perturbation quantity. Unfortunately, the infamous turbulence closure problem requires that some relation must be derived for the additional unknown ``Reynolds stress'' term $\rho \overline{u'_i u'_j}$. Turbulence models allow the estimation of this term and the closure of the RANS equations to notable success, but inherent inaccuracy is introduced by the nature of modeling.
+
+A slight variation of RANS is Unsteady RANS (URANS), which is a time-accurate method that requires all grid cells to be fixed to the same global time step.  This allows URANS to capture unsteady behavior of the mean flow.
+
+In recent year, the advantages of DNS in resolving fine turbulent behavior have been brought into use through the compromising strategy of Large Eddy Simulation (LES), where turbulent structures that are large enough to be resolved on the chosen computational grid are solved with DNS, and smaller turbulent scales are solved with a turbulence model called a Subgrid-Scale (SGS) model.
+
+This method was enhanced by Spalart to operate with RANS as the Subgrid Scale Model, effectively combing the two methods into a hybrid RANS/LES method coined Detached Eddy Simulation (DES) \cite{spalart2009detachededdy}.
+
+Finally, Scale Adaptive Simulation (SAS) is a RANS-like method developed by Menter \cite{menter2005scaleadaptive} that uses a dynamic von Karman length-scale in its turbulence model, which allows the resolution of the full turbulent spectrum and results in LES-like results.
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \subsection{Turbulence Modeling Overview} \label{subsec:turbulencemodeling}
+
+
+
+
+
+
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \subsection{Turbulence Modeling Aspects} \label{subsec:turbulencemodeling}
 
 \textcolor{red}{\emph{LH}}
 
