@@ -66,7 +66,7 @@ $\rho$ & density, $kg/m^3$\\
 $Re$   & Reynolds Number, N.D. \\
 \multicolumn{2}{@{}l}{Subscripts}\\
 $()_{\infty}$ & freestream quantity\\
-$D$     & Diameter as reference length\\
+$()_D$     & Diameter as reference length\\
 \multicolumn{2}{@{}l}{Acronyms}\\
 CFD & Computational Fluid Dynamics\\
 RANS & Reynolds-Averaged Navier-Stokes \\
@@ -85,8 +85,6 @@ DNS & Direct Numerical Simulation \\
 \section{Introduction} \label{sec:intro}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-% \lettrine{B}{luff-bodies} (equivalently known as blunt-bodies) are a fundamental, generic body shape in aerodynamics, and they are classified as bodies where pressure drag makes up the majority of
 
 \lettrine{W}{hen} a body moves in a fluid, it experiences two types of forces: shear force due to friction and normal force due to pressure. Integration of the distribution of these forces along the surface of the body results in an overall force vector on the body, which can be expressed in components such as the familiar combination of lift and drag. The drag force can be thought of as a summation of the net surface shear and net surface pressure difference in the direction of the body's velocity.
 
@@ -188,16 +186,12 @@ There are even applications for bluff-bodies outside the concepts of loading and
 
 
 
+The wakes of bluff-bodies are extremely complex, containing many scales of turbulent structures and can be highly unstable. These facts simultaneously impress upon the importance of understanding the effects of bluff-body flows for engineering applications and gives rise to long-term difficulties in modeling and observing bluff-body flow. The study presented in this article will attempt to connect the entire field of bluff-body fluid dynamics, archiving the fundamental concepts and historical approaches, assessing modern techniques of experimental and computational analysis, and discussing the challenges that remain.
 
 
 
-STATE WHY WE DID THIS REVIEW, WHAT PURPOSE IT SERVES, WHY IT IS DIFFERENT THAN PREVIOUS WORKS
-
-Bring together basic concepts (bluff body, base pressure), preserve history, determine state of the art
-
-
-\emph{Big whorls have little whorls, which feed on their velocity, and little whorls have lesser whorls, and so on to viscosity (in the molecular sense).}
-Richardson (1922) \cite{richardson1922weather}
+% \emph{Big whorls have little whorls, which feed on their velocity, and little whorls have lesser whorls, and so on to viscosity (in the molecular sense).}
+% Richardson (1922) \cite{richardson1922weather}
 
 
 
