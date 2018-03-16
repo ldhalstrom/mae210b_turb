@@ -534,22 +534,11 @@ The results of this study suggest that the undisputed superiority of LES over UR
 \end{figure}
 %%\vspace{-2em}
 
-Next, the functionality of DES (a close sibling to LES with less computational cost) will be compared to URANS for the applied bluff-body case of an atmospheric reentry capsule during the subsonic portion of its trajectory at notably high $Re=5.0 \times 10^6$.  The study by Schwing et al. (2009) \cite{schwing2015detachededdy} compared DES and URANS simulations of the Orion capsule at subsonic and transonic Mach numbers to wind tunnel pressure data. Analysis of the prediction both the instantaneous and mean turbulence features was performed in the study, but this analysis will focus on the accuracy of the simulations with regards to the time-averaged results during subsonic flight.
+Next, the functionality of DES (a close sibling to LES with less computational demand) will be compared to URANS for the applied bluff-body case of an atmospheric reentry capsule during the subsonic portion of its trajectory at notably high $Re=5.0 \times 10^6$.  The study by Schwing et al. (2009) \cite{schwing2015detachededdy} compared DES and URANS simulations of the Orion capsule at subsonic and transonic Mach numbers to wind tunnel pressure data. Analysis of the prediction both the instantaneous and mean turbulence features was performed in the study, but this analysis will focus on the accuracy of the simulations with regards to the time-averaged results during subsonic flight.
 
 The mean surface pressure results for each CFD method are presented in the top image of Fig~\ref{fig:orionpressure} for $\alpha=155^o$ and are compared to the mean pressures measured by the taps in the wind tunnel test. In this example, it is obvious that the DES-KES method (which will be referred to as DES for the remainder of this section) predicts the backshell pressure distribution with vastly superior accuracy to its URANS equivalent. This advantage does not occur in all tested conditions, however, as there are many cases where the less-expensive URANS formulation produces compatible pressure distributions to DES.
 
-
-
-
-
-
-
-
-
-
-
-
-
+A more quantitative analysis capsule wake prediction accuracy of each model is supplied in the lower image of Fig~\ref{fig:orionpressure}, which is a line plot of the surface pressure in taps along the centerline of the capsule's cross-section. Here, two suction peaks can be seen near X/D=0.75, which correspond to the flow separation at the capsule shoulder that can be seen in Fig~\ref{fig:oriongridflow}. The magnitude of each of these peaks is most closely predicted by DES. In addition, the nearly constant base pressure on the backshell of the capsule in the separated wake is very accurately predicted by DES, while the URANS equivalent is incorrect in both magnitude and in its varying nature.  These differences in wake behavior prediction result in a much more accurate drag prediction by DES in comparison to wind tunnel results. However, DES was not the overall victor in mean load prediction since the integration of lift of for the URANS pressure distribution proved to be more accurate. The author attributes this discrepancy to separation prediction, which highlights the potential ambiguity of hybrid RANS/LES behavior in response to grid and geometry.
 
 
 
@@ -570,25 +559,7 @@ The mean surface pressure results for each CFD method are presented in the top i
 %%\vspace{-2em}
 
 
-
-
-Freckle plots of pressure tap data, viewed from fi  180 deg, for Mach 0.50, AoA   155 deg case
-
-Line plots of pressure tap for data Mach 0.50, AoA   155 deg case.
-
-
-
-RANS fails to predict suction peak, surface pressures in wake.  Gets best lift integration compared to DES due to separation prediction, worse drag due to wake pressure prediction.
-
-
-
-
-
-
-
-DES is less computational demanding than LES, can do high Re capsule while LES couldnt do cylinder
-
-DES can be better than RANS, but lots of situations where they're the same and its not worth it
+The results of this study demonstrate that CFD techniques are mature enough to accurately simulate complex, realistic bluff-body flows like this high-Reynolds number reentry capsule.  Both URANS and DES proved capable in many sets of conditions, but the increased computational cost of DES became more justified at high angle of attack flight conditions where URANS was insufficient for accurate wake modeling.  The ambiguity of mean load prediction accuracy between methods demonstrates that no one method is superior for all conditions and that user intuition toward flow realism is still an essential component of an accurate bluff-body simulation.
 
 
 
