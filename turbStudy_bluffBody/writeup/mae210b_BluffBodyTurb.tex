@@ -454,8 +454,11 @@ Lastly, SAS simulations for a similar circular cylinder with $Re_D=3.6 \times 10
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Comparison of RANS and LES/DES for Bluff-Bodies} \label{subsec:desvsrans}
+\subsection{Comparison of RANS and LES/DES Methodologies for Bluff-Bodies} \label{subsec:desvsrans}
 
+Though Section~\ref{subsec:initialcompare} demonstrates that higher-fidelity CFD methodologies like LES are undoubtedly capable of more realistic unsteady bluff-body simulation than RANS methods, the ambiguity of the accuracy time-averaged results of each method calls for further comparison of the strengths and weaknesses of URANS and LES/DES in predicting time-averaged quantities for bluff-body flows.
+
+First, URANS will be compared directly to LES in the study by Catalano et al. (2003) \cite{catalano2003numerical} of a circular cylinder at a relatively high Reynolds number of $Re_D = 1.0 \times 10^6$. A qualitative flow comparison of the two solutions in Fig~\ref{fig:cylinderransvslesflow} demonstrates that there is a obvious difference in both the instantaneous and time-averaged flow behavior between the two methods, which is consistent with the discussion in Section~\ref{subsec:initialcompare}.
 
 
 
@@ -464,17 +467,20 @@ Lastly, SAS simulations for a similar circular cylinder with $Re_D=3.6 \times 10
 % \begin{figure}[htb]
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.49\textwidth]{Images/logan/catalano_2003numerical_UnsteadyURANSvsLES.pdf}
-\includegraphics[width=0.49\textwidth]{Images/logan/catalano_2003numerical_SteadyURANSvsLES.pdf}
-\caption{ cylinder les vs urans instantaneous and averaged \cite{catalano2003numerical} }
+\includegraphics[width=0.45\textwidth]{Images/logan/catalano_2003numerical_UnsteadyURANSvsLES.pdf}
+\includegraphics[width=0.54\textwidth]{Images/logan/catalano_2003numerical_SteadyURANSvsLES.pdf}
+\caption{ Instantaneous vorticity magnitude (left) and time-averaged streamwise velocity distribution of numeric solutions for circular cylinder at $Re_D = 1.0 \times 10^6$ \cite{catalano2003numerical} }
 \label{fig:cylinderransvslesflow}
 \end{center}
 \end{figure}
 %%\vspace{-2em}
 
-Instantaneous vorticity magnitude at a given spanwise cut for flow over a circular cylinder at ReD 1⁄4 1   106. 25 contour levels from xD=U1 1⁄4 1 to xD=U1 1⁄4 575 (exponential distribution) are plotted.
 
-Fig. 5. Mean streamwise velocity distribution predicted by LES and URANS. 45 contour levels from U=U1 1⁄4  0:2 to U=U1 1⁄4 1:7 are plotted.
+Quantitative comparison of the two methodologies against experiment can be found in Fig~\ref{fig:cylinderransvslesvalidation}. To the left, it can be seen that LES matches both the suction peak before separation (near $\theta=90^o$) and the constant base pressure in the separated wake ($\theta=130-180^o$) of the $Re_D = 1.2 \times 10^6$ experiment more closely than URANS.
+
+However, the advantage of LES over URANS in this application diminishes with increasing Reynolds number since more grid refinement is required by LES to resolve finer turbulence scales. Thus, as can be seen in the right of Fig~\ref{fig:cylinderransvslesvalidation}, URANS begins to predict drag coefficient more correctly at higher Reynolds numbers using the same computational resources as the $Re_D = 1.2 \times 10^6$ case.
+
+
 
 
 
@@ -485,17 +491,20 @@ Fig. 5. Mean streamwise velocity distribution predicted by LES and URANS. 45 con
 \begin{center}
 \includegraphics[width=0.49\textwidth]{Images/logan/catalano2003numerical_CylinderCp.pdf}
 \includegraphics[width=0.49\textwidth]{Images/logan/catalano2003numerical_CylinderDrag.pdf}
-\caption{ rans vs les \cite{catalano2003numerical} }
-\label{fig:cylinderransvsdesvalidation}
+\caption{ Mean surface pressure distribution on a cylinder (left) for computational methods: (---) LES, (- -) RANS, (-.-) URANS at $Re_D = 1.0 \times 10^6$ and experiments at (o) $Re_D = 1.2 \times 10^6$ and ($\triangle$) $Re_D = 6.7 \times 10^5$ and computed cylinder drag coefficient as a function of Reynolds number (right) for (--) experiment, (o) LES, and ($\Box$) URANS \cite{catalano2003numerical} }
+\label{fig:cylinderransvslesvalidation}
 \end{center}
 \end{figure}
 %%\vspace{-2em}
 
 
-Mean pressure distribution on the cylinder: (—) LES at ReD 1⁄4 1 106; (- - -) RANS at ReD 1⁄41 106; (–.–) URANS at ReD 1⁄4 1   106 ; ( $o$ ) experiment by Warschauer and Leene (1971) at ReD 1⁄4 1:2   106 (spanwise averaged); ($\Delta$) experiment by Falchsbart (in Zdravko- vich, 1997) at ReD 1⁄4 6:7   105.
+The results of this study suggest that the undisputed superiority of LES over URANS in resolving instantaneous turbulence of bluff-bodies can remain an advantage in accuracy even when time-averaging is applied. However, this conclusion is case-specific, as URANS can prevail in mean flow prediction accuracy when the flow exceeds the resolution of the LES grid due to the greater computational cost of LES.
 
 
-Drag coefficient as a function of the Reynolds number. (—) Achenbach (1968); (circle) LES; (square) URANS.
+
+
+
+
 
 
 
@@ -574,7 +583,7 @@ RANS fails to predict suction peak, surface pressures in wake.  Gets best lift i
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Comparison of DES and SAS for Bluff-Bodies} \label{subsec:desvssas}
+\subsection{Comparison of DES and SAS Methodologies for Bluff-Bodies} \label{subsec:desvssas}
 
 
 
@@ -758,7 +767,7 @@ NOTE: DES could be used to emulate the dimples on a golf ball by setting the bou
 
 
 
-
+spalart table of methodology readiness
 
 
 
