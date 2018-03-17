@@ -609,14 +609,11 @@ It is also relevant to consider the differences in computational cost between th
 \subsection{Current State of Computational Methods for Bluff-Body Flows} \label{subsec:currentstatenumeric}
 
 
-The relative differences between CFD methodologies has been reviewed in the previous sections. This section will detail
+The relative differences between CFD methodologies has been reviewed in the previous sections. This section will detail the current state-of-the-art in bluff-body flow modeling and the challenges that remain to be addressed.
 
+As the previous sections have established, URANS, though less complex in nature than SAS, LES, and DES, has proved to yield acceptable time-averaged results under the correct conditions. As this method is inarguably the least expensive and most widely used CFD methodology in the current industry, it is important to note that this technique will remain relevant until computer technology and LES/DES maturity have both improved enough to outweigh the benefits of this method.
 
-
-
-
-
-
+However, the maturity of hybrid techniques like DES have been steadily improving.  Results in this review demonstrate successes in theoretical and real-world applications alike. Further demonstration of the maturity of this technology is demonstrated in Spalart's review of DES (2009) \cite{spalart2009detachededdy} and is shown in Fig~\ref{fig:desspherevalidation}.
 
 %%% DES SPHERE DEMONSTRATING COMPARISON TO EXPERIMENT
 %%\vspace{-2em}
@@ -636,6 +633,79 @@ b courtesy of K. Squires. (c) Phase-averaged vorticity contours for a cylinder. 
 (2008), and the solid line denotes experiments by the same authors.
 
 NOTE: DES could be used to emulate the dimples on a golf ball by setting the boundary layer separation point, but true simulation of flow in golf ball dimples requires DNS due to the range of scales
+
+
+
+
+
+
+
+
+
+%%% F15 DES
+%%\vspace{-2em}
+% \begin{figure}[htb]
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{Images/logan/forsythe2004detachededdy_f15grid.pdf}
+\includegraphics[width=0.45\textwidth]{Images/logan/spalart2009detachededdy_f15des.pdf}
+\caption{ F-15 DES grid (left) \cite{forsythe2004detachededdy} vorticity isocontours (right) \cite{spalart2009detachededdy} }
+\label{fig:f15des}
+\end{center}
+\end{figure}
+%%\vspace{-2em}
+
+
+
+%%% CAR DES
+%%\vspace{-2em}
+% \begin{figure}[htb]
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{Images/logan/spalart2009detachededdy_carDES.pdf}
+\caption{ car DES isocontours \cite{mendonca2002towards} }
+\label{fig:cardes}
+\end{center}
+\end{figure}
+%%\vspace{-2em}
+
+
+
+
+
+
+
+DES works in right situations. User must know appropriate geometry/grid techniques
+
+DES order of accuracy
+
+
+%%% GRID INDUCED SEPARATION FROM DES
+%%\vspace{-2em}
+% \begin{figure}[htb]
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{Images/logan/spalart2009detachededdy_GridInducedSeparation.pdf}
+\caption{ Example of DES grid induced separation from \cite{spalart2009detachededdy}, source: \cite{menter2004adaptation} }
+\label{fig:desgridinducedseparation}
+\end{center}
+\end{figure}
+%%\vspace{-2em}
+
+Vorticity contours over an airfoil: (a) Reynolds-averaged Navier-Stokes and (b) detached-eddy simulation.
+Arrows indicate separation. Figure taken from Menter \& Kuntz 2002.
+
+Potential con of using DES. EXPLAIN HOW GRID INDUCED SEPARATION WORKS.
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -681,63 +751,34 @@ Contours of azimuthal vorticity. (a) Re = 2.5   104; (b) Re = 1.1   105
 
 NOTE: Recall sphere example from Spalart review and say that this is the analogous DNS experiment to his DES
 
+
+
+
+
+
+% SPALART TABLE OF TURBULENCE MODEL READINESS
 %%\vspace{-2em}
 % \begin{figure}[htb]
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.5\textwidth]{Images/logan/cimarelli2018direct_vorticity.pdf}
-\caption{ DNS square cylinder vorticity contours Re=3000 \cite{cimarelli2018direct} }
-\label{fig:dnsRectCylPressure}
-\end{center}
-\end{figure}
-%%\vspace{-2em}
-
-Fig. 10. Instantaneous isosurfaces of $\lambda_2=-2$ colored with $y$. Perspective, top and lateral views in (a), (b) and (c) plots, respectively.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-%%% F15 DES
-%%\vspace{-2em}
-% \begin{figure}[htb]
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.45\textwidth]{Images/logan/forsythe2004detachededdy_f15grid.pdf}
-\includegraphics[width=0.45\textwidth]{Images/logan/spalart2009detachededdy_f15des.pdf}
-\caption{ F-15 DES grid (left) \cite{forsythe2004detachededdy} vorticity isocontours (right) \cite{spalart2009detachededdy} }
-\label{fig:f15des}
+\includegraphics[width=0.95\textwidth]{Images/logan/spalart2000strategies_TurbModelTable.pdf}
+\caption{ Spalart's review of turbulence model readiness (2000) \cite{spalart2000strategies} }
+\label{fig:turbulencemodelreadiness}
 \end{center}
 \end{figure}
 %%\vspace{-2em}
 
 
 
-%%% CAR DES
-%%\vspace{-2em}
-% \begin{figure}[htb]
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.5\textwidth]{Images/logan/spalart2009detachededdy_carDES.pdf}
-\caption{ car DES isocontours \cite{mendonca2002towards} }
-\label{fig:cardes}
-\end{center}
-\end{figure}
-%%\vspace{-2em}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -754,27 +795,8 @@ Fig. 10. Instantaneous isosurfaces of $\lambda_2=-2$ colored with $y$. Perspecti
 
 
 
-spalart table of methodology readiness
 
 
-
-
-%%% GRID INDUCED SEPARATION FROM DES
-%%\vspace{-2em}
-% \begin{figure}[htb]
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.6\textwidth]{Images/logan/spalart2009detachededdy_GridInducedSeparation.pdf}
-\caption{ Example of DES grid induced separation from \cite{spalart2009detachededdy}, source: \cite{menter2004adaptation} }
-\label{fig:desgridinducedseparation}
-\end{center}
-\end{figure}
-%%\vspace{-2em}
-
-Vorticity contours over an airfoil: (a) Reynolds-averaged Navier-Stokes and (b) detached-eddy simulation.
-Arrows indicate separation. Figure taken from Menter \& Kuntz 2002.
-
-Potential con of using DES. EXPLAIN HOW GRID INDUCED SEPARATION WORKS.
 
 
 
@@ -943,6 +965,19 @@ Potential con of using DES. EXPLAIN HOW GRID INDUCED SEPARATION WORKS.
 
 
 
+% % DNS SQUARE CYLINDER FLOW
+% %%\vspace{-2em}
+% % \begin{figure}[htb]
+% \begin{figure}[H]
+% \begin{center}
+% \includegraphics[width=0.5\textwidth]{Images/logan/cimarelli2018direct_vorticity.pdf}
+% \caption{ DNS square cylinder vorticity contours Re=3000 \cite{cimarelli2018direct} }
+% \label{fig:dnsRectCylPressure}
+% \end{center}
+% \end{figure}
+% %%\vspace{-2em}
+
+% Fig. 10. Instantaneous isosurfaces of $\lambda_2=-2$ colored with $y$. Perspective, top and lateral views in (a), (b) and (c) plots, respectively.
 
 
 
