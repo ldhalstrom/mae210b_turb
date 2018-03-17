@@ -349,7 +349,8 @@ The wakes of bluff-bodies are extremely complex, containing many scales of turbu
 
 
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Current State of Experimental Methods for Bluff-Body Flows} \label{subsec:currentstateexperimental}
 
 
 
@@ -605,7 +606,16 @@ It is also relevant to consider the differences in computational cost between th
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Complex Bluff-Body Flows with DES} \label{subsec:complexdes}
+\subsection{Current State of Computational Methods for Bluff-Body Flows} \label{subsec:currentstatenumeric}
+
+
+The relative differences between CFD methodologies has been reviewed in the previous sections. This section will detail
+
+
+
+
+
+
 
 
 %%% DES SPHERE DEMONSTRATING COMPARISON TO EXPERIMENT
@@ -626,6 +636,72 @@ b courtesy of K. Squires. (c) Phase-averaged vorticity contours for a cylinder. 
 (2008), and the solid line denotes experiments by the same authors.
 
 NOTE: DES could be used to emulate the dimples on a golf ball by setting the boundary layer separation point, but true simulation of flow in golf ball dimples requires DNS due to the range of scales
+
+
+
+
+
+
+
+
+%%% SPHERE DNS
+%%\vspace{-2em}
+% \begin{figure}[htb]
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{Images/logan/rodriguez2011direct_DNSsphereWake.pdf}
+\includegraphics[width=0.45\textwidth]{Images/logan/rodriguez2011direct_DNSsphereCp.pdf}
+\caption{ Instantaneous vortical structures (right) and mean surface pressure comparison (left) for DNS flow over a sphere ($Re_D = 3700$) \cite{rodriguez2011direct} }
+\label{fig:dnssphere}
+\end{center}
+\end{figure}
+%%\vspace{-2em}
+
+
+
+
+
+%%% GOLF BALL DNS
+%%\vspace{-2em}
+% \begin{figure}[htb]
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{Images/logan/smith2010numerical_golfballgrid.pdf}
+\includegraphics[width=0.45\textwidth]{Images/logan/smith2010numerical_golfballvorticity.pdf}
+\caption{ DNS non-rotating golf ball with dimples grid (left) vorticity (right) \cite{smith2010numerical} }
+\label{fig:dnsgolfball}
+\end{center}
+\end{figure}
+%%\vspace{-2em}
+
+
+Example grid resolution in a dimple near 84° (measured from the stagnation point at the front of the golf ball). (a) Re = 2.5   104; (b) Re = 1.1   105.
+
+Contours of azimuthal vorticity. (a) Re = 2.5   104; (b) Re = 1.1   105
+
+NOTE: Recall sphere example from Spalart review and say that this is the analogous DNS experiment to his DES
+
+%%\vspace{-2em}
+% \begin{figure}[htb]
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{Images/logan/cimarelli2018direct_vorticity.pdf}
+\caption{ DNS square cylinder vorticity contours Re=3000 \cite{cimarelli2018direct} }
+\label{fig:dnsRectCylPressure}
+\end{center}
+\end{figure}
+%%\vspace{-2em}
+
+Fig. 10. Instantaneous isosurfaces of $\lambda_2=-2$ colored with $y$. Perspective, top and lateral views in (a), (b) and (c) plots, respectively.
+
+
+
+
+
+
+
+
+
 
 
 
@@ -670,72 +746,6 @@ NOTE: DES could be used to emulate the dimples on a golf ball by setting the bou
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Current State of Bluff-Body Turbulence Analysis} \label{sec:currentstate}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{itemize}
-    \item Current State of Knowledge
-    \item Remaining Challenges
-\end{itemize}
-
-
-
-
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Experimental Methods} \label{subsec:currentstateexperimental}
-
-\textcolor{red}{\emph{FZ}}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Computational Methods} \label{subsec:currentstatecomputational}
-
-
-
 \begin{itemize}
     \item Current State of Knowledge
     \item Remaining Challenges
@@ -769,41 +779,6 @@ Potential con of using DES. EXPLAIN HOW GRID INDUCED SEPARATION WORKS.
 
 
 
-
-
-
-%%% GOLF BALL DNS
-%%\vspace{-2em}
-% \begin{figure}[htb]
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.45\textwidth]{Images/logan/smith2010numerical_golfballgrid.pdf}
-\includegraphics[width=0.45\textwidth]{Images/logan/smith2010numerical_golfballvorticity.pdf}
-\caption{ DNS non-rotating golf ball with dimples grid (left) vorticity (right) \cite{smith2010numerical} }
-\label{fig:dnsgolfball}
-\end{center}
-\end{figure}
-%%\vspace{-2em}
-
-
-Example grid resolution in a dimple near 84° (measured from the stagnation point at the front of the golf ball). (a) Re = 2.5   104; (b) Re = 1.1   105.
-
-Contours of azimuthal vorticity. (a) Re = 2.5   104; (b) Re = 1.1   105
-
-NOTE: Recall sphere example from Spalart review and say that this is the analogous DNS experiment to his DES
-
-%%\vspace{-2em}
-% \begin{figure}[htb]
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=0.5\textwidth]{Images/logan/cimarelli2018direct_vorticity.pdf}
-\caption{ DNS square cylinder vorticity contours Re=3000 \cite{cimarelli2018direct} }
-\label{fig:dnsRectCylPressure}
-\end{center}
-\end{figure}
-%%\vspace{-2em}
-
-Fig. 10. Instantaneous isosurfaces of $\lambda_2=-2$ colored with $y$. Perspective, top and lateral views in (a), (b) and (c) plots, respectively.
 
 
 
@@ -849,7 +824,7 @@ Fig. 10. Instantaneous isosurfaces of $\lambda_2=-2$ colored with $y$. Perspecti
 \end{itemize}
 
 
-LIST ALL FIGURES HERE, REORDER AND DESCRIBE LATER
+
 
 
 
