@@ -613,7 +613,7 @@ The relative differences between CFD methodologies has been reviewed in the prev
 
 As the previous sections have established, URANS, though less complex in nature than SAS, LES, and DES, has proved to yield acceptable time-averaged results under the correct conditions. As this method is inarguably the least expensive and most widely used CFD methodology in the current industry, it is important to note that this technique will remain relevant until computer technology and LES/DES maturity have both improved enough to outweigh the benefits of this method.
 
-However, the maturity of hybrid techniques like DES have been steadily improving.  Results in this review demonstrate successes in theoretical and real-world applications alike. Further demonstration of the maturity of this technology is demonstrated in Spalart's review of DES (2009) \cite{spalart2009detachededdy} and is shown in Fig~\ref{fig:desspherevalidation}.
+However, the maturity of hybrid techniques like DES have been steadily improving.  Results in this review demonstrate successes in theoretical and real-world applications alike. Further proof of the maturity of this technology is offered in Spalart's review of DES (2009) \cite{spalart2009detachededdy} and is shown in Fig~\ref{fig:desspherevalidation}.
 
 %%% DES SPHERE DEMONSTRATING COMPARISON TO EXPERIMENT
 %%\vspace{-2em}
@@ -627,21 +627,13 @@ However, the maturity of hybrid techniques like DES have been steadily improving
 \end{figure}
 %%\vspace{-2em}
 
-Fig~\ref{fig:desspherevalidation} (a) and (b) show
+Fig~\ref{fig:desspherevalidation} (a) and (b) show DES solutions for flow over a sphere with laminar separation at $Re_D = 1.0 \times 10^5$ and turbulent separation at $Re_D = 1.1 \times 10^6$ \cite{squires2004detachededdy}. With properly controlled separation, these two simulations are shown to match experimental data quantitatively for both surface pressure distributions as well as wake flow features.
 
+Fig~\ref{fig:desspherevalidation}d shows an impressive comparison of the simulation averaged flow vorticity contours to those observed using Particle Image Velocimetry (PIV) in experiment (outlined in black) \cite{mockett2008demonstration}. This suggests that the DNS portion of hybrid RANS-LES methods allows for realistic turbulent features to develop within the wake.
 
+Fig~\ref{fig:desspherevalidation}c demonstrates that the surface pressure distribution (solid lines are simulation and open markers are experiment) is predicted almost perfectly for both conditions in the attached flow regions, including the suction peak disparity that is the source of the famous ``drag crisis'' relationship for circular bodies. Still, the constant base pressure in the separated wake region for the turbulent separation case is predicted with significant offset, suggesting that integration of drag coefficient may not perfectly reproduce Reynolds number-dependent behavior observed for experiments, and that there is still room for improvement with this method of modeling.
 
-
-
-
-
-Simple bluff bodies. (a) Flow visualizations and (b) pressure distributions for a sphere. Re = 105 and 1.1 × 106. Open circles and
-diamonds denote experiments, whereas the dotted and dashed lines denote detached-eddy simulation (DES) on two grids. Panels a and
-b courtesy of K. Squires. (c) Phase-averaged vorticity contours for a cylinder. Color gradations denote DES conducted by Mockett et al.
-(2008), and the solid line denotes experiments by the same authors.
-
-NOTE: DES could be used to emulate the dimples on a golf ball by setting the boundary layer separation point, but true simulation of flow in golf ball dimples requires DNS due to the range of scales
-
+It is important to note that separation location, which is so important in determining the correct base pressure and drag of this bluff-body, was controlled for these DES simulations. The turbulence modeling in the RANS portion of the hybrid method is not sufficient to accurately predict this specific location, especially for detailed geometry such as the dimples on a golf ball that might create this kind of turbulent separation in a real-world flow. Spalart notes that more advanced techniques like DNS are required for this level of prediction accuracy and will be discussed later in this section.
 
 
 
