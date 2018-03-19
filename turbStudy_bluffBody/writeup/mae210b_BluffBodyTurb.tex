@@ -753,9 +753,13 @@ DES methods have also been shown to be effective in multi-disciplinary applicati
 
 
 
-DES works in right situations. User must know appropriate geometry/grid techniques
 
-DES order of accuracy
+
+
+
+
+
+
 
 
 %%% GRID INDUCED SEPARATION FROM DES
@@ -764,24 +768,13 @@ DES order of accuracy
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.6\textwidth]{Images/logan/spalart2009detachededdy_GridInducedSeparation.pdf}
-\caption{ Example of DES grid induced separation from \cite{spalart2009detachededdy}, source: \cite{menter2004adaptation} }
+\caption{ Vorticity contours over an airfoil for RANS (left) and DES (right) simulations showing an example of DES Grid Induced Separation (GIS) (indicated by arrow) from \cite{spalart2009detachededdy}, source: \cite{menter2004adaptation} }
 \label{fig:desgridinducedseparation}
 \end{center}
 \end{figure}
 %%\vspace{-2em}
 
-Vorticity contours over an airfoil: (a) Reynolds-averaged Navier-Stokes and (b) detached-eddy simulation.
-Arrows indicate separation. Figure taken from Menter \& Kuntz 2002.
-
-Potential con of using DES. EXPLAIN HOW GRID INDUCED SEPARATION WORKS.
-
-
-
-
-
-
-
-
+Despite these successes, DES is not the perfect solution for computational modeling of massively separated flow over bluff-bodies. A number of deficiencies are inherent even in the fundamental nature of DES as a hybrid method. Rules for the hand-off between RANS and LES methods in the ``gray-area'' are approximate and potentially nonobjective. This can result in the RANS turbulence model ``contaminating'' the DNS results of the LES solution in the gray-area \cite{spalart2009detachededdy}. In situations where the grid near the surface is spaced such that LES is performed on an insufficiently fine grid, flow separation can occur at non-physical locations for simulations in which a pure-RANS model might predict the correct location of separation, as shown in Fig~\ref{fig:desgridinducedseparation}. Grid-based misbehavior of DES can be compensated for by using comparable methodologies like SAS or more advanced (and computationally expensive) formulations of DES like Delayed DES (DDES), which detects boundary layer regions and delays the switch from RANS to LES in order to preserve the turbulence modeling of the shear layer. Thus, DES cannot be used as a simple ``plug-and-play'' turbulence model option (though it can be chosen from a turbulence model menu as such). A DES user must be aware of non-physical flow behavior and common geometry and grid features that may lead to these failures. Finally, DES may prove insufficient for some applications that require high orders of numeric accuracy to avoid numeric dissipation or resolve fine acoustic signals. In a DES solution where both RANS and LES modeling is present, it is extremely difficult to propose an order of accuracy of the composite solution. Even at a minimum, a lack of quantification of accuracy creates a deficiency in the ability to quality control a DES solution \cite{spalart2009detachededdy}.
 
 
 
@@ -804,6 +797,10 @@ Potential con of using DES. EXPLAIN HOW GRID INDUCED SEPARATION WORKS.
 \end{center}
 \end{figure}
 %%\vspace{-2em}
+
+In spite of its deficiencies, however, DES proves to be an extremely effective method for bluff body simulations today, especially when compared to higher-order methods that alleviate that issues mentioned above.
+
+
 
 
 
