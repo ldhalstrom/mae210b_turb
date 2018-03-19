@@ -796,7 +796,7 @@ DNS results for flow over a sphere are presented in Fig~\ref{fig:dnssphere} from
 %%\vspace{-2em}
 
 
-DNS has been applied to more realistic bluff-body flows, such as the fabled dimpled golf ball, shown in Fig~\ref{fig:dnsgolfball} from Smith et al. (2010), and qualitative comparisons show that the results are reasonably realistic \cite{smith2010numerical}. From the figure, however, one can note the extreme fineness of the grid required to resolve DNS flow over a non-rotating golf ball at a Reynolds number still one order of magnitude below the DES example.
+DNS has been applied to more realistic bluff-body flows, such as the fabled dimpled golf ball, shown in Fig~\ref{fig:dnsgolfball} from Smith et al. (2010), and qualitative comparisons show that the results are reasonably realistic \cite{smith2010numerical}. From the figure, however, one can note the extreme fineness of the grid required to resolve DNS flow over a non-rotating golf ball at a Reynolds number still one order of magnitude below the DES example. Extrapolating this resolution of discretization to a complex case like the F-15 in Fig~\ref{fig:f15des} would be simply infeasible to solve with today's computational technology.
 
 
 
@@ -808,8 +808,8 @@ DNS has been applied to more realistic bluff-body flows, such as the fabled dimp
 % \begin{figure}[htb]
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.45\textwidth]{Images/logan/smith2010numerical_golfballgrid.pdf}
-\includegraphics[width=0.45\textwidth]{Images/logan/smith2010numerical_golfballvorticity.pdf}
+\includegraphics[width=0.40\textwidth]{Images/logan/smith2010numerical_golfballgrid.pdf}
+\includegraphics[width=0.55\textwidth]{Images/logan/smith2010numerical_golfballvorticity.pdf}
 \caption{ DNS grid (left) and vorticity contours (right) for a non-rotating golf ball with dimples (a: $Re_D = 2.5\times10^4$, b: $Re_D=1.1\times10^5$) \cite{smith2010numerical} }
 \label{fig:dnsgolfball}
 \end{center}
@@ -817,11 +817,10 @@ DNS has been applied to more realistic bluff-body flows, such as the fabled dimp
 %%\vspace{-2em}
 
 
-Example grid resolution in a dimple near 84° (measured from the stagnation point at the front of the golf ball). (a) Re = 2.5   104; (b) Re = 1.1   105.
 
-Contours of azimuthal vorticity. (a) Re = 2.5   104; (b) Re = 1.1   105
 
-NOTE: Recall sphere example from Spalart review and say that this is the analogous DNS experiment to his DES
+
+
 
 
 
@@ -841,16 +840,13 @@ NOTE: Recall sphere example from Spalart review and say that this is the analogo
 %%\vspace{-2em}
 
 
+In summary, the current state-of-the-art in bluff-body flow simulation is a combination of CFD methodologies and greatly depends on the specific application. URANS simulations have been shown to match time-averaged loading and flow feature results of both experiment and more advanced computational methods under the correct geometry and flow conditions. A user aware of the limitations of URANS should be able to use this method in the appropriate applications as an extremely cost-saving alternative to higher-fidelity methods.
 
+Still, in situations where the fine turbulent features of the massively separated flow behind a bluff-body is impossible to model with RANS or when higher accuracy is required in resolving unsteady flow behavior, the hybrid RANS/LES methodology of DES is preferable as the most mature and feasible implementation of direct simulation. This method combines the robustness of RANS in the boundary layer with the accuracy of DNS for the large turbulent structures in a formulation efficient enough to run accurately for complex bluff-bodies on today's computers.
 
-SUMMARY
+Though more user-friendly than LES, DES is far from automatic. Ambiguous behavior with respect to geometry and grid refinement requires the user to be well trained in the correct application of DES. Other methodologies including DDES and SAS exist to alleviate some of these shortcomings, but come at their own cost of computational expense or reduction in accuracy. Solver selection between DES and SAS is, again, a decision that must be made with engineering judgment.
 
-computational efficiency is king. RANS ok for time-averaged loads in some situations. DES is better than LES for simulations of the same computational resources.
-
-DES is not the final solution. Grid ambiguity, order of accuracy. SAS can be a remedy but isn't a solution either.
-
-Future is computationally feasible LES. DNS will remain a laboratory for a long time.
-
+In the future, we can look forward to computational power improvements and LES methodology maturation. Artificial intelligence in grid refinement and solver selection may improve the hybridization of LES-like solutions, making them both more accurate and user-friendly \cite{spalart2000strategies}. DNS will continue to be important for RANS turbulence model calibration, but its true feasibility remains in the distant future, as roughly estimated by Spalart in Fig~\ref{fig:turbulencemodelreadiness} based on on the ``rule of thumb'' that computer power increases by a factor of five every five years.
 
 
 
@@ -859,74 +855,6 @@ Future is computationally feasible LES. DNS will remain a laboratory for a long 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-\begin{itemize}
-    \item Current State of Knowledge
-    \item Remaining Challenges
-    \item des GIS and order of accuracy
-\end{itemize}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\textcolor{red}{\emph{LH}}
-
-\begin{itemize}
-    \item \underline{Brief} turbulence model description
-    \begin{itemize}
-        \item RANS vs URANS
-        \item DNS
-        \item LES (uses DNS) and DES (=Hybrid RANS/LES)
-    \end{itemize}
-    \item Compare turbulence model performance for sphere/cylinder
-    \begin{itemize}
-        \item DES > URANS > RANS
-        \item DES = functional LES
-        \item SAS vs DES?
-        \item DNS: limited Re
-    \end{itemize}
-    \item Shortcomings of each model (and how to address them)
-    \begin{itemize}
-        \item URANS
-        \item DES: only good at sharp separation
-        \begin{itemize}
-            \item ``An order of accuracy has not even been proposed for a simulation using both modes within DES'' -Spalart about hybrid method
-            \item grid induced separation (maybe not an issue for bluff bodies)
-            \item DES can default to RANS if grid adaptation misses a shear layer
-            \item more computational cost than RANS
-    \end{itemize}
-    \end{itemize}
-    \item Advanced geometries
-    \begin{itemize}
-        \item f-15
-        \item car
-        \item building
-        \item capsule
-        \item chute, landing gear, helicopter, wind turbine
-    \end{itemize}
-\end{itemize}
 
 
 
