@@ -19,10 +19,10 @@
 \ProcessOptions\relax
 \LoadClass[10pt]{article}
 
-\RequirePackage[T1]{fontenc}
+%\RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{microtype}
-\RequirePackage{newtxtext,newtxmath}
+%\RequirePackage{newtxtext,newtxmath}
 
 \RequirePackage[letterpaper,margin=1in]{geometry}
 \RequirePackage{enumitem}

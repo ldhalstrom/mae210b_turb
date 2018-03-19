@@ -4,12 +4,12 @@
 
 \usepackage{graphicx}
 \usepackage{amsmath}
-\usepackage[version=4]{mhchem}
+%\usepackage[version=4]{mhchem}
 \usepackage{siunitx}
 \usepackage{longtable,tabularx}
 \setlength\LTleft{0pt}
 
-% \usepackage{amsmath}          % for formula writing (i.e. 'split', etc)
+ \usepackage{amsmath}          % for formula writing (i.e. 'split', etc)
 \usepackage{rotate}           %rotate/mirror images
 \usepackage{cancel}           %draw lines through math to show "goes to zero"
 \usepackage{xfrac}            %allows slated and side fractions
@@ -231,25 +231,55 @@ The wakes of bluff-bodies are extremely complex, containing many scales of turbu
 
 
 
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Flow around a bluff body and transition}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+Despite the differences between the shapes of bluff bodies, the disturbed flow around them have some similarities. Bluff bodies generate an alteration in the surrounding velocity, and flow around them can be bigger than, equal to or smaller than the free stream velocity. When describing the flow around a cylinder, ideally  the description would be general for bluff bodies, independently of their shape. The present state of knowledge is still not capable of doing this, and so the description will depend on the shape of the body. In this section we are going to describe one of the most common and studied shapes of bluff bodies: circular cylinders. Figure \ref{fig:RegionsFlow} shows a scheme of the flow around a circular cylinder with the different regions of disturbed flow. The different regions are:
+
+\begin{enumerate}[label=(\roman*)]
+\item A thin region of retarded flow.
+\item Two boundary layers attached to the surface.
+\item Two regions adjacent to the cylinder with accelerated flow.
+\item One region downstream the cylinder of separated flow, usually called wake.  
+\end{enumerate} 
+
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{Images/federico/Figure01}
-\caption{ Regions of disturbed flow. Extracted from \cite{hunt1990} }
+\caption{ Regions of disturbed flow around a circular cylinder. Extracted from \cite{Zdravkovich1997} }
 \label{fig:RegionsFlow}
 \end{center}
 \end{figure}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Steady laminar wake}
+Although flow around circular cylinders usually present all these regions, their shape, size and flow structures depends on various parameters, but especially on the Reynolds number ($Re$). The Reynolds number is the parameter that usually describes the transition from laminar to turbulent flow. In the case of circular cylinders, transition can begin in different regions of the disturbed flow. The first transition appears in the wake, where turbulence is developed in the wake but the shear layer around the near-wake remain laminar. The second transition appears in the shear layer close to the near-wake and, as $Re$ increases, the transition gets closer to the boundary layer, leading to the third transition to turbulence, transition in the boundary layer. Transition in boundary layer was one of the most studied transitions in this type of flows, because it causes a sudden decrease in the drag force, usually denominated 'drag crisis'.
+
+The Reynolds number is considered the governing parameter around a circular cylinder only for disturbance-free flows. In real flows, other variables may affect the flow around bluff bodies. These variables are usually called influencing parameters. When the effect of these parameters is important, they may become into governing parameters. Common influencing parameters found in real flows are free stream turbulence, surface roughness, wall proximity, non-uniform free stream flow, oscillatory free stream flow, between others. All these parameters will modify the beginning and the end of the different flows regimes around bluff bodies, and they even cause the disappearance of some of the regimes. A very known example is how a rough sphere generate transition to turbulent boundary layers for lower $Re$ than a smooth sphere.
+
+In the following section we are going to describe the different flow regimes around a circular cylinder as a function of $Re$ for a free-disturbance flow. The regimes will be divided into five regimes, and those regimes into sub-regimes
+
+\begin{enumerate}[label=(\roman*)]
+\item Laminar regime (L)
+\item Transition in wake regime regime (TrW)
+\item Transition in shear-layer regime (TrSL)
+\item Transition in boundary-layer regime (TrBL)
+\item Fully turbulent Regime (T)
+\end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Periodic Laminar Regime}
+\subsection{Laminar regime (L)}
+
+The laminar state can be divided into three different flow regimes:
+
+\begin{enumerate}[label=(\roman*)]
+\item L1: Creeping flow regime  $0<Re<4-5$
+\item L2: Steady separation regime $4-5<Re<30-48$
+\item L3: Periodic laminar regime $30-48<Re<180-200$
+\end{enumerate}
+
+Creeping flow (L1) only occurs for very low $Re$ and its dominated by viscous forces. In this regime there is not visible separation, and the flow is similar to the one predicted by the potential theory.  When  $Re$ increases the effect of the viscous forces decrease, until at a $Re$ of 4 or 5 the flow separates. This separation is cause due to a favorable pressure gradient in the surface of the cylinder. The steady separation regime (L2) is characterized for two shear layers that form a steady, closed and symmetric wake. Behind the cylinder there is a weak recirculating flow that form two symmetric eddies. 
+
+This wake becomes unstable for $Re > 30-48$, starting the denominated periodic laminar regime (L3). In this regime any disturbance generates an oscillation that is amplified, causing a wavy trail after the cylinder. The amplitude of the oscillation increase with $Re$ until the two shear layers begin to interact with each other, forming eddies that are shed downstream, forming the well known Von-Karman eddy street. 
 
 
 \begin{figure}[H]
@@ -260,21 +290,43 @@ The wakes of bluff-bodies are extremely complex, containing many scales of turbu
 \end{center}
 \end{figure}
 
+A picture of a fully developed Von-Karman eddy street is shown in Figure \ref{fig:Laminar}. It was generated by Zdravkovich (1968) \citep{Zdravkovich1968} in a wind tunnel using liquid kerosene in the form of a fog of fine droplets. We can see that the eddies initiated at the end of the closed near wake and that after some length downstream the cylinder the patterns become 'frozen', meaning that they practically do not change their shape. This effect appears because these 'frozen' eddies are present where the wake have already disappeared, and they are only the remaining shapes of smoke that are advected downstream by a uniform flow, without affecting their structure. Another feature that can be noticed in Figure \ref{fig:Laminar} is that the widening of the wake occurs due to the entrainment of the external fluid.
+
+The periodic laminar regime is truly two dimensional for $40<Re<80$. For  $80<Re<100$ the wake become sensitive to perturbations and may become three dimensional and it is always three dimensional for  $100<Re<160$ \cite{Phillips1956}. This three dimensionality of the flow may lead to transition for higher $Re$.
+
+\Huge{\textcolor{red}{STROUHAL NUMBER}}
+
+\normalsize
+
+ 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Transition in wake state}
+\subsection{Transition in wake (TrW)}
+
+Only in rare cases a flow instability does not lead to transition to turbulence. The flow in the wake of a circular cylinder will eventually become turbulent if $Re$ is increased. The transition in wake may be divided into two regimes:
+
+\begin{enumerate}[label=(\roman*)]
+\item TrW1: Lower transition regime.
+\item TrW2: Upper transition regime.
+\end{enumerate}
+
+In the lower transition regime (TrW1) the eddies are formed laminar but become turbulent downstream after they have been shed (Figure \ref{fig:TrW1}). This transition will spread upstream with increasing $Re$. In the upper transition regime (TrW2) the eddies are formed laminar but become turbulent before they are shed (Figure \ref{fig:TrW2}). The shear layers remain laminar, even for the TrW2 regime.
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{Images/federico/Figure03}
-\caption{Transition in wake at \textbf{\textit{Re = 190}}. Extracted from \cite{Zdravkovich1968} }
+\caption{Transition in wake 1 at \textbf{\textit{Re = 190}}. Extracted from \cite{Zdravkovich1968} }
 \label{fig:TrW1}
 \end{center}
 \end{figure}
 
+When $Re>150$ a peculiar type of distortion of the eddy filaments next to the cylinder appear. Gerrard (1978) \cite{Gerrard1978} called them 'fingers' because these distortions pointed towards the cylinder. These 'fingers' do not produce turbulent eddies, but they do produce a highly three dimensional flow which is still laminar. At some point downstream these structures desintegrate themselves becoming turbulent. 
+
+
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.5\textwidth]{Images/federico/Figure04}
-\caption{Transition in wake at \textbf{\textit{Re = 344}}. Extracted from \cite{Gerrard1978} }
+\caption{Transition in wake 2 at \textbf{\textit{Re = 344}}. Extracted from \cite{Gerrard1978} }
 \label{fig:TrW2}
 \end{center}
 \end{figure}
@@ -493,7 +545,7 @@ However, the advantage of LES over URANS in this application diminishes with inc
 \begin{center}
 \includegraphics[width=0.49\textwidth]{Images/logan/catalano2003numerical_CylinderCp.pdf}
 \includegraphics[width=0.49\textwidth]{Images/logan/catalano2003numerical_CylinderDrag.pdf}
-\caption{ Mean surface pressure distribution on a cylinder (left) for computational methods: (---) LES, (- -) RANS, (-.-) URANS at $Re_D = 1.0 \times 10^6$ and experiments at (o) $Re_D = 1.2 \times 10^6$ and ($\triangle$) $Re_D = 6.7 \times 10^5$ and computed cylinder drag coefficient as a function of Reynolds number (right) for (--) experiment, (o) LES, and ($\Box$) URANS \cite{catalano2003numerical} }
+\caption{ Mean surface pressure distribution on a cylinder (left) for computational methods: (---) LES, (- -) RANS, (-.-) URANS at $Re_D = 1.0 \times 10^6$ and experiments at (o) $Re_D = 1.2 \times 10^6$ and ($\triangle$) $Re_D = 6.7 \times 10^5$ and computed cylinder drag coefficient as a function of Reynolds number (right) for (--) experiment, (o) LES, and ($square$) URANS \cite{catalano2003numerical} }
 \label{fig:cylinderransvslesvalidation}
 \end{center}
 \end{figure}
