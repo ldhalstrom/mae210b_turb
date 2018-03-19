@@ -78,7 +78,8 @@ $()_{\infty}$ & Freestream quantity\\
 $\vec{()}$ & Vector quantity\\
 $\overline{()}$ & Mean quantity (time-averaged)\\
 $()'$      & Perturbation quantity\\
-$()_D$     & Diameter as reference length\\
+$()_D$     & Diameter-based reference length\\
+$()_c$     & Chord-based reference length\\
 $()_i$     & Einstein notation index \\
 $()_j$     & Einstein notation index \\
 \end{longtable*}}
@@ -241,8 +242,8 @@ Despite the differences between the shapes of bluff bodies, the disturbed flow a
 \item A thin region of retarded flow.
 \item Two boundary layers attached to the surface.
 \item Two regions adjacent to the cylinder with accelerated flow.
-\item One region downstream the cylinder of separated flow, usually called wake.  
-\end{enumerate} 
+\item One region downstream the cylinder of separated flow, usually called wake.
+\end{enumerate}
 
 \begin{figure}[H]
 \begin{center}
@@ -277,9 +278,9 @@ The laminar state can be divided into three different flow regimes:
 \item L3: Periodic laminar regime $30-48<Re<180-200$
 \end{enumerate}
 
-Creeping flow (L1) only occurs for very low $Re$ and its dominated by viscous forces. In this regime there is not visible separation, and the flow is similar to the one predicted by the potential theory.  When  $Re$ increases the effect of the viscous forces decrease, until at a $Re$ of 4 or 5 the flow separates. This separation is cause due to a favorable pressure gradient in the surface of the cylinder. The steady separation regime (L2) is characterized for two shear layers that form a steady, closed and symmetric wake. Behind the cylinder there is a weak recirculating flow that form two symmetric eddies. 
+Creeping flow (L1) only occurs for very low $Re$ and its dominated by viscous forces. In this regime there is not visible separation, and the flow is similar to the one predicted by the potential theory.  When  $Re$ increases the effect of the viscous forces decrease, until at a $Re$ of 4 or 5 the flow separates. This separation is cause due to a favorable pressure gradient in the surface of the cylinder. The steady separation regime (L2) is characterized for two shear layers that form a steady, closed and symmetric wake. Behind the cylinder there is a weak recirculating flow that form two symmetric eddies.
 
-This wake becomes unstable for $Re > 30-48$, starting the denominated periodic laminar regime (L3). In this regime any disturbance generates an oscillation that is amplified, causing a wavy trail after the cylinder. The amplitude of the oscillation increase with $Re$ until the two shear layers begin to interact with each other, forming eddies that are shed downstream, forming the well known Von-Karman eddy street. 
+This wake becomes unstable for $Re > 30-48$, starting the denominated periodic laminar regime (L3). In this regime any disturbance generates an oscillation that is amplified, causing a wavy trail after the cylinder. The amplitude of the oscillation increase with $Re$ until the two shear layers begin to interact with each other, forming eddies that are shed downstream, forming the well known Von-Karman eddy street.
 
 
 \begin{figure}[H]
@@ -298,7 +299,7 @@ The periodic laminar regime is truly two dimensional for $40<Re<80$. For  $80<Re
 
 \normalsize
 
- 
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Transition in wake (TrW)}
@@ -320,7 +321,7 @@ In the lower transition regime (TrW1) the eddies are formed laminar but become t
 \end{center}
 \end{figure}
 
-When $Re>150$ a peculiar type of distortion of the eddy filaments next to the cylinder appear. Gerrard (1978) \cite{Gerrard1978} called them 'fingers' because these distortions pointed towards the cylinder. These 'fingers' do not produce turbulent eddies, but they do produce a highly three dimensional flow which is still laminar. At some point downstream these structures desintegrate themselves becoming turbulent. 
+When $Re>150$ a peculiar type of distortion of the eddy filaments next to the cylinder appear. Gerrard (1978) \cite{Gerrard1978} called them 'fingers' because these distortions pointed towards the cylinder. These 'fingers' do not produce turbulent eddies, but they do produce a highly three dimensional flow which is still laminar. At some point downstream these structures desintegrate themselves becoming turbulent.
 
 
 \begin{figure}[H]
@@ -352,7 +353,7 @@ In the TrSL1 regime transition waves appear in the free surface. Similar waves t
 \end{center}
 \end{figure}
 
-In the TrSL2 regime, a chain of transition eddies are formed along the shear layer, incorporating free stream flow to the wake (Figure \ref{fig:TrSL}). They eventually roll up forming a large turbulent eddy.  As $Re$ increases the formation of eddies  gets closer to the cylinder, until the shear layer becomes fully turbulent, marking the beginning of TrSL3 regime. Once this regime starts, the formation of eddies do not change its position (e.g. do not get closer to the cylinder) and the transition is reduced to a spot of sudden burst into turbulence.  
+In the TrSL2 regime, a chain of transition eddies are formed along the shear layer, incorporating free stream flow to the wake (Figure \ref{fig:TrSL}). They eventually roll up forming a large turbulent eddy.  As $Re$ increases the formation of eddies  gets closer to the cylinder, until the shear layer becomes fully turbulent, marking the beginning of TrSL3 regime. Once this regime starts, the formation of eddies do not change its position (e.g. do not get closer to the cylinder) and the transition is reduced to a spot of sudden burst into turbulence.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Transition in boundary layer}
@@ -699,7 +700,7 @@ Fig~\ref{fig:desspherevalidation}d shows an impressive comparison of the simulat
 
 Fig~\ref{fig:desspherevalidation}c demonstrates that the surface pressure distribution (solid lines are simulation and open markers are experiment) is predicted almost perfectly for both conditions in the attached flow regions, including the suction peak disparity that is the source of the famous ``drag crisis'' relationship for circular bodies. Still, the constant base pressure in the separated wake region for the turbulent separation case is predicted with significant offset, suggesting that integration of drag coefficient may not perfectly reproduce Reynolds number-dependent behavior observed for experiments, and that there is still room for improvement with this method of modeling.
 
-It is important to note that separation location, which is so important in determining the correct base pressure and drag of this bluff-body, was controlled for these DES simulations. The turbulence modeling in the RANS portion of the hybrid method is not sufficient to accurately predict this specific location, especially for detailed geometry such as the dimples on a golf ball that might create this kind of turbulent separation in a real-world flow. Spalart notes that more advanced techniques like DNS are required for this level of prediction accuracy and will be discussed later in this section.
+It is important to note that separation location, which is so important in determining the correct base pressure and drag of this bluff-body, was controlled for these DES simulations. The turbulence modeling in the RANS portion of the hybrid method is not sufficient to accurately predict this specific location, especially for detailed geometry such as the dimples on a golf ball that might create this kind of turbulent separation in a real-world flow. Spalart notes that more advanced techniques such as DNS are required for this level of prediction accuracy and will be discussed later in this section.
 
 
 
@@ -715,12 +716,16 @@ It is important to note that separation location, which is so important in deter
 \begin{center}
 \includegraphics[width=0.45\textwidth]{Images/logan/forsythe2004detachededdy_f15grid.pdf}
 \includegraphics[width=0.45\textwidth]{Images/logan/spalart2009detachededdy_f15des.pdf}
-\caption{ F-15 DES grid (left) \cite{forsythe2004detachededdy} vorticity isocontours (right) \cite{spalart2009detachededdy} }
+\caption{ F-15 DES grid (left) \cite{forsythe2004detachededdy} vorticity isocontours (right) at $\alpha=65^o, \; Re_c=13.6\times10^6, \; M_{\infty}=0.3$ \cite{spalart2009detachededdy} }
 \label{fig:f15des}
 \end{center}
 \end{figure}
 %%\vspace{-2em}
 
+
+Hybrid RANS/LES techniques have also demonstrated maturity for highly complex bluff-body geometries. Fig~\ref{fig:f15des} shows vorticity DES simulation isocontours for the complete geometry of an F-15 aircraft at high angle of attack $\alpha=65^o$, high Reynolds number $Re=13.6\times10^6$, and for a relatively incompressible wake at $M_{\infty}=0.3$ \cite{forsythe2004detachededdy}. In this study, DES simulation results were compared to Boeing’s stability and control database and similar RANS CFD simulations. It was found that the DES results agreed with the database more favorably than RANS for time-averaged load results such as lift and drag.
+
+However, both methods of simulation were within 10\% of the database and DES was shown to be seven times more expensive than RANS, so this is another an example of a situation where engineering judgment would be necessary to determine the most appropriate and efficient technique to use for the specific application. DES might prove advantageous in providing more accurate data for building an empirical model but RANS might be a more feasible tool for building an extensive CFD database for this fighter aircraft.
 
 
 %%% CAR DES
@@ -734,6 +739,8 @@ It is important to note that separation location, which is so important in deter
 \end{center}
 \end{figure}
 %%\vspace{-2em}
+
+
 
 
 
