@@ -734,11 +734,16 @@ However, both methods of simulation were within 10\% of the database and DES was
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.5\textwidth]{Images/logan/spalart2009detachededdy_carDES.pdf}
-\caption{ car DES isocontours \cite{mendonca2002towards} }
+\caption{ Acoustic source isocontours resulting from the DES-simulated flow over a representative passenger vehicle \cite{mendonca2002towards} }
 \label{fig:cardes}
 \end{center}
 \end{figure}
 %%\vspace{-2em}
+
+
+DES methods have also been shown to be effective in multi-disciplinary applications such as Computational Aeroacoustics (CAA), which combines CFD and Computational Acoustics (CA) in order to simulate the acoustic effects of aerodynamic flows \cite{mendonca2002towards}. Acoustic effects occur on a wide range of scales and are very closely related to the turbulence of a flow, so for this reason, it is advantageous to resolve turbulent structures directly with LES-like methods such as DES rather than relying on the often incorrect estimation of RANS turbulence models. The study by Mendonca et al. (2002) demonstrates the effectiveness of DES coupled with CA methods in noise prediction for a representative passenger vehicle, as shown in Fig~\ref{fig:cardes}. Acoustic signature results computed from LES and DES data were compared to experiment, and DES-based predictions were shown to be superior as they were run on higher-fidelity grids due to the lower computational demand of DES. This example again highlights the importance of computational efficiency, as LES was shown to be more realistic than DES in this study for an individual test case, but was infeasible to run at this level of fidelity for the actual application.
+
+
 
 
 
@@ -844,6 +849,17 @@ NOTE: Recall sphere example from Spalart review and say that this is the analogo
 
 
 
+SUMMARY
+
+computational efficiency is king. RANS ok for time-averaged loads in some situations. DES is better than LES for simulations of the same computational resources.
+
+DES is not the final solution. Grid ambiguity, order of accuracy. SAS can be a remedy but isn't a solution either.
+
+Future is computationally feasible LES. DNS will remain a laboratory for a long time.
+
+
+
+
 
 
 
@@ -917,6 +933,10 @@ NOTE: Recall sphere example from Spalart review and say that this is the analogo
         \item chute, landing gear, helicopter, wind turbine
     \end{itemize}
 \end{itemize}
+
+
+
+
 
 
 
