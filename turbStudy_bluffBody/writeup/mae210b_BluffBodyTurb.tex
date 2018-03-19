@@ -778,12 +778,9 @@ Despite these successes, DES is not the perfect solution for computational model
 
 
 
+In spite of its deficiencies, however, DES proves to be an extremely effective method for bluff-body simulations today, especially when compared to higher-order methods that alleviate that issues mentioned above. Non-hybrid LES methods offer improvements in accuracy and fidelity but come at a higher computational cost and with demand for more specialized grids and SGS modeling. Even so, LES can still be thought of as a hybrid method of sorts, so an even more stark improvement in accuracy can be obtained by making the jump to full DNS: the ultimate end of the spectrum in high-fidelity CFD methodologies. In practice, however, this leap more often than not demands unattainable computational results.
 
-
-
-
-
-
+DNS results for flow over a sphere are presented in Fig~\ref{fig:dnssphere} from a study by Rodriguez et al. (2011) and show outstanding comparison to experimental results \cite{rodriguez2011direct}. The only caveat is that these results are for a Reynolds number that is three orders of magnitude below that of the turbulent separation case achieved by DES in Fig~\ref{fig:desspherevalidation}. This very-laminar flow can prove useful as a testbed for other turbulence or empirical models, but is an unlikely flow to encounter in the real world.
 
 %%% SPHERE DNS
 %%\vspace{-2em}
@@ -798,8 +795,8 @@ Despite these successes, DES is not the perfect solution for computational model
 \end{figure}
 %%\vspace{-2em}
 
-In spite of its deficiencies, however, DES proves to be an extremely effective method for bluff body simulations today, especially when compared to higher-order methods that alleviate that issues mentioned above.
 
+DNS has been applied to more realistic bluff-body flows, such as the fabled dimpled golf ball, shown in Fig~\ref{fig:dnsgolfball} from Smith et al. (2010), and qualitative comparisons show that the results are reasonably realistic \cite{smith2010numerical}. From the figure, however, one can note the extreme fineness of the grid required to resolve DNS flow over a non-rotating golf ball at a Reynolds number still one order of magnitude below the DES example.
 
 
 
@@ -813,7 +810,7 @@ In spite of its deficiencies, however, DES proves to be an extremely effective m
 \begin{center}
 \includegraphics[width=0.45\textwidth]{Images/logan/smith2010numerical_golfballgrid.pdf}
 \includegraphics[width=0.45\textwidth]{Images/logan/smith2010numerical_golfballvorticity.pdf}
-\caption{ DNS non-rotating golf ball with dimples grid (left) vorticity (right) \cite{smith2010numerical} }
+\caption{ DNS grid (left) and vorticity contours (right) for a non-rotating golf ball with dimples (a: $Re_D = 2.5\times10^4$, b: $Re_D=1.1\times10^5$) \cite{smith2010numerical} }
 \label{fig:dnsgolfball}
 \end{center}
 \end{figure}
