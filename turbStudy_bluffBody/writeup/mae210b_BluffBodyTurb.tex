@@ -58,18 +58,20 @@ The concept, history, and methods of analysis of bluff-body flows is reviewed. S
 
 {\renewcommand\arraystretch{1.0}
 \noindent\begin{longtable*}{@{}l @{\quad=\quad} l@{}}
-$\alpha$ & Angle of attack, deg\\
-$\rho$ & Density, $kg/m^3$\\
 $M$   & Mach number, N.D. \\
 $Re$   & Reynolds number, N.D. \\
-$C_d$   & 2-Dimensional drag coefficient, N.D. \\
-$\nabla$   & Gradient function \\
-$V$   & Velocity, $m/s$ \\
-$u$   & Einstein notation velocity, $m/s$ \\
-$x$   & Einstein notation dimension, $m$ \\
+$\alpha$ & Angle of attack, deg\\
+$\rho$ & Density, $kg/m^3$\\
 $P$   & Pressure, $Pa$ \\
 $\mu$   & Dynamic viscosity, $Pa \cdot s$ \\
 $t$   & Time, $s$ \\
+$V$   & Velocity, $m/s$ \\
+$u$   & Einstein notation velocity, $m/s$ \\
+$x$   & Einstein notation dimension, $m$ \\
+$\nabla$   & Gradient function \\
+$C_d$   & 2-Dimensional drag coefficient, N.D. \\
+$d$   & Diameter, $m$ \\
+$h$   & Height, $m$ \\
 \multicolumn{2}{@{}l}{Subscripts}\\
 $()_{\infty}$ & Freestream quantity\\
 $\vec{()}$ & Vector quantity\\
@@ -91,7 +93,7 @@ The shear drag, commonly called friction drag, occurs due to a difference in vel
 
 The differences between friction and pressure drag can be illustrated by considering the flow around a flat plate. If the flat plate is oriented in the direction of the flow, then the boundary layer will remain attached and friction drag will dominate while the pressure drag will be almost negligible. Conversely, if the flat plate is oriented perpendicularly to the flow, the boundary layer will separate at the edges and the low pressure in the separated, aft region will create a difference in pressure between both sides of the plate.  This net pressure drag will be much more significant than the friction drag acting in the minuscule regions of attached boundary layer.
 
-\textcolor{red}{These definitions of drag} are necessary to define the concept of a bluff-body (equivalently known as a blunt-body), which is a fundamental, generic body shape in aerodynamics and the central concept discussed in this paper. A bluff-body is defined as a body where the major contribution to total drag is pressure drag, as in the case of the perpendicular flat plate \cite{anderson2010fundamentals}.  Conversely, the drag of a streamlined body will be composed primarily of friction drag, as in the case of the streamwise-oriented plate.
+Understanding the different sources of drag is necessary to define the concept of a bluff-body (equivalently known as a blunt-body), which is a fundamental, generic body shape in aerodynamics and the central concept discussed in this paper. A bluff-body is defined as a body where the major contribution to total drag is pressure drag, as in the case of the perpendicular flat plate \cite{anderson2010fundamentals}.  Conversely, the drag of a streamlined body will be composed primarily of friction drag, as in the case of the streamwise-oriented plate.
 
 An illustration of the differences in shape and flow behavior between these two body shapes can be found in Fig~\ref{fig:bluffvsstreamlined}. From the figure, the origin of the streamlined body's name is obvious: the streamlines of the surrounding flow follow the shape of the body smoothly, which indicates that the boundary layer is attached and the dominant form of drag is from friction.  Above the streamlined airfoil, flow over a square cylinder is shown to demonstrate the stark differences of bluff-body flow. Other examples of bluff-bodies include circular cylinders, cubes, spheres, and airfoils at large angle of attack. The flow for all of these bluff-bodies can be characterized by the four common flow features annotated in Fig~\ref{fig:bluffvsstreamlined}: an attached boundary layer (minimal for the square), a separated shear layer that may or may not reattach, a recirculation zone behind the blunt face of the bluff-body where flow is entrained after which it coalesces into a coherent wake \cite{elkhoury2016assessment}.
 
@@ -322,7 +324,7 @@ In the lower transition regime (TrW1) the eddies are formed laminar but become t
 \end{center}
 \end{figure}
 
-When $Re>150$ a peculiar type of distortion of the eddy filaments next to the cylinder appear. Gerrard (1978) \cite{Gerrard1978} called them 'fingers' because these distortions pointed towards the cylinder. These 'fingers' do not produce turbulent eddies, but they do produce a highly three dimensional flow which is still laminar. At some point downstream these structures desintegrate themselves becoming turbulent.
+When $Re>150$ a peculiar type of distortion of the eddy filaments next to the cylinder appear. Gerrard (1978) \cite{Gerrard1978} called them 'fingers' because these distortions pointed towards the cylinder. These 'fingers' do not produce turbulent eddies, but they do produce a highly three dimensional flow which is still laminar. At some point downstream these structures disintegrate themselves becoming turbulent.
 
 
 \begin{figure}[H]
@@ -408,12 +410,12 @@ The fully turbulent regime is reached when all the disturbed flow regions become
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-In the previous section, flow around a circular cylinder was analyzed for a free-disturbance flow. In real flows, one of the most common parameters that affects flow around bluff bodies is free stream turbulence, and most flows in engineering applications are turbulent. Approaching turbulence interacts with flow structures past bluff bodies. One of the most classical examples of the influence of the free stream turbulence is the the reduction in the drag coefficient in cylinders and spheres \cite{Nakamura1988}. On the other hand, turbulence can increase the drag coefficient in square plates with its flat plate normal to the flow. 
+In the previous section, flow around a circular cylinder was analyzed for a free-disturbance flow. In real flows, one of the most common parameters that affects flow around bluff bodies is free stream turbulence, and most flows in engineering applications are turbulent. Approaching turbulence interacts with flow structures past bluff bodies. One of the most classical examples of the influence of the free stream turbulence is the the reduction in the drag coefficient in cylinders and spheres \cite{Nakamura1988}. On the other hand, turbulence can increase the drag coefficient in square plates with its flat plate normal to the flow.
 
 In general, assuming a uniform and isotropic turbulence, the effect of free stream turbulence can be characterized by two parameters, turbulence intensity ($u'/U$) and turbulence lengthscale ($L_t$). Usually the lengthscale is used in its non-dimensional form, dividing it by a characteristic length of the bluff body ($L_t/h$).
 
 
-Free stream turbulence has an important effect in the three types of transition to turbulence (TrW, TrSL, TrBL). Most experiments are made in wind tunnels with low-turbulence intensity, so the parameters obtained in these experiments cannot be extrapolated to real flows. Initiation of transition is particularly sensible to adverse pressure gradient, and fluctuating pressure due to turbulence imposes alternating gradients generating transition for lower $Re$ than those that generate transition in smooth flows.  
+Free stream turbulence has an important effect in the three types of transition to turbulence (TrW, TrSL, TrBL). Most experiments are made in wind tunnels with low-turbulence intensity, so the parameters obtained in these experiments cannot be extrapolated to real flows. Initiation of transition is particularly sensible to adverse pressure gradient, and fluctuating pressure due to turbulence imposes alternating gradients generating transition for lower $Re$ than those that generate transition in smooth flows.
 
 
 The interaction between free stream turbulence and flow structures is extremely complicated, and many research has been done to address this problem. In some cases the interaction is really important, like in the cases previously mentioned, and in some cases, the effect is almost negligible. An example of the latter is the interaction between free stream turbulence and wake eddies for TrW1 and TrW2 regime. In TrW1 regime, the effect of turbulence is only relevant when the velocity fluctuations are of the order of the intensity of the free stream turbulence \citep{Zdravkovich1997}. In the TrW2 regime, the transition to turbulence is almost insensitive to the free stream turbulence due to a stable laminar shear layer surrounding it.
@@ -421,12 +423,12 @@ The interaction between free stream turbulence and flow structures is extremely 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.5\textwidth]{Images/federico/Figure09}
-\caption{Base pressure coefficient vs. turbulence intensity. (o): square plate, $L_t/h=2.4$. (\textcolor{red}{black circle}): cube, $L_t/h=0.24$ \cite{nakamura1993bluffbody}}
+\caption{Base pressure coefficient vs. turbulence intensity. (o): square plate, $L_t/h=2.4$. (\textbullet): cube, $L_t/h=0.24$ \cite{nakamura1993bluffbody}}
 \label{fig:Nakamura01}
 \end{center}
 \end{figure}
 
-The effect of free stream turbulence depends also on the shape of the bluff body. Nakamura \cite{nakamura1993bluffbody} tested the effect of turbulence intensity and turbulence lengthscale on the base pressure for a 3D square rod, a 2D rectangular cylinder and a 2D flat plate. He found that the base pressure decreased with turbulence intensity for a cube, but increased for a square plate (Figure \ref{fig:Nakamura01}). In his study, he also tested the influence of the turbulence lengthscale. The lengthscale was controlled by placing different square-mesh biplanar grids at the beginning of the wind tunnel. The experiments results showed an important interaction between large scale turbulence and vortex shedding, sometimes intensifying it and sometimes weakening it, depending of the geometry of the bluff body. The effect of the turbulence lenghtscale in the base pressure is showed in Figure \ref{fig:Nakamura02} for rectangular cylinders with different aspect ratios. The results show that the effect of this parameter highly depends on the geometry of the bluff body.  
+The effect of free stream turbulence depends also on the shape of the bluff body. Nakamura \cite{nakamura1993bluffbody} tested the effect of turbulence intensity and turbulence lengthscale on the base pressure for a 3D square rod, a 2D rectangular cylinder and a 2D flat plate. He found that the base pressure decreased with turbulence intensity for a cube, but increased for a square plate (Figure \ref{fig:Nakamura01}). In his study, he also tested the influence of the turbulence lengthscale. The lengthscale was controlled by placing different square-mesh biplanar grids at the beginning of the wind tunnel. The experiments results showed an important interaction between large scale turbulence and vortex shedding, sometimes intensifying it and sometimes weakening it, depending of the geometry of the bluff body. The effect of the turbulence lengthscale in the base pressure is showed in Figure \ref{fig:Nakamura02} for rectangular cylinders with different aspect ratios. The results show that the effect of this parameter highly depends on the geometry of the bluff body.
 
 The effect of free stream turbulence depends also on the shape of the bluff body. Nakamura \cite{nakamura1993bluffbody} tested the effect of turbulence intensity and turbulence lengthscale on the base pressure for a 3D square rod, a 2D rectangular cylinder and a 2D flat plate.
 
@@ -455,7 +457,7 @@ Another types of experimental methods included sound measurements to detect forc
 
 \subsection{Current State of Experimental Methods for Bluff-Body Flows} \label{subsec:currentstateexperimental}
 
-Probably the most used technique nowadays to measure flow velocity around bluff bodies is the Particle Image Velocimetry (PIV). PIV is an optical technique to measure instantaneous flow velocities in fluids. The fluid is seeded with small particles that are considered to move with the same velocity of the fluid. Then this particles are illuminated (usually with a laser), filmed with a high velocity camera and then post-processed with a specific software. One of the biggest drawbacks of PIV is the incapacity of this technique to measure close to walls (wind/water tunnel walls or body walls), and therefore it has to be complemented with other techniques. One common technique to complement PIV near the wall is the Laser Doppler Velocimetry (LDV), which use the doppler shift of a laser beam to measure the velocity on the fluid. This technique may be complemented with oil visualization. This is a technique where oil is applied at some points of the body, and the displacement of the oil on the surface allows to detect flow separation and reattachment. Pressure distribution is usually measured using probes at the body of the bluff body.      
+Probably the most used technique nowadays to measure flow velocity around bluff bodies is the Particle Image Velocimetry (PIV). PIV is an optical technique to measure instantaneous flow velocities in fluids. The fluid is seeded with small particles that are considered to move with the same velocity of the fluid. Then this particles are illuminated (usually with a laser), filmed with a high velocity camera and then post-processed with a specific software. One of the biggest drawbacks of PIV is the incapacity of this technique to measure close to walls (wind/water tunnel walls or body walls), and therefore it has to be complemented with other techniques. One common technique to complement PIV near the wall is the Laser Doppler Velocimetry (LDV), which use the doppler shift of a laser beam to measure the velocity on the fluid. This technique may be complemented with oil visualization. This is a technique where oil is applied at some points of the body, and the displacement of the oil on the surface allows to detect flow separation and reattachment. Pressure distribution is usually measured using probes at the body of the bluff body.
 
 Cenedese et. al (1993) \cite{Cenedese1993} used PIV to measure the velocity field near to a obstacle located at the wall of a cylinder filled with water, where the motion was generated trough a rotating disk at one end of the cylinder. Taylor et. al (2011, 2012) \cite{Taylor2011} \cite{Taylor2012} used PIV and pressure taps to measure the flow velocity and pressure distribution around elongated bodies. Each elongated body had 24 pressure taps with a sampling frequency of 200 Hz. The PIV measurements used atomized olive oil  to seed the flow, and measurements were taken with a frequency of 15 Hz.
 
@@ -463,11 +465,11 @@ In order to illustrate the current state of the art, two new experimental studie
 
 In the study by Gohlke et. al (2007), the flow and forces around a generic bluff body in cross-wind are studied with experimental techniques. The bluff body is a generic body that resembles the front of a high-speed train or truck. The experimental measurements include:
 \begin{enumerate}
-\item Force measurements: The aerodinamic forces are measured with a stain gauge balance, mounted with four columns. With this forces it is possible to get the drag and lift forces directly. The samples were taken with a frequency of 10 Hz.
-\item Pressure measurements: Pressure distribution was measured using 249 pressure tubes over one half of the model (see Figure \ref{fig:Exp} center). Data was sampled with a frequency of 40 Hz. 
-\item Oil Flow visualization: This technique is useful to get time-averaged flow distributions near wall. This technique is can be used to identify three dimensional separation and reattachment. Gravity influences the oil flow and it has to be taken into account. 
-\item Particle image velocimetry: Measurements in planes parallel to the X, Y and Z direction were done (see Figure \ref{fig:Exp} right). The used camera had a sampling frequency of 4.5 kHz and a resolution of 1,280 x 1,024 pixels. The seeding particles were olive oil droplets. In order to reduce reflection interference, the body was covered with a special paint that absorbs 99\% of the laser light, and only reflect one wavelength. A filter that filters this wavelength was fixed to the camera, to avoid interference. 
-\item Laser doppler velocimetry: Despite the special paint, laser reflection close to the body difficult PIV measurements in that zone. To complement this technique a laser doppler velocimetry was used where the PIV cannot measure (See Figure \ref{fig:Exp} left). 
+\item Force measurements: The aerodynamic forces are measured with a stain gauge balance, mounted with four columns. With this forces it is possible to get the drag and lift forces directly. The samples were taken with a frequency of 10 Hz.
+\item Pressure measurements: Pressure distribution was measured using 249 pressure tubes over one half of the model (see Figure \ref{fig:Exp} center). Data was sampled with a frequency of 40 Hz.
+\item Oil Flow visualization: This technique is useful to get time-averaged flow distributions near wall. This technique is can be used to identify three dimensional separation and reattachment. Gravity influences the oil flow and it has to be taken into account.
+\item Particle image velocimetry: Measurements in planes parallel to the X, Y and Z direction were done (see Figure \ref{fig:Exp} right). The used camera had a sampling frequency of 4.5 kHz and a resolution of 1,280 x 1,024 pixels. The seeding particles were olive oil droplets. In order to reduce reflection interference, the body was covered with a special paint that absorbs 99\% of the laser light, and only reflect one wavelength. A filter that filters this wavelength was fixed to the camera, to avoid interference.
+\item Laser doppler velocimetry: Despite the special paint, laser reflection close to the body difficult PIV measurements in that zone. To complement this technique a laser doppler velocimetry was used where the PIV cannot measure (See Figure \ref{fig:Exp} left).
 \end{enumerate}
 
 
@@ -480,7 +482,7 @@ In the study by Gohlke et. al (2007), the flow and forces around a generic bluff
 \end{figure}
 
 
-The pressure measurements where averaged and interpolated along the body. In Figure \ref{fig:ExpResults} (left) the pressure distribution is presented for a cross-wind angle ($\beta$) of 20\textsuperscript{o} and 30\textsuperscript{o}. Because the taps were installed only on one side of the body, the symmetry of the geometry was used to reconstruct the other side, measuring pressure for $\beta$ and $-\beta$. Oil flow visualization is presented in Figure \ref{fig:ExpResults} (right). In this figure is possible to identify the flow separation in the deatachment line (A), and the reattachment line in (B). 
+The pressure measurements where averaged and interpolated along the body. In Figure \ref{fig:ExpResults} (left) the pressure distribution is presented for a cross-wind angle ($\beta$) of 20\textsuperscript{o} and 30\textsuperscript{o}. Because the taps were installed only on one side of the body, the symmetry of the geometry was used to reconstruct the other side, measuring pressure for $\beta$ and $-\beta$. Oil flow visualization is presented in Figure \ref{fig:ExpResults} (right). In this figure is possible to identify the flow separation in the detachment line (A), and the reattachment line in (B).
 
 
 
@@ -492,7 +494,7 @@ The pressure measurements where averaged and interpolated along the body. In Fig
 \end{center}
 \end{figure}
 
-The PIV measurements provided vector maps with a size of 167 x 127 vectors in a spacial resolution between $2.5$x$10^{-3}$ m and $5$x$10^{-3}$ m, depending on the measurement plane. Figure \ref{fig:ExpResults2} shows the  streamlines and velocity magnitude for the separating wake with a cross-flow angle of $\beta = 30^o$ in the back of the body. 
+The PIV measurements provided vector maps with a size of 167 x 127 vectors in a spacial resolution between $2.5$x$10^{-3}$ m and $5$x$10^{-3}$ m, depending on the measurement plane. Figure \ref{fig:ExpResults2} shows the  streamlines and velocity magnitude for the separating wake with a cross-flow angle of $\beta = 30^o$ in the back of the body.
 
 
 \begin{figure}[H]
@@ -507,7 +509,7 @@ The PIV measurements provided vector maps with a size of 167 x 127 vectors in a 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The study 'Flow and Turbulence Structure past a Cluster of Freshwater Mussels' \cite{Constantinescu2013} analyze the velocity distribution around a cluster of mussels to understand how they are dislocated from the bed under certain flow conditions. A large-eddy-simulation (LES) is validated with PIV measurements in a water flume. A real mussel was digitalizated using CAT scanning (Figure \ref{fig:ExpResults3}) and then fabricated in a scale 1:1 using an injection modeling technique.
+The study 'Flow and Turbulence Structure past a Cluster of Freshwater Mussels' \cite{Constantinescu2013} analyze the velocity distribution around a cluster of mussels to understand how they are dislocated from the bed under certain flow conditions. A large-eddy-simulation (LES) is validated with PIV measurements in a water flume. A real mussel was digitalized using CAT scanning (Figure \ref{fig:ExpResults3}) and then fabricated in a scale 1:1 using an injection modeling technique.
 
 
 \begin{figure}[H]
@@ -518,7 +520,7 @@ The study 'Flow and Turbulence Structure past a Cluster of Freshwater Mussels' \
 \end{center}
 \end{figure}
 
-PIV was used to measure two-dimensional velocity fields. A 8cm x 8cm section was captured with a frequency of 5 Hz. The velocity field was calculated in a 51 x 56 grid, with a physical resolution of 1.389 mm. Experimental results and LES showed a highly three dimensional flow around the structure of mussels, dominated by coherent structures. A turbulent horseshoe vortex (HV) form around each mussel (Figure \ref{fig:ExpResults5}). 
+PIV was used to measure two-dimensional velocity fields. A 8cm x 8cm section was captured with a frequency of 5 Hz. The velocity field was calculated in a 51 x 56 grid, with a physical resolution of 1.389 mm. Experimental results and LES showed a highly three dimensional flow around the structure of mussels, dominated by coherent structures. A turbulent horseshoe vortex (HV) form around each mussel (Figure \ref{fig:ExpResults5}).
 
 
 
@@ -540,7 +542,7 @@ PIV was used to measure two-dimensional velocity fields. A 8cm x 8cm section was
 
 Figure \ref{fig:ExpResults6} (left) shows the velocity field downstream the leading mussel, showing the recirculation in the  HV zone. The same can be observed using a solution of rhodamine WT solution, confirming the presence of a necklace vortex in the upstream base of the mussel (Figure \ref{fig:ExpResults6} right). Figure \ref{fig:ExpResults7} shows a comparison between experimental and computational results, showing a very good agreement.
 
-This study shows how experimental and computational results complement each other. While the experimental results provide accurate description of velocity and vorticity magnitudes in the transverse plane, and at the same time validate the computational methods, the CFD allows to study the three dimensionality of the vortical structures.  
+This study shows how experimental and computational results complement each other. While the experimental results provide accurate description of velocity and vorticity magnitudes in the transverse plane, and at the same time validate the computational methods, the CFD allows to study the three dimensionality of the vortical structures.
 
 
 
@@ -1000,163 +1002,20 @@ In the future, we can look forward to computational power improvements and LES m
 
 
 
-
-
-
-
-
-
-
-
-
-% %%% LES VS RANS CYLINDER
-% %%\vspace{-2em}
-% % \begin{figure}[htb]
-% \begin{figure}[H]
-% \begin{center}
-% \includegraphics[width=0.5\textwidth]{Images/logan/catalano_2003numerical_VelocityProfiles.pdf}
-% \caption{ cylinder les vs urans velocity profiles \cite{catalano2003numerical} }
-% \label{fig:lesvsuranscylindervelprofile}
-% \end{center}
-% \end{figure}
-% %%\vspace{-2em}
-
-% Fig. 6. Mean streamwise and vertical velocities at x=D 1⁄4 0:75 (upper figures) and x=D 1⁄4 1:50 (lower figures): (—) LES; (– –) URANS
-
-
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% %%% LES VS RANS CYLINDER GRID
-% %%\vspace{-2em}
-% % \begin{figure}[htb]
-% \begin{figure}[H]
-% \begin{center}
-% \includegraphics[width=0.5\textwidth]{Images/logan/travin2000detachededdy_grid.pdf}
-% \caption{ cylinder les vs rans grid \cite{travin2000detachededdy} }
-% \label{fig:lesvsranscylindergrid}
-% \end{center}
-% \end{figure}
-% %%\vspace{-2em}
-
-% Figure1. Medium computational grid, CaseTS2.Innerblock150×36,wakeblock74×36, outer block 59 × 30. The three blocks meet near x = 1.06, y = 1.03.  Grid for spalart cylinders.
-
-
-% %%% LES VS RANS CYLINDER
-% %%\vspace{-2em}
-% % \begin{figure}[htb]
-% \begin{figure}[H]
-% \begin{center}
-% \includegraphics[width=0.5\textwidth]{Images/logan/spalart2000strategies_CylinderLESvsRANS.pdf}
-% \caption{ cylinder les vs rans \cite{spalart2000strategies} }
-% \label{fig:lesvsranscylinder}
-% \end{center}
-% \end{figure}
-% %%\vspace{-2em}
-
-
-% grid for LES shown above (actual simulations were DES)
-
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-% %%% CURVE BACKSTEP VELOCITY PROFILE LES VS RANS
-% %%\vspace{-2em}
-% % \begin{figure}[htb]
-% \begin{figure}[H]
-% \begin{center}
-% \includegraphics[width=0.5\textwidth]{Images/logan/durbin2018some_BackstepLESvsRANS.pdf}
-% \caption{curve backstep velocity profile les vs rans \cite{durbin2018some}}
-% \label{fig:lesvsransbackstep}
-% \end{center}
-% \end{figure}
-% %%\vspace{-2em}
-
-
-
-
-
-
-
-
-
-
-% %%% RECTANCULAR CYLINDER DNS
-% %%\vspace{-2em}
-% % \begin{figure}[htb]
-% \begin{figure}[H]
-% \begin{center}
-% \includegraphics[width=0.45\textwidth]{Images/logan/cimarelli2018direct_vortices.pdf}
-% \caption{ DNS square cylinder vortex locations Re=3000 \cite{cimarelli2018direct} }
-% \label{fig:dnsRectCylVortices}
-% \end{center}
-% \end{figure}
-% %%\vspace{-2em}
-
-
-% Fig. 4. Streamlines of the mean velocity field (U,V) (x,y)  The green lines show the primary vortex, the red lines mark the secondary vortex and the black lines denote the wake vortex. The red dots denote the locations of the probes used for the computation of time spectra in section x5. (For interpretation of the references to color in this figure legend, the reader is referred to the Web version of this article.)
-
-% %%\vspace{-2em}
-% % \begin{figure}[htb]
-% \begin{figure}[H]
-% \begin{center}
-% \includegraphics[width=0.45\textwidth]{Images/logan/cimarelli2018direct_pressure.pdf}
-% \caption{ DNS square cylinder mean pressure distribution Re=3000 \cite{cimarelli2018direct} }
-% \label{fig:dnsRectCylPressure}
-% \end{center}
-% \end{figure}
-% %%\vspace{-2em}
-
-% Fig. 5. Isocontours of the mean pressure field P(x,y). The dashed lines report the location of the primary vortex, secondary vortex and wake vortex.
-
-
-
-
-
-
-
-% % DNS SQUARE CYLINDER FLOW
-% %%\vspace{-2em}
-% % \begin{figure}[htb]
-% \begin{figure}[H]
-% \begin{center}
-% \includegraphics[width=0.5\textwidth]{Images/logan/cimarelli2018direct_vorticity.pdf}
-% \caption{ DNS square cylinder vorticity contours Re=3000 \cite{cimarelli2018direct} }
-% \label{fig:dnsRectCylPressure}
-% \end{center}
-% \end{figure}
-% %%\vspace{-2em}
-
-% Fig. 10. Instantaneous isosurfaces of $\lambda_2=-2$ colored with $y$. Perspective, top and lateral views in (a), (b) and (c) plots, respectively.
-
-
-
-
-
-
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusions}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Bluff-body flow accounts for an innumerable amount of real-world applications, ranging from high-angle-of-attack fighter aircraft to buildings in a hurricane. Furthermore, flow over simple bluff-bodies like cylinders and spheres serve as common test cases for solver and experiment calibration. The complex nature of the massively separated wake behind a bluff body and the spectra of turbulence that develops within this flow region makes deciphering bluff-body flow through experiment and modeling both a difficult challenge and an essential task for understanding unsteady loading, stability characteristics, acoustics, and a number of other flow effects.
 
-Given the high complexity of the flow around bluff bodies, visualization techniques complemented with velocity and pressure measurements were utilized to interpret the flow around bluff bodies for different Reynolds numbers. Until the last few decades, these were the only techniques capable of describing these kind of flows. Nowadays flow around different types of bluff bodies can be described in detail complementing different techniques. This results can be further supplemented using computational models that allow to describe and quantify three-dimensional features of these type of flows.   
+Given the high complexity of the flow around bluff bodies, visualization techniques complemented with velocity and pressure measurements were utilized to interpret the flow around bluff bodies for different Reynolds numbers. Until the last few decades, standard analysis techniques included only pressure and velocity measurements and limited, qualitative visualization methods. Nowadays, improvements in imaging and computer post-processing technology allow detailed observation of flow around different types of bluff bodies by complimenting standard pressure and velocity measurements. These results can be further supplemented using computational models that allow description and quantification of three-dimensional features of these type of flows.
 
 This review has made the case for a combination of URANS and DES as the current state-of-the-art in bluff-body wake modeling. Pure DNS currently demands to much computational power for realistic bluff-body applications. URANS is cost-effective and suitable for obtaining time-averaged results for certain bluff-body geometries and conditions, but will prove insubstantial in some situations. DES provides higher-fidelity simulation of bluff-body turbulence but comes with its own set of guidelines and pitfalls. In short, simulations must still be designed with a deep understanding of the flow physics and methodology limitations to obtain reasonable results, but when this knowledge is applied and simulations are validated according to experimental examples, accurate representations of bluff-body flow for a wide range of conditions can be obtained numerically. In the future, advances in computational power and intelligent solver algorithms will continue to improve the usability and accuracy of CFD applied to bluff-body geometries.
 
 
 
 
-\clearpage
+
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \section*{Acknowledgments} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
