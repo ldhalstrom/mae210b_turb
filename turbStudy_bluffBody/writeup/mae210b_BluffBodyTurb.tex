@@ -333,7 +333,7 @@ When $Re>150$ a peculiar type of distortion of the eddy filaments next to the cy
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Transition in shear layers state}
+\subsection{Transition in shear layers (TrSL)}
 
 In the TrW regime, the shear layer surrounding the near-wake eddies remain laminar. The transition to turbulence in shear layer can be divided into three regimes:
 
@@ -356,31 +356,81 @@ In the TrSL1 regime transition waves appear in the free surface. Similar waves t
 In the TrSL2 regime, a chain of transition eddies are formed along the shear layer, incorporating free stream flow to the wake (Figure \ref{fig:TrSL}). They eventually roll up forming a large turbulent eddy.  As $Re$ increases the formation of eddies  gets closer to the cylinder, until the shear layer becomes fully turbulent, marking the beginning of TrSL3 regime. Once this regime starts, the formation of eddies do not change its position (e.g. do not get closer to the cylinder) and the transition is reduced to a spot of sudden burst into turbulence.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Transition in boundary layer}
+\subsection{Transition in boundary layer (TrBL)}
+
+The advance of transition to turbulence to the separated boundary layer in the TrSL regime is limited because  the separated shear layers are squeezed beyond the separation by the accelerated free stream. This effect is reduced with increasing $Re$, allowing the  beginning of the transition in boundary layer regime (TrBL). The turbulent boundary layer reattaches to the surface and the separation point gradually moves downstream. In order to be able to create a physical model that represent this regime, cylinders should be large enough and so huge wind tunnels are necessary to place them. Because of this reason many of the experiments performed to study this regime are affected by many influencing parameters. The TrBL state can be divided in five regimes:
+
+\begin{enumerate}[label=(\roman*)]
+\item TrBL0: Precritical regime. $100k-200k<Re<300k-340k$
+\item TrBL1: One-bubble regime. $300k-340k<Re<380k-400k$
+\item TrBL2: Two-buble regime. $380k-400k<Re<0.5M-1M$
+\item TrBL3: Supercritical regime. $0.5M-1M<Re<3.4M-6M$
+\item TrBL4: Post-critical regime. $3.4M-6M<Re<unkown$
+\end{enumerate}
+
+The precritical regime (TrBL0) in characterized by a gradual displacement of the separation downstream with rising $Re$. This regime end abruptly with a discontinuous fall in the drag coefficient and a jump in the frequency of the eddy shedding. The one-bubble regime in characterized for an asymmetric pressure distribution on the sides of the cylinder. This effect appears because only on one side of the cylinder the boundary layer reattached to the surface. This effect also leads to an asymmetric near wake (Figure \ref{fig:TrBL}). The formation of the bubble may appear in any of the two sides, but once it appear, it does not change side \citep{Zdravkovich1997}. The reattachment of the boundary layer lead to a reduction in the wake's width and an increase in the shedding frequency. 
+
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{Images/federico/Figure06}
+\caption{Transition in boundary layer. Left: One-bubble regime \textbf{\textit{Re = 338k}}. Right: Two-bubble regime \textbf{\textit{Re = 374k}}. Extracted from \cite{Almosnino1984}}
+\label{fig:TrBL}
+\end{center}
+\end{figure}
+
+
+The one-bubble regime is only stable for a low range of $Re$. When $Re$ increases this regime ends abruptly as the two-bubble regime starts (TrBL2). The two-bubble regime is characterized for a second abrupt decrease in the drag coefficient, an increase in the base pressure, and a reattachment of the second boundary layer. TrBL1 and TrBL2  regimes are very sensitive to perturbations and can be eliminated with a rough surface.
+
+If $Re$ increases the primary laminar separation becomes transitional, leading to a disruption and fragmentation in the separation bubbles along the cylinder. This fragmentation prevents eddy shedding, which is the most notable characteristic of the supercritical regime (TrBL3).As $Re$ increases the beginning of the turbulent boundary layers move upstream. The post-critical regime (TrBL4) is defined when they start somewhere between the separation and the stagnation points. As $Re$ increases the transition region advance downstream asymptotically in the direction of the stagnation point and this is why the limit of the TrBL4 is hard to define.   
 
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Fully turbulent state}
+\subsection{Fully turbulent regime}
 
+The fully turbulent regime is reached when all the disturbed flow regions become turbulent. It is unexpected to have any other type of transition when this state is reached, but this hypothesis in extremely difficult to test experimentally. This state would be achieved with extremely high $Re$, and this can be done by increasing the size of the cylinder or the velocity. The former is limited by the size of the wind tunnels while the former by effect of compressibility in air, and cavitation in water. Some examples of this type of flows can be found in geophysical flows of high scale, like ocean currents or atmospheric wind past islands (Figure \ref{fig:T}).
 
-
-
-
-
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{Images/federico/Figure07}
+\caption{Flow around a volcanic island. Retrieved from  \url{https://karlgaff.wordpress.com/karman-vortex-streets/}}
+\label{fig:T}
+\end{center}
+\end{figure}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Free stream turbulence and non-uniform free stream}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+In the previous section, flow around a cylinder was analyzed for a free-disturbance flow. One of the parameters that affects flow around bluff bodies is free stream turbulence. Most flows in engineering applications are turbulent, and approaching turbulence interacts with flow structures past bluff bodies. One of the most classical examples of the influence of the free stream turbulence is the the reduction in the drag coefficient in cylinder and spheres \cite{Nakamura1988}. On the other hand, turbulence can increase the drag coefficient in square plates with its flat plate normal to the flow. 
+
+In general, assuming a uniform and isotropic turbulence, the effect of free stream turbulence can be characterized by two parameters, turbulence intensity ($u'/U$) and turbulence lengthscale ($L_t$). Usually the lengthscale is used in its non-dimensional form, dividing it by the length of the bluff body ($L_t/h$).     
+
+Free stream turbulence has an important effect the three types of transition to turbulence (TrW, TrSL, TrBL). Most experiments are made in wind tunnels with low-turbulence intensity, so the parameters obtained in these experiments cannot be extrapolated for real flows. Initiation of transition is particularly sensible to adverse pressure gradient, and fluctuating pressure due to turbulence imposes this gradient generating transition for lower $Re$ than those that generate transition in smooth flows.  
+
+The interaction between free stream turbulence and flow structures is extremely complicated, and many research has been done to address this problem. In some cases the interaction is really important, like in the cases previously mentioned, and in some cases, the effect is almost negligible. An example of the latter is the interaction between free stream turbulence and eddies for TrW1 and TrW2 regime. In TrW1 regime, the effect of turbulence is only relevant when the velocity fluctuations are of the order of the intensity of the free stream turbulence \citep{Zdravkovich1997}. In the TrW2 regime, the transition to turbulence is almost insensitive to the free stream turbulence due to a stable laminar shear layer surrounding it.
+
+The effect of free stream turbulence depends also on the shape of the bluff body. Nakamura \cite{nakamura1993bluffbody} tested the effect of turbulence intensity and turbulence lengthscale on the base pressure for a 3D square rod, a 2D rectangular cylinder and a 2D flat plate.  
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.4\textwidth]{Images/federico/Figure09}
+\caption{Flow around a volcanic island. Retrieved from  \url{https://karlgaff.wordpress.com/karman-vortex-streets/}}
+\label{fig:T}
+\end{center}
+\end{figure}
 
 
-
-
-
-
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{Images/federico/Figure08}
+\caption{Flow around a volcanic island. Retrieved from  \url{https://karlgaff.wordpress.com/karman-vortex-streets/}}
+\label{fig:T}
+\end{center}
+\end{figure}
 
 
 
