@@ -405,11 +405,11 @@ The fully turbulent regime is reached when all the disturbed flow regions become
 \section{Free stream turbulence and non-uniform free stream}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In the previous section, flow around a cylinder was analyzed for a free-disturbance flow. One of the parameters that affects flow around bluff bodies is free stream turbulence. Most flows in engineering applications are turbulent, and approaching turbulence interacts with flow structures past bluff bodies. One of the most classical examples of the influence of the free stream turbulence is the the reduction in the drag coefficient in cylinder and spheres \cite{Nakamura1988}. On the other hand, turbulence can increase the drag coefficient in square plates with its flat plate normal to the flow. 
+In the previous section, flow around a circular cylinder was analyzed for a free-disturbance flow. In real flows, one of the most common parameters that affects flow around bluff bodies is free stream turbulence, and most flows in engineering applications are turbulent. Approaching turbulence interacts with flow structures past bluff bodies. One of the most classical examples of the influence of the free stream turbulence is the the reduction in the drag coefficient in cylinders and spheres \cite{Nakamura1988}. On the other hand, turbulence can increase the drag coefficient in square plates with its flat plate normal to the flow. 
 
 In general, assuming a uniform and isotropic turbulence, the effect of free stream turbulence can be characterized by two parameters, turbulence intensity ($u'/U$) and turbulence lengthscale ($L_t$). Usually the lengthscale is used in its non-dimensional form, dividing it by the length of the bluff body ($L_t/h$).     
 
-Free stream turbulence has an important effect the three types of transition to turbulence (TrW, TrSL, TrBL). Most experiments are made in wind tunnels with low-turbulence intensity, so the parameters obtained in these experiments cannot be extrapolated for real flows. Initiation of transition is particularly sensible to adverse pressure gradient, and fluctuating pressure due to turbulence imposes this gradient generating transition for lower $Re$ than those that generate transition in smooth flows.  
+Free stream turbulence has an important effect in the three types of transition to turbulence (TrW, TrSL, TrBL). Most experiments are made in wind tunnels with low-turbulence intensity, so the parameters obtained in these experiments cannot be extrapolated to real flows. Initiation of transition is particularly sensible to adverse pressure gradient, and fluctuating pressure due to turbulence imposes alternating gradients generating transition for lower $Re$ than those that generate transition in smooth flows.  
 
 The interaction between free stream turbulence and flow structures is extremely complicated, and many research has been done to address this problem. In some cases the interaction is really important, like in the cases previously mentioned, and in some cases, the effect is almost negligible. An example of the latter is the interaction between free stream turbulence and wake eddies for TrW1 and TrW2 regime. In TrW1 regime, the effect of turbulence is only relevant when the velocity fluctuations are of the order of the intensity of the free stream turbulence \citep{Zdravkovich1997}. In the TrW2 regime, the transition to turbulence is almost insensitive to the free stream turbulence due to a stable laminar shear layer surrounding it.
 
@@ -421,16 +421,18 @@ The interaction between free stream turbulence and flow structures is extremely 
 \end{center}
 \end{figure}
 
-The effect of free stream turbulence depends also on the shape of the bluff body. Nakamura \cite{nakamura1993bluffbody} tested the effect of turbulence intensity and turbulence lengthscale on the base pressure for a 3D square rod, a 2D rectangular cylinder and a 2D flat plate.  
+The effect of free stream turbulence depends also on the shape of the bluff body. Nakamura \cite{nakamura1993bluffbody} tested the effect of turbulence intensity and turbulence lengthscale on the base pressure for a 3D square rod, a 2D rectangular cylinder and a 2D flat plate. He found that the base pressure decreased with turbulence intensity for a cube, but increased for a square plate (Figure \ref{fig:Nakamura01}). In his study, he also tested the influence of the turbulence lengthscale. The lengthscale was controlled by placing different square-mesh biplanar grids at the beginning of the wind tunnel. The experiments results showed an important interaction between large scale turbulence and vortex shedding, sometimes intensifying it and sometimes weakening it, depending of the geometry of the bluff body. The effect of the turbulence lenghtscale in the base pressure is showed in Figure \ref{fig:Nakamura02} for rectangular cylinders with different aspect ratios. The results show that the effect of this parameter highly depends on the geometry of the bluff body.  
 
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.8\textwidth]{Images/federico/Figure08}
 \caption{Base pressure coefficient vs. turbulence scale for rectangular cylinders for $u'/U = 10\%-10.8\%$. $d/h$: aspect ratio.}
-\label{fig:T}
+\label{fig:Nakamura02}
 \end{center}
 \end{figure}
+
+The interaction between free stream turbulence and flow structures in a bluff body is an extremely complicates phenomena, and it is almost impossible to generalize these effects. The most important parameters to take into account when analyzing free stream turbulence, are the turbulence intensity, the turbulence lengthscale, the regime of the flow (or the Reynolds number) and the geometry of the bluff body. These parameters will control the interaction and the effect of the free stream turbulence on the bluff body.
 
 
 
@@ -438,31 +440,60 @@ The effect of free stream turbulence depends also on the shape of the bluff body
 \section{Experimental Methods And Results} \label{sec:experimentalmethods}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\textcolor{red}{\emph{FZ}}
+\subsection{Historical study}
+The first methods to analyze flow around bluff bodies consisted in visual methods, utilizing some type of tracer to study the flow structures around bluff bodies. Bernard \cite{Bernard1908a} \cite{Bernard1908b}, was the first person to accurately describe the latter called Von-Karman street (or Bernard-Karman street), using a solution of sugar and water to identify the eddies. Zdravkovich \citep{Zdravkovich1968} used liquid kerosene in the form of a fog of fine droplets to visualize flow around a circular cylinder for a big number of $Re$. Gerrard (1978) \cite{Gerrard1978} used I.C.I Edicol food dye in a towing tank filled with water visualize the flow around a cylinder. Almosino and McAlister (1984) \citep{Almosnino1984} used several electrodes installed around a cylinder located in a water tunnel to generate hydrogen bubbles for the visualization of selected portions of the flow field.
 
+Another types of measurements included sound measurements to detect force fluctuations and frequency of eddies shedding. Phillips (1956) \citep{Phillips1956} used Aeolian tones to relate the intensity of the radiated sound with the intensity of force fluctuations in a moving rigid body. Hot wire anemometers were really popular in the past, and were used to measure velocity fluctuations around bluff bodies. Bloor (1964) used a hot wire anemometer to detect transition eddies in the shear layers. Maerkawa and Mizuno (1967) used a hot-wire anemometer to measure velocity fluctuations in the free shear layer and in the near wake. Hot wire anemometers are still used nowadays. Mariotti and Buresti (2103) \cite{Mariotti2013} used a hot wire anemometer to measure the velocity in the boundary layer of a blunt body with a sampling frequency of 2 kHz.
+
+\subsection{Current measurement techniques}
+
+Probably the most used technique nowadays to measure flow velocity around bluff bodies is the Particle Image Velocimetry (PIV). PIV is an optical technique to measure instantaneous flow velocities in fluids. The fluid is seeded with small particles that are considered to move with the same velocity of the fluid. Then this particles are illuminated (usually with a laser), filmed with a high velocity camera and then post-processed with a specific software. One of the biggest drawbacks of PIV is the incapacity of this technique to measure close to walls (wind/water tunnel walls or body walls), and therefore it has to be complemented with other techniques. One common technique to complement PIV near the wall is the Laser Doppler Velocimetry (LDV), which use the doppler shift of a laser beam to measure the velocity on the fluid. This technique may be complemented with oil visualization. This is a technique where oil is applied at some points of the body, and the displacement of the oil on the surface allows to detect flow separation and reattachment. Pressure distribution is usually measured using probes at the body of the bluff body.      
+
+Cenedese et. al (1993) \cite{Cenedese1993} used PIV to measure the velocity field near to a obstacle located at the wall of a cylinder filled with water, where the motion was generated trough a rotating disk at one end of the cylinder. Taylor et. al (2011, 2012) \cite{Taylor2011} \cite{Taylor2012} used PIV and pressure taps to measure the flow velocity and pressure distribution around elongated bodies. Each elongated body had 24 pressure taps with a sampling frequency of 200 Hz. The PIV measurements used atomized olive oil  to seed the flow, and measurements were taken with a frequency of 15 Hz.
+
+In order to illustrate the current state of the art, two new experimental studies are going to be discussed in detail. The first one is the study 'Experimental analysis of flow structures and forces in a 3D-bluff-body in constant cross-wind', by Gohlke et. al (2007) \cite{Gohlke2007}. This study has the interesting feature that many different experimental techniques are applied in the same bluff body. The second one is 'Flow and Turbulence Structure past a Cluster of Freshwater Mussels', where experimental studies and numerical simulations are compared for the same geometry.
+
+In the study by Gohlke et. al (2007), the flow and forces around a generic bluff body in cross-wind are studied with experimental techniques. The bluff body is a generic body that resembles the front of a high-speed train or truck. The experimental measurements include:
 \begin{itemize}
-    \item Historical Study
-    \item Experimental techniques
-    \begin{itemize}
-        \item ballistic range?
-    \end{itemize}
-    \item Applications
-    \begin{itemize}
-        \item Simple cases: cylinder/sphere
-        \begin{itemize}
-            \item Drag vs Re?
-            \item Wake velocity profiles?
-            \item Wake structure?
-        \end{itemize}
-        \item Sharp vs bluff: sphere vs cube
-        \item Complex cases: capsule/building
-    \end{itemize}
+\item Force measurements: The aerodinamic forces are measured with a stain gauge balance, mounted with four columns. With this forces it is possible to get the drag and lift forces directly. The samples were taken with a frequency of 10 Hz.
+\item Pressure measurements: Pressure distribution was measured using 249 pressure tubes over one half of the model (see Figure \ref{fig:Exp} center). Data is samples with a frequency of 40 Hz. 
+\item Oil Flow visualization: This technique is useful to get time-averaged near wall flow distributions. This technique is useful to identify three dimensional separation and reattachment. Gravity influences the oil flow and it has to be taken into account. 
+\item Particle image velocimetry: Measurements in planes parallel to the X, Y and Z direction were done (see Figure \ref{fig:Exp} right). The used camera had a sampling frequency of 4.5 kHz and a resolution of 1,280 x 1,024 pixels. The seeding particles were olive oil droplets. In order to reduce reflection interference, the body was covered with a special paint that absorbs \%99 of the laser light, and only reflect one wavelength. A filter that filters this wavelength was fixed to the camera, to avoid interference. 
+\item Laser doppler velocimetry: Despite the special paint, laser reflection close to the body difficult PIV measurements close to the wall. To complement this technique a laser doppler velocimetry was used where the PIV cannot measure (See Figure \ref{fig:Exp} left). 
 \end{itemize}
 
 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{Images/federico/Figure10}
+\caption{Experimental setup. Left: Laser Doppler Velocimetry. Center: Pressure taps. Right: Planes Z and Y used for PIV measurements. Source: Extracted from \cite{Gohlke2007}}
+\label{fig:Exp}
+\end{center}
+\end{figure}
+
+
+The pressure measurements where averaged and interpolated along the body. In Figure \ref{fig:ExpResults} (left) the pressure distribution is presented for a cross-wind angle ($\beta$) of 20\textsuperscript{o} and 30\textsuperscript{o}. Because the taps were installed only on one side of the body, the symmetry of the geometry was used to reconstruct the other side, measuring pressure for $\beta$ and $-\beta$. Oil flow visualization is presented in Figure \ref{fig:ExpResults} (right). In this figure is possible to identify the flow separation in the deatachment line (A), and the reattachment line in (B). 
 
 
 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{Images/federico/Figure11}
+\caption{Experimental results. Left: Average pressure distribution obtained with pressure taps at $\beta = 20^o$ and $\beta = 30^o$. Right: Oil flow visualization at $\beta = 30^o$. Source: Extracted from \cite{Gohlke2007}}
+\label{fig:ExpResults}
+\end{center}
+\end{figure}
+
+The PIV measurements provided vector maps with a size of 167 x 127 vectors in a spacial resolution between $2.5$x$10^{-3}$ m and $5$x$10^{-3}$ m, depending on the measurement plane. Figure \ref{fig:ExpResults2} shows the  streamlines and velocity magnitude for the separating wake with a cross-flow angle of $\beta = 30^o$ in the back of the body. 
+
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{Images/federico/Figure12}
+\caption{Streamlines and flow velocity measured with PIV in the back of the body for a cross-flow with $\beta = 30^o$. Source: Extracted from \cite{Gohlke2007}}
+\label{fig:ExpResults2}
+\end{center}
+\end{figure}
 
 
 
