@@ -46,10 +46,7 @@
 \begin{abstract} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The concept, history, and methods of analysis of bluff-body flows is reviewed. Special attention is given to high-Reynolds number flows and complex geometries. \textcolor{red}{discuss experimental methods.} Computational Fluid Dynamics methodologies including Unsteady Reynolds-Averaged Navier-Stokes, Direct Numerical Simulation, Large Eddy Simulation, Detached Eddy Simulation, and Scale-Adaptive Simulation are compared in their application to massively separated flow by accuracy, turbulence fidelity, and computational efficiency. The state-of-the-art in experimental and computational methodologies for analyzing bluff-body flow is assessed and summarized.
-
-
-\emph{Each full-length paper must have a summary-type abstract of 100 to 200 (maximum) words in one paragraph, without numerical references, acronyms, or abbreviations. The abstract indicates the subjects dealt with in the paper and states the objectives of the investigation.}
+The concept, history, and methods of analysis of bluff-body flows is reviewed. Special attention is given to high-Reynolds number flows and complex geometries. Classical and modern experimental methods are analyzed, with their possibilities and limitations. Computational Fluid Dynamics methodologies including Unsteady Reynolds-Averaged Navier-Stokes, Direct Numerical Simulation, Large Eddy Simulation, Detached Eddy Simulation, and Scale-Adaptive Simulation are compared in their application to massively separated flow by accuracy, turbulence fidelity, and computational efficiency. The state-of-the-art in experimental and computational methodologies for analyzing bluff-body flow is assessed and summarized.
 
 \end{abstract}
 
@@ -240,7 +237,7 @@ The wakes of bluff-bodies are extremely complex, containing many scales of turbu
 \clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Flow around a bluff body and transition}
+\section{Flow around a circular cylinders and transition to turbulence}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Despite the differences between the shapes of bluff bodies, the disturbed flow around them have some similarities. Bluff bodies generate an alteration in the surrounding velocity, and flow around them can be bigger than, equal to or smaller than the free stream velocity. When describing the flow around a cylinder, ideally  the description would be general for bluff bodies, independently of their shape. The present state of knowledge is still not capable of doing this, and so the description will depend on the shape of the body. In this section we are going to describe one of the most common and studied shapes of bluff bodies: circular cylinders. Figure \ref{fig:RegionsFlow} shows a scheme of the flow around a circular cylinder with the different regions of disturbed flow. The different regions are:
@@ -392,7 +389,7 @@ If $Re$ increases the primary laminar separation becomes transitional, leading t
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Fully turbulent regime}
+\subsection{Fully turbulent regime (T)}
 
 The fully turbulent regime is reached when all the disturbed flow regions become turbulent. It is unexpected to have any other type of transition when this state is reached, but this hypothesis in extremely difficult to test experimentally. This state would be achieved with extremely high $Re$, and this can be done by increasing the size of the cylinder or the velocity. The former is limited by the size of the wind tunnels while the former by effect of compressibility in air, and cavitation in water. Some examples of this type of flows can be found in geophysical flows of high scale, like ocean currents or atmospheric wind past islands (Figure \ref{fig:T}).
 
@@ -1157,14 +1154,14 @@ In the future, we can look forward to computational power improvements and LES m
 
 Bluff-body flow accounts for an innumerable amount of real-world applications, ranging from high-angle-of-attack fighter aircraft to buildings in a hurricane. Furthermore, flow over simple bluff-bodies like cylinders and spheres serve as common test cases for solver and experiment calibration. The complex nature of the massively separated wake behind a bluff body and the spectra of turbulence that develops within this flow region makes deciphering bluff-body flow through experiment and modeling both a difficult challenge and an essential task for understanding unsteady loading, stability characteristics, acoustics, and a number of other flow effects.
 
-\textcolor{red}{\emph{FZ: Experimental methods summary/current state}}
+Given the high complexity of the flow around bluff bodies, visualization techniques complemented with velocity and pressure measurements were utilized to interpret the flow around bluff bodies for different Reynolds numbers. Until the last few decades, these were the only techniques capable of describing these kind of flows. Nowadays flow around different types of bluff bodies can be described in detail complementing different techniques. This results can be further supplemented using computational models that allow to describe and quantify three-dimensional features of these type of flows.   
 
 This review has made the case for a combination of URANS and DES as the current state-of-the-art in bluff-body wake modeling. Pure DNS currently demands to much computational power for realistic bluff-body applications. URANS is cost-effective and suitable for obtaining time-averaged results for certain bluff-body geometries and conditions, but will prove insubstantial in some situations. DES provides higher-fidelity simulation of bluff-body turbulence but comes with its own set of guidelines and pitfalls. In short, simulations must still be designed with a deep understanding of the flow physics and methodology limitations to obtain reasonable results, but when this knowledge is applied and simulations are validated according to experimental examples, accurate representations of bluff-body flow for a wide range of conditions can be obtained numerically. In the future, advances in computational power and intelligent solver algorithms will continue to improve the usability and accuracy of CFD applied to bluff-body geometries.
 
 
 
 
-
+\clearpage
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \section*{Acknowledgments} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
