@@ -431,6 +431,27 @@ In the TrSL2 regime, a chain of transition eddies are formed along the shear lay
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\clearpage
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Computational Methods and Results} \label{sec:computationalmethods}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -490,6 +511,7 @@ Finally, Scale Adaptive Simulation (SAS) is a RANS-like method developed by Ment
 The fundamental differences between the CFD methodologies previously described in Section~\ref{subsec:turbulencemodeling} can result in noticeable variations in simulation results; especially for massively separated wakes. A first look at these differences is offered in Fig~\ref{fig:cylinderturbmodels}, which is a comparison of flow over a circular cylinder calculated using various RANS and DES methods from Spalart and Travin \cite{spalart2009detachededdy} and comparable SAS cases from Menter \cite{menter2005scaleadaptive}. The circular cylinder is arguably the simplest bluff-body shape and therefore offers a relatively unbiased platform upon which to compare these different solvers.
 
 In this instance, we are observing simulations for a diameter-based Reynolds number of $Re_D = 5 \times 10^4$, which corresponds to laminar separation, and we are comparing the time-averaged result for drag coefficient $C_d$ from each simulation to the range of instantaneous $C_d=1.15-1.25$ observed in experiment at a similar Reynolds number \cite{travin2000detachededdy}.
+
 
 The simplest of all of these models is the steady RANS case (a), where the wake vorticity isocontours demonstrate that only the two-dimensional separated shear layer is predicted. This very low-fidelity wake results in a correspondingly inaccurate $C_d$ compared to the wind tunnel range. RANS simulations can be significantly improved, however, by modeling time-accurate changes in the mean and allowing three-dimensional flow effects to develop, as is the case for 3D URANS.  In this simulation, the flow is significantly more realistic than steady RANS, though much of the three-dimensionality is still suppressed \cite{spalart2009detachededdy}.  Averaging and integration of this wake behavior results in a $C_d$ that is just within the upper range of the wind tunnel values, which is a significant improvement upon steady RANS.
 
@@ -638,10 +660,7 @@ The results of this study demonstrate that CFD techniques are mature enough to a
 
 It has been established in the previous sections that higher-fidelity CFD methods like LES and DES are capable of producing more realistic predictions of turbulent effects than URANS methods but that this superiority comes at the cost of significantly increased computational demand and other potential sources of inaccuracy like Grid Induced Separation, which will be discussed later. Scale-Adaptive Simulation was developed in an attempt to avoid some of these issues, so it is relevant in this study to compare the accuracy and performance of these methods in their application to bluff-bodies.
 
-A study by Zheng et al. (2016) \cite{zheng2016comparative} compared DES and SAS simulations of flow over a circular cylinder at $Re_D = 1.4 \times 10^5$. Computations with each method were performed with the same grid resolution, and results for time-averaged streamwise velocity along the wake centerline for each method and an experimental comparison are provided in Fig~\ref{fig:cylinderdesvssas}. The results demonstrate that, in this application, SAS produces predicts flow phenomena in the near wake more similarly to the experiment that DES, while DES becomes more accurate further downstream since SAS is more dissipative in this region. Both methods produce accurate results in the far wake. This single comparison does not necessarily demonstrate that either SAS or DES is superior to the other but rather highlights that both methods can be consider to have comparable accuracy and each will have a unique and specific set of applications where it is superior.
-
-
-
+A study by Zheng et al. (2016) \cite{zheng2016comparative} compared DES and SAS simulations of flow over a circular cylinder at $Re_D = 1.4 \times 10^5$. Computations with each method were performed with the same grid resolution, and results for time-averaged streamwise velocity along the wake centerline for each method and an experimental comparison are provided in Fig~\ref{fig:cylinderdesvssas}.
 
 %%% CYLINDER DES VS SAS VALIDATION
 %%\vspace{-2em}
@@ -654,6 +673,13 @@ A study by Zheng et al. (2016) \cite{zheng2016comparative} compared DES and SAS 
 \end{center}
 \end{figure}
 %%\vspace{-2em}
+
+The results demonstrate that, in this application, SAS produces predicts flow phenomena in the near wake more similarly to the experiment that DES, while DES becomes more accurate further downstream since SAS is more dissipative in this region. Both methods produce accurate results in the far wake. This single comparison does not necessarily demonstrate that either SAS or DES is superior to the other but rather highlights that both methods can be consider to have comparable accuracy and each will have a unique and specific set of applications where it is superior.
+
+
+
+
+
 
 It is also relevant to consider the differences in computational cost between the two methods, as this is often a limiting factor for realistic engineering tasks. A preliminary study by Wang et al. (2017) compared the simulation of flow over a high-speed train computed by URANS, SAS, and Delayed DES (an even more cost-intensive version of DES) to wind tunnel results \cite{wang2017performance}. The study found that the ratio of computational cost of the three methods URANS:SAS:DDES was on the order of 1:10:20. URANS was found to have inferior accuracy to the other two methods, and DDES was found to have slightly improved results compared to SAS. This study represents an extreme case of cost differences between SAS and DES, but shows that SAS can be used as a cost-saving alternative to DES in the correct applications.
 
@@ -676,11 +702,20 @@ It is also relevant to consider the differences in computational cost between th
 \subsection{Current State of Computational Methods for Bluff-Body Flows} \label{subsec:currentstatenumeric}
 
 
-The relative differences between CFD methodologies has been reviewed in the previous sections. This section will detail the current state-of-the-art in bluff-body flow modeling and the challenges that remain to be addressed.
-
-As the previous sections have established, URANS, though less complex in nature than SAS, LES, and DES, has proved to yield acceptable time-averaged results under the correct conditions. As this method is inarguably the least expensive and most widely used CFD methodology in the current industry, it is important to note that this technique will remain relevant until computer technology and LES/DES maturity have both improved enough to outweigh the benefits of this method.
+The relative differences between CFD methodologies has been reviewed in the previous sections. This section will detail the current state-of-the-art in bluff-body flow modeling and the challenges that remain to be addressed. As the previous sections have established, URANS, though less complex in nature than SAS, LES, and DES, has proved to yield acceptable time-averaged results under the correct conditions. As this method is inarguably the least expensive and most widely used CFD methodology in the current industry, it is important to note that this technique will remain relevant until computer technology and LES/DES maturity have both improved enough to outweigh the benefits of this method.
 
 However, the maturity of hybrid techniques like DES have been steadily improving.  Results in this review demonstrate successes in theoretical and real-world applications alike. Further proof of the maturity of this technology is offered in Spalart's review of DES (2009) \cite{spalart2009detachededdy} and is shown in Fig~\ref{fig:desspherevalidation}.
+
+
+
+Fig~\ref{fig:desspherevalidation} (a) and (b) show DES solutions for flow over a sphere with laminar separation at $Re_D = 1.0 \times 10^5$ and turbulent separation at $Re_D = 1.1 \times 10^6$ \cite{squires2004detachededdy}. With properly controlled separation, these two simulations are shown to match experimental data quantitatively for both surface pressure distributions as well as wake flow features.
+
+Fig~\ref{fig:desspherevalidation}d shows an impressive comparison of the simulation averaged flow vorticity contours to those observed using Particle Image Velocimetry (PIV) in experiment (outlined in black) \cite{mockett2008demonstration}. This suggests that the DNS portion of hybrid RANS-LES methods allows for realistic turbulent features to develop within the wake.
+
+Fig~\ref{fig:desspherevalidation}c demonstrates that the surface pressure distribution (solid lines are simulation and open markers are experiment) is predicted almost perfectly for both conditions in the attached flow regions, including the suction peak disparity that is the source of the famous ``drag crisis'' relationship for circular bodies. Still, the constant base pressure in the separated wake region for the turbulent separation case is predicted with significant offset, suggesting that integration of drag coefficient may not perfectly reproduce Reynolds number-dependent behavior observed for experiments, and that there is still room for improvement with this method of modeling.
+
+It is important to note that separation location, which is so important in determining the correct base pressure and drag of this bluff-body, was controlled for these DES simulations. The turbulence modeling in the RANS portion of the hybrid method is not sufficient to accurately predict this specific location, especially for detailed geometry such as the dimples on a golf ball that might create this kind of turbulent separation in a real-world flow. Spalart notes that more advanced techniques such as DNS are required for this level of prediction accuracy and will be discussed later in this section.
+
 
 %%% DES SPHERE DEMONSTRATING COMPARISON TO EXPERIMENT
 %%\vspace{-2em}
@@ -694,13 +729,6 @@ However, the maturity of hybrid techniques like DES have been steadily improving
 \end{figure}
 %%\vspace{-2em}
 
-Fig~\ref{fig:desspherevalidation} (a) and (b) show DES solutions for flow over a sphere with laminar separation at $Re_D = 1.0 \times 10^5$ and turbulent separation at $Re_D = 1.1 \times 10^6$ \cite{squires2004detachededdy}. With properly controlled separation, these two simulations are shown to match experimental data quantitatively for both surface pressure distributions as well as wake flow features.
-
-Fig~\ref{fig:desspherevalidation}d shows an impressive comparison of the simulation averaged flow vorticity contours to those observed using Particle Image Velocimetry (PIV) in experiment (outlined in black) \cite{mockett2008demonstration}. This suggests that the DNS portion of hybrid RANS-LES methods allows for realistic turbulent features to develop within the wake.
-
-Fig~\ref{fig:desspherevalidation}c demonstrates that the surface pressure distribution (solid lines are simulation and open markers are experiment) is predicted almost perfectly for both conditions in the attached flow regions, including the suction peak disparity that is the source of the famous ``drag crisis'' relationship for circular bodies. Still, the constant base pressure in the separated wake region for the turbulent separation case is predicted with significant offset, suggesting that integration of drag coefficient may not perfectly reproduce Reynolds number-dependent behavior observed for experiments, and that there is still room for improvement with this method of modeling.
-
-It is important to note that separation location, which is so important in determining the correct base pressure and drag of this bluff-body, was controlled for these DES simulations. The turbulence modeling in the RANS portion of the hybrid method is not sufficient to accurately predict this specific location, especially for detailed geometry such as the dimples on a golf ball that might create this kind of turbulent separation in a real-world flow. Spalart notes that more advanced techniques such as DNS are required for this level of prediction accuracy and will be discussed later in this section.
 
 
 
@@ -708,6 +736,9 @@ It is important to note that separation location, which is so important in deter
 
 
 
+Hybrid RANS/LES techniques have also demonstrated maturity for highly complex bluff-body geometries. Fig~\ref{fig:f15des} shows vorticity DES simulation isocontours for the complete geometry of an F-15 aircraft at high angle of attack $\alpha=65^o$, high Reynolds number $Re=13.6\times10^6$, and for a relatively incompressible wake at $M_{\infty}=0.3$ \cite{forsythe2004detachededdy}. In this study, DES simulation results were compared to Boeing’s stability and control database and similar RANS CFD simulations. It was found that the DES results agreed with the database more favorably than RANS for time-averaged load results such as lift and drag.
+
+However, both methods of simulation were within 10\% of the database and DES was shown to be seven times more expensive than RANS, so this is another an example of a situation where engineering judgment would be necessary to determine the most appropriate and efficient technique to use for the specific application. DES might prove advantageous in providing more accurate data for building an empirical model but RANS might be a more feasible tool for building an extensive CFD database for this fighter aircraft.
 
 %%% F15 DES
 %%\vspace{-2em}
@@ -723,9 +754,14 @@ It is important to note that separation location, which is so important in deter
 %%\vspace{-2em}
 
 
-Hybrid RANS/LES techniques have also demonstrated maturity for highly complex bluff-body geometries. Fig~\ref{fig:f15des} shows vorticity DES simulation isocontours for the complete geometry of an F-15 aircraft at high angle of attack $\alpha=65^o$, high Reynolds number $Re=13.6\times10^6$, and for a relatively incompressible wake at $M_{\infty}=0.3$ \cite{forsythe2004detachededdy}. In this study, DES simulation results were compared to Boeing’s stability and control database and similar RANS CFD simulations. It was found that the DES results agreed with the database more favorably than RANS for time-averaged load results such as lift and drag.
 
-However, both methods of simulation were within 10\% of the database and DES was shown to be seven times more expensive than RANS, so this is another an example of a situation where engineering judgment would be necessary to determine the most appropriate and efficient technique to use for the specific application. DES might prove advantageous in providing more accurate data for building an empirical model but RANS might be a more feasible tool for building an extensive CFD database for this fighter aircraft.
+
+
+DES methods have also been shown to be effective in multi-disciplinary applications such as Computational Aeroacoustics (CAA), which combines CFD and Computational Acoustics (CA) in order to simulate the acoustic effects of aerodynamic flows \cite{mendonca2002towards}. Acoustic effects occur on a wide range of scales and are very closely related to the turbulence of a flow, so for this reason, it is advantageous to resolve turbulent structures directly with LES-like methods such as DES rather than relying on the often incorrect estimation of RANS turbulence models. The study by Mendonca et al. (2002) demonstrates the effectiveness of DES coupled with CA methods in noise prediction for a representative passenger vehicle, as shown in Fig~\ref{fig:cardes}. Acoustic signature results computed from LES and DES data were compared to experiment, and DES-based predictions were shown to be superior as they were run on higher-fidelity grids due to the lower computational demand of DES. This example again highlights the importance of computational efficiency, as LES was shown to be more realistic than DES in this study for an individual test case, but was infeasible to run at this level of fidelity for the actual application.
+
+
+
+
 
 
 %%% CAR DES
@@ -741,25 +777,9 @@ However, both methods of simulation were within 10\% of the database and DES was
 %%\vspace{-2em}
 
 
-DES methods have also been shown to be effective in multi-disciplinary applications such as Computational Aeroacoustics (CAA), which combines CFD and Computational Acoustics (CA) in order to simulate the acoustic effects of aerodynamic flows \cite{mendonca2002towards}. Acoustic effects occur on a wide range of scales and are very closely related to the turbulence of a flow, so for this reason, it is advantageous to resolve turbulent structures directly with LES-like methods such as DES rather than relying on the often incorrect estimation of RANS turbulence models. The study by Mendonca et al. (2002) demonstrates the effectiveness of DES coupled with CA methods in noise prediction for a representative passenger vehicle, as shown in Fig~\ref{fig:cardes}. Acoustic signature results computed from LES and DES data were compared to experiment, and DES-based predictions were shown to be superior as they were run on higher-fidelity grids due to the lower computational demand of DES. This example again highlights the importance of computational efficiency, as LES was shown to be more realistic than DES in this study for an individual test case, but was infeasible to run at this level of fidelity for the actual application.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Despite these successes, DES is not the perfect solution for computational modeling of massively separated flow over bluff-bodies. A number of deficiencies are inherent even in the fundamental nature of DES as a hybrid method. Rules for the hand-off between RANS and LES methods in the ``gray-area'' are approximate and potentially nonobjective. This can result in the RANS turbulence model ``contaminating'' the DNS results of the LES solution in the gray-area \cite{spalart2009detachededdy}. In situations where the grid near the surface is spaced such that LES is performed on an insufficiently fine grid, flow separation can occur at non-physical locations for simulations in which a pure-RANS model might predict the correct location of separation, as shown in Fig~\ref{fig:desgridinducedseparation}. Grid-based misbehavior of DES can be compensated for by using comparable methodologies like SAS or more advanced (and computationally expensive) formulations of DES like Delayed DES (DDES), which detects boundary layer regions and delays the switch from RANS to LES in order to preserve the turbulence modeling of the shear layer. Thus, DES cannot be used as a simple ``plug-and-play'' turbulence model option (though it can be chosen from a turbulence model menu as such). A DES user must be aware of non-physical flow behavior and common geometry and grid features that may lead to these failures. Finally, DES may prove insufficient for some applications that require high orders of numeric accuracy to avoid numeric dissipation or resolve fine acoustic signals. In a DES solution where both RANS and LES modeling is present, it is extremely difficult to propose an order of accuracy of the composite solution. Even at a minimum, a lack of quantification of accuracy creates a deficiency in the ability to quality control a DES solution \cite{spalart2009detachededdy}.
 
 
 %%% GRID INDUCED SEPARATION FROM DES
@@ -773,9 +793,6 @@ DES methods have also been shown to be effective in multi-disciplinary applicati
 \end{center}
 \end{figure}
 %%\vspace{-2em}
-
-Despite these successes, DES is not the perfect solution for computational modeling of massively separated flow over bluff-bodies. A number of deficiencies are inherent even in the fundamental nature of DES as a hybrid method. Rules for the hand-off between RANS and LES methods in the ``gray-area'' are approximate and potentially nonobjective. This can result in the RANS turbulence model ``contaminating'' the DNS results of the LES solution in the gray-area \cite{spalart2009detachededdy}. In situations where the grid near the surface is spaced such that LES is performed on an insufficiently fine grid, flow separation can occur at non-physical locations for simulations in which a pure-RANS model might predict the correct location of separation, as shown in Fig~\ref{fig:desgridinducedseparation}. Grid-based misbehavior of DES can be compensated for by using comparable methodologies like SAS or more advanced (and computationally expensive) formulations of DES like Delayed DES (DDES), which detects boundary layer regions and delays the switch from RANS to LES in order to preserve the turbulence modeling of the shear layer. Thus, DES cannot be used as a simple ``plug-and-play'' turbulence model option (though it can be chosen from a turbulence model menu as such). A DES user must be aware of non-physical flow behavior and common geometry and grid features that may lead to these failures. Finally, DES may prove insufficient for some applications that require high orders of numeric accuracy to avoid numeric dissipation or resolve fine acoustic signals. In a DES solution where both RANS and LES modeling is present, it is extremely difficult to propose an order of accuracy of the composite solution. Even at a minimum, a lack of quantification of accuracy creates a deficiency in the ability to quality control a DES solution \cite{spalart2009detachededdy}.
-
 
 
 In spite of its deficiencies, however, DES proves to be an extremely effective method for bluff-body simulations today, especially when compared to higher-order methods that alleviate that issues mentioned above. Non-hybrid LES methods offer improvements in accuracy and fidelity but come at a higher computational cost and with demand for more specialized grids and SGS modeling. Even so, LES can still be thought of as a hybrid method of sorts, so an even more stark improvement in accuracy can be obtained by making the jump to full DNS: the ultimate end of the spectrum in high-fidelity CFD methodologies. In practice, however, this leap more often than not demands unattainable computational results.
@@ -827,6 +844,15 @@ DNS has been applied to more realistic bluff-body flows, such as the fabled dimp
 
 
 
+
+
+
+In summary, the current state-of-the-art in bluff-body flow simulation is a combination of CFD methodologies and greatly depends on the specific application. URANS simulations have been shown to match time-averaged loading and flow feature results of both experiment and more advanced computational methods under the correct geometry and flow conditions. A user aware of the limitations of URANS should be able to use this method in the appropriate applications as an extremely cost-saving alternative to higher-fidelity methods.
+
+Still, in situations where the fine turbulent features of the massively separated flow behind a bluff-body is impossible to model with RANS or when higher accuracy is required in resolving unsteady flow behavior, the hybrid RANS/LES methodology of DES is preferable as the most mature and feasible implementation of direct simulation. This method combines the robustness of RANS in the boundary layer with the accuracy of DNS for the large turbulent structures in a formulation efficient enough to run accurately for complex bluff-bodies on today's computers.
+
+Though more user-friendly than LES, DES is far from automatic. Ambiguous behavior with respect to geometry and grid refinement requires the user to be well trained in the correct application of DES. Other methodologies including DDES and SAS exist to alleviate some of these shortcomings, but come at their own cost of computational expense or reduction in accuracy. Solver selection between DES and SAS is, again, a decision that must be made with engineering judgment.
+
 % SPALART TABLE OF TURBULENCE MODEL READINESS
 %%\vspace{-2em}
 % \begin{figure}[htb]
@@ -839,14 +865,7 @@ DNS has been applied to more realistic bluff-body flows, such as the fabled dimp
 \end{figure}
 %%\vspace{-2em}
 
-
-In summary, the current state-of-the-art in bluff-body flow simulation is a combination of CFD methodologies and greatly depends on the specific application. URANS simulations have been shown to match time-averaged loading and flow feature results of both experiment and more advanced computational methods under the correct geometry and flow conditions. A user aware of the limitations of URANS should be able to use this method in the appropriate applications as an extremely cost-saving alternative to higher-fidelity methods.
-
-Still, in situations where the fine turbulent features of the massively separated flow behind a bluff-body is impossible to model with RANS or when higher accuracy is required in resolving unsteady flow behavior, the hybrid RANS/LES methodology of DES is preferable as the most mature and feasible implementation of direct simulation. This method combines the robustness of RANS in the boundary layer with the accuracy of DNS for the large turbulent structures in a formulation efficient enough to run accurately for complex bluff-bodies on today's computers.
-
-Though more user-friendly than LES, DES is far from automatic. Ambiguous behavior with respect to geometry and grid refinement requires the user to be well trained in the correct application of DES. Other methodologies including DDES and SAS exist to alleviate some of these shortcomings, but come at their own cost of computational expense or reduction in accuracy. Solver selection between DES and SAS is, again, a decision that must be made with engineering judgment.
-
-In the future, we can look forward to computational power improvements and LES methodology maturation. Artificial intelligence in grid refinement and solver selection may improve the hybridization of LES-like solutions, making them both more accurate and user-friendly \cite{spalart2000strategies}. DNS will continue to be important for RANS turbulence model calibration, but its true feasibility remains in the distant future, as roughly estimated by Spalart in Fig~\ref{fig:turbulencemodelreadiness} based on on the ``rule of thumb'' that computer power increases by a factor of five every five years.
+In the future, we can look forward to computational power improvements and LES methodology maturation. Artificial intelligence in grid refinement and solver selection may improve the hybridization of LES-like solutions, making them both more accurate and user-friendly \cite{spalart2000strategies}. DNS will continue to be important for RANS turbulence model calibration, but its true feasibility remains in the distant future, as roughly estimated by Spalart in Fig~\ref{fig:turbulencemodelreadiness} based on on the ``rule of thumb'' that computer power increases by a factor of five every five years. Based off of predictions like these, DNS is hardly a technology to wait on in today's industry, and RANS and DES will continue their reign, supplemented with experimental validation.
 
 
 
@@ -1007,26 +1026,27 @@ In the future, we can look forward to computational power improvements and LES m
 \section{Conclusions}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\textcolor{red}{\emph{LH\&FZ}}
+Bluff-body flow accounts for an innumerable amount of real-world applications from high-angle-of-attack fighter aircraft to buildings in a hurricane. Furthermore, flow over simple bluff-bodies like cylinders and spheres serve as common test cases for solver and experiment calibration. The complex nature of the massively separated wake behind a bluff body and the spectra of turbulence that develops within this flow region makes deciphering bluff-body flow through experiment and modeling both a difficult challenge and an essential task for understanding unsteady loading, stability characteristics, acoustics, and a number of other flow effects.
 
-Conclusions provide a detailed discussion of study findings. Do not introduce concepts not presented in text; do not refer to other work.
+\textcolor{red}{\emph{FZ: Experimental methods summary/current state}}
+
+This review has made the case for a combination of URANS and DES as the current state-of-the-art in bluff-body wake modeling. Pure DNS currently demands to much computational power for realistic bluff-body applications. URANS is cost-effective and suitable for obtaining time-averaged results for certain bluff-body geometries and conditions, but will prove insubstantial in some situations. DES provides higher-fidelity simulation of bluff-body turbulence but comes with its own set of guidelines and pitfalls. In short, simulations must still be designed with a deep understanding of the flow physics and methodology limitations to obtain reasonable results, but when this knowledge is applied and simulations are validated according to experimental examples, accurate representations of bluff-body flow for a wide range of conditions can be obtained numerically. In the future, advances in computational power and intelligent solver algorithms will continue to improve the usability and accuracy of CFD applied to bluff-body geometries.
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Acknowledgments} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\textcolor{red}{\emph{LH\&FZ}}
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \section*{Acknowledgments} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \textcolor{red}{\emph{LH\&FZ}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% BIBLIOGRAPHY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%SAMPLE CITATIONS TO SEE CITATION FORMATTING
-\textcolor{red}{Example citations}
-
-\cite{nakamura1993bluffbody}
 
 %bibliography from .bib file, filename goes in {}
 %NOTE: References must be cited with "\cite" command to appear in bibliography
