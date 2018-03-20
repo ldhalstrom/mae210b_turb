@@ -91,7 +91,7 @@ The shear drag, commonly called friction drag, occurs due to a difference in vel
 
 The differences between friction and pressure drag can be illustrated by considering the flow around a flat plate. If the flat plate is oriented in the direction of the flow, then the boundary layer will remain attached and friction drag will dominate while the pressure drag will be almost negligible. Conversely, if the flat plate is oriented perpendicularly to the flow, the boundary layer will separate at the edges and the low pressure in the separated, aft region will create a difference in pressure between both sides of the plate.  This net pressure drag will be much more significant than the friction drag acting in the minuscule regions of attached boundary layer.
 
-These definitions of drag are necessary to define the concept of a bluff-body (equivalently known as a blunt-body), which is a fundamental, generic body shape in aerodynamics and the central concept discussed in this paper. A bluff-body is defined as a body where the major contribution to total drag is pressure drag, as in the case of the perpendicular flat plate \cite{anderson2010fundamentals}.  Conversely, the drag of a streamlined body will be composed primarily of friction drag, as in the case of the streamwise-oriented plate.
+\textcolor{red}{These definitions of drag} are necessary to define the concept of a bluff-body (equivalently known as a blunt-body), which is a fundamental, generic body shape in aerodynamics and the central concept discussed in this paper. A bluff-body is defined as a body where the major contribution to total drag is pressure drag, as in the case of the perpendicular flat plate \cite{anderson2010fundamentals}.  Conversely, the drag of a streamlined body will be composed primarily of friction drag, as in the case of the streamwise-oriented plate.
 
 An illustration of the differences in shape and flow behavior between these two body shapes can be found in Fig~\ref{fig:bluffvsstreamlined}. From the figure, the origin of the streamlined body's name is obvious: the streamlines of the surrounding flow follow the shape of the body smoothly, which indicates that the boundary layer is attached and the dominant form of drag is from friction.  Above the streamlined airfoil, flow over a square cylinder is shown to demonstrate the stark differences of bluff-body flow. Other examples of bluff-bodies include circular cylinders, cubes, spheres, and airfoils at large angle of attack. The flow for all of these bluff-bodies can be characterized by the four common flow features annotated in Fig~\ref{fig:bluffvsstreamlined}: an attached boundary layer (minimal for the square), a separated shear layer that may or may not reattach, a recirculation zone behind the blunt face of the bluff-body where flow is entrained after which it coalesces into a coherent wake \cite{elkhoury2016assessment}.
 
@@ -240,7 +240,7 @@ The wakes of bluff-bodies are extremely complex, containing many scales of turbu
 \section{Flow around a circular cylinders and transition to turbulence}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Despite the differences between the shapes of bluff bodies, the disturbed flow around them have some similarities. Bluff bodies generate an alteration in the surrounding velocity, and flow around them can be bigger than, equal to or smaller than the free stream velocity. When describing the flow around a cylinder, ideally  the description would be general for bluff bodies, independently of their shape. The present state of knowledge is still not capable of doing this, and so the description will depend on the shape of the body. In this section we are going to describe one of the most common and studied shapes of bluff bodies: circular cylinders. Figure \ref{fig:RegionsFlow} shows a scheme of the flow around a circular cylinder with the different regions of disturbed flow. The different regions are:
+Despite the differences between the shapes of bluff bodies, the disturbed flow around them have some similarities. Bluff bodies generate an alteration in the surrounding velocity, and flow around them can be bigger than, equal to or smaller than the free stream velocity. When describing the flow around a bluff body, ideally  the description would be general, independently of their shape. The present state of knowledge is still not capable of doing this, and so the description will depend on the shape of the body. In this section we are going to describe one of the most common and studied shapes of bluff bodies: circular cylinders. Figure \ref{fig:RegionsFlow} shows a scheme of the flow around a circular cylinder with the different regions of disturbed flow. These regions are:
 
 \begin{enumerate}[label=(\roman*)]
 \item A thin region of retarded flow.
@@ -257,9 +257,9 @@ Despite the differences between the shapes of bluff bodies, the disturbed flow a
 \end{center}
 \end{figure}
 
-Although flow around circular cylinders usually present all these regions, their shape, size and flow structures depends on various parameters, but especially on the Reynolds number ($Re$). The Reynolds number is the parameter that usually describes the transition from laminar to turbulent flow. In the case of circular cylinders, transition can begin in different regions of the disturbed flow. The first transition appears in the wake, where turbulence is developed in the wake but the shear layer around the near-wake remain laminar. The second transition appears in the shear layer close to the near-wake and, as $Re$ increases, the transition gets closer to the boundary layer, leading to the third transition to turbulence, transition in the boundary layer. Transition in boundary layer was one of the most studied transitions in this type of flows, because it causes a sudden decrease in the drag force, usually denominated 'drag crisis'.
+Although flow around circular cylinders usually present all these regions, their shape, size and flow structures depends on various parameters, but especially on the Reynolds number ($Re$). The Reynolds number is the parameter that usually determine the transition from laminar to turbulent flow. In the case of circular cylinders, transition can begin in different regions of the disturbed flow. The first transition appears in the wake, where turbulence is developed in the wake but the shear layer around the near-wake remain laminar. The second transition appears in the shear layer close to the near-wake and, as $Re$ increases, the transition gets closer to the boundary layer, leading to the third transition to turbulence, transition in the boundary layer. Transition in boundary layer was one of the most studied transitions in this type of flows, because it causes a sudden decrease in the drag force, usually denominated 'drag crisis'.
 
-The Reynolds number is considered the governing parameter around a circular cylinder only for disturbance-free flows. In real flows, other variables may affect the flow around bluff bodies. These variables are usually called influencing parameters. When the effect of these parameters is important, they may become into governing parameters. Common influencing parameters found in real flows are free stream turbulence, surface roughness, wall proximity, non-uniform free stream flow, oscillatory free stream flow, between others. All these parameters will modify the beginning and the end of the different flows regimes around bluff bodies, and they even cause the disappearance of some of the regimes. A very known example is how a rough sphere generate transition to turbulent boundary layers for lower $Re$ than a smooth sphere.
+The Reynolds number is considered the governing parameter for flows around a circular cylinder only for disturbance-free flows. In real flows, other variables may affect the flow around bluff bodies. These variables are usually called influencing parameters. When the effect of any of these parameters is important, it may become into governing parameter. Common influencing parameters found in real flows are free stream turbulence, surface roughness, wall proximity, non-uniform free stream flow, oscillatory free stream flow, between others. All these parameters will modify the beginning and the end of the different flows regimes around bluff bodies, and they even cause the disappearance of some of them. A very known example is how a rough sphere generate transition to turbulent boundary layers regime for lower $Re$ than for smooth sphere.
 
 In the following section we are going to describe the different flow regimes around a circular cylinder as a function of $Re$ for a free-disturbance flow. The regimes will be divided into five regimes, and those regimes into sub-regimes
 
@@ -282,7 +282,7 @@ The laminar state can be divided into three different flow regimes:
 \item L3: Periodic laminar regime $30-48<Re<180-200$
 \end{enumerate}
 
-Creeping flow (L1) only occurs for very low $Re$ and its dominated by viscous forces. In this regime there is not visible separation, and the flow is similar to the one predicted by the potential theory.  When  $Re$ increases the effect of the viscous forces decrease, until at a $Re$ of 4 or 5 the flow separates. This separation is cause due to a favorable pressure gradient in the surface of the cylinder. The steady separation regime (L2) is characterized for two shear layers that form a steady, closed and symmetric wake. Behind the cylinder there is a weak recirculating flow that form two symmetric eddies.
+Creeping flow (L1) only occurs for very low $Re$ and its dominated by viscous forces. In this regime there is not visible separation, and the flow is similar to the one predicted by the potential theory.  When  $Re$ increases the effect of the viscous forces decrease, until at a $Re$ of 4 or 5 the flow separates. This separation is caused due to a favorable pressure gradient in the surface of the cylinder. The steady separation regime (L2) is characterized for two shear layers that form a steady, closed and symmetric wake. Behind the cylinder there is a weak recirculating flow that form two symmetric eddies.
 
 This wake becomes unstable for $Re > 30-48$, starting the denominated periodic laminar regime (L3). In this regime any disturbance generates an oscillation that is amplified, causing a wavy trail after the cylinder. The amplitude of the oscillation increase with $Re$ until the two shear layers begin to interact with each other, forming eddies that are shed downstream, forming the well known Von-Karman eddy street.
 
@@ -295,7 +295,7 @@ This wake becomes unstable for $Re > 30-48$, starting the denominated periodic l
 \end{center}
 \end{figure}
 
-A picture of a fully developed Von-Karman eddy street is shown in Figure \ref{fig:Laminar}. It was generated by Zdravkovich (1968) \citep{Zdravkovich1968} in a wind tunnel using liquid kerosene in the form of a fog of fine droplets. We can see that the eddies initiated at the end of the closed near wake and that after some length downstream the cylinder the patterns become 'frozen', meaning that they practically do not change their shape. This effect appears because these 'frozen' eddies are present where the wake have already disappeared, and they are only the remaining shapes of smoke that are advected downstream by a uniform flow, without affecting their structure. Another feature that can be noticed in Figure \ref{fig:Laminar} is that the widening of the wake occurs due to the entrainment of the external fluid.
+A picture of a fully developed Von-Karman eddy street is shown in Figure \ref{fig:Laminar}. It was generated by Zdravkovich (1968) \citep{Zdravkovich1968} in a wind tunnel using liquid kerosene in the form of a fog of fine droplets. We can see that the eddies initiated at the end of the closed near wake, then shed, and after some length downstream the patterns become 'frozen', meaning that they practically do not change their shape. This effect appears because these 'frozen' eddies are present where the wake have already disappeared, and they are only the remaining shapes of smoke that are advected downstream by a uniform flow, without affecting their structure. Another feature that can be noticed in Figure \ref{fig:Laminar} is that the widening of the wake occurs due to the entrainment of the external fluid.
 
 The periodic laminar regime is truly two dimensional for $40<Re<80$. For  $80<Re<100$ the wake become sensitive to perturbations and may become three dimensional and it is always three dimensional for  $100<Re<160$ \cite{Phillips1956}. This three dimensionality of the flow may lead to transition for higher $Re$.
 
@@ -305,7 +305,7 @@ The periodic laminar regime is truly two dimensional for $40<Re<80$. For  $80<Re
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Transition in wake (TrW)}
 
-Only in rare cases a flow instability does not lead to transition to turbulence. The flow in the wake of a circular cylinder will eventually become turbulent if $Re$ is increased. The transition in wake may be divided into two regimes:
+Only in rare cases a flow instability does not lead to transition to turbulence. The flow in the wake of a circular cylinder will eventually become turbulent if $Re$ keeps increasing. The transition in wake may be divided into two regimes:
 
 \begin{enumerate}[label=(\roman*)]
 \item TrW1: Lower transition regime. $180-200<Re<220-250$
@@ -369,7 +369,7 @@ The advance of transition to turbulence to the separated boundary layer in the T
 \item TrBL4: Post-critical regime. $3.4M-6M<Re<unkown$
 \end{enumerate}
 
-The precritical regime (TrBL0) in characterized by a gradual displacement of the separation downstream with rising $Re$. This regime end abruptly with a discontinuous fall in the drag coefficient and a jump in the frequency of the eddy shedding. The one-bubble regime in characterized for an asymmetric pressure distribution on the sides of the cylinder. This effect appears because only on one side of the cylinder the boundary layer reattached to the surface. This effect also leads to an asymmetric near wake (Figure \ref{fig:TrBL}). The formation of the bubble may appear in any of the two sides, but once it appear, it does not change side \citep{Zdravkovich1997}. The reattachment of the boundary layer lead to a reduction in the wake's width and an increase in the shedding frequency.
+The precritical regime (TrBL0) in characterized by a gradual displacement of the separation downstream with rising $Re$. This regime end abruptly with a discontinuous fall in the drag coefficient and a jump in the frequency of the eddy shedding. The one-bubble regime (TrBL1) in characterized for an asymmetric pressure distribution on the sides of the cylinder. This effect appears because only on one side of the cylinder the boundary layer reattaches to the surface. This effect also leads to an asymmetric near wake (Figure \ref{fig:TrBL}). The formation of the bubble may appear in any of the two sides, but once it appear, it does not change side \citep{Zdravkovich1997}. The reattachment of the boundary layer lead to a reduction in the wake's width and an increase in the shedding frequency.
 
 
 \begin{figure}[H]
@@ -383,7 +383,7 @@ The precritical regime (TrBL0) in characterized by a gradual displacement of the
 
 The one-bubble regime is only stable for a low range of $Re$. When $Re$ increases this regime ends abruptly as the two-bubble regime starts (TrBL2). The two-bubble regime is characterized for a second abrupt decrease in the drag coefficient, an increase in the base pressure, and a reattachment of the second boundary layer. TrBL1 and TrBL2  regimes are very sensitive to perturbations and can be eliminated with a rough surface.
 
-If $Re$ increases the primary laminar separation becomes transitional, leading to a disruption and fragmentation in the separation bubbles along the cylinder. This fragmentation prevents eddy shedding, which is the most notable characteristic of the supercritical regime (TrBL3).As $Re$ increases the beginning of the turbulent boundary layers move upstream. The post-critical regime (TrBL4) is defined when they start somewhere between the separation and the stagnation points. As $Re$ increases the transition region advance downstream asymptotically in the direction of the stagnation point and this is why the limit of the TrBL4 is hard to define.
+If $Re$ increases the primary laminar separation becomes transitional, leading to a disruption and fragmentation in the separation bubbles along the cylinder. This fragmentation prevents eddy shedding, which is the most notable characteristic of the supercritical regime (TrBL3).As $Re$ increases the beginning of the turbulent boundary layers move upstream. The post-critical regime (TrBL4) is defined when the turbulent boundary layer starts somewhere in between the separation and the stagnation points. As $Re$ increases the transition region advances downstream asymptotically in the direction of the stagnation point and this is why the limit of the TrBL4 is hard to define.
 
 
 
@@ -391,7 +391,7 @@ If $Re$ increases the primary laminar separation becomes transitional, leading t
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Fully turbulent regime (T)}
 
-The fully turbulent regime is reached when all the disturbed flow regions become turbulent. It is unexpected to have any other type of transition when this state is reached, but this hypothesis in extremely difficult to test experimentally. This state would be achieved with extremely high $Re$, and this can be done by increasing the size of the cylinder or the velocity. The former is limited by the size of the wind tunnels while the former by effect of compressibility in air, and cavitation in water. Some examples of this type of flows can be found in geophysical flows of high scale, like ocean currents or atmospheric wind past islands (Figure \ref{fig:T}).
+The fully turbulent regime is reached when all the disturbed flow regions become turbulent. It is unexpected to have any other type of transition when this state is reached, but this hypothesis in extremely difficult to test experimentally. This state would be achieved with extremely high $Re$, and this can be done by increasing the size of the cylinder or the velocity. The former is limited by the size of the wind tunnels while the latter by effects of compressibility in air, and cavitation in water. Some examples of this type of flows can be found in geophysical flows of high scale, like ocean currents or atmospheric wind past islands (Figure \ref{fig:T}).
 
 \begin{figure}[H]
 \begin{center}
@@ -410,23 +410,18 @@ The fully turbulent regime is reached when all the disturbed flow regions become
 
 In the previous section, flow around a circular cylinder was analyzed for a free-disturbance flow. In real flows, one of the most common parameters that affects flow around bluff bodies is free stream turbulence, and most flows in engineering applications are turbulent. Approaching turbulence interacts with flow structures past bluff bodies. One of the most classical examples of the influence of the free stream turbulence is the the reduction in the drag coefficient in cylinders and spheres \cite{Nakamura1988}. On the other hand, turbulence can increase the drag coefficient in square plates with its flat plate normal to the flow. 
 
-In the previous section, flow around a cylinder was analyzed for a free-disturbance flow. One of the parameters that affects flow around bluff bodies is free stream turbulence. Most flows in engineering applications are turbulent, and approaching turbulence interacts with flow structures past bluff bodies. One of the most classical examples of the influence of the free stream turbulence is the the reduction in the drag coefficient in cylinder and spheres \cite{Nakamura1988}. On the other hand, turbulence can increase the drag coefficient in square plates with its flat plate normal to the flow.
-
-
-In general, assuming a uniform and isotropic turbulence, the effect of free stream turbulence can be characterized by two parameters, turbulence intensity ($u'/U$) and turbulence lengthscale ($L_t$). Usually the lengthscale is used in its non-dimensional form, dividing it by the length of the bluff body ($L_t/h$).
+In general, assuming a uniform and isotropic turbulence, the effect of free stream turbulence can be characterized by two parameters, turbulence intensity ($u'/U$) and turbulence lengthscale ($L_t$). Usually the lengthscale is used in its non-dimensional form, dividing it by a characteristic length of the bluff body ($L_t/h$).
 
 
 Free stream turbulence has an important effect in the three types of transition to turbulence (TrW, TrSL, TrBL). Most experiments are made in wind tunnels with low-turbulence intensity, so the parameters obtained in these experiments cannot be extrapolated to real flows. Initiation of transition is particularly sensible to adverse pressure gradient, and fluctuating pressure due to turbulence imposes alternating gradients generating transition for lower $Re$ than those that generate transition in smooth flows.  
-
-Free stream turbulence has an important effect the three types of transition to turbulence (TrW, TrSL, TrBL). Most experiments are made in wind tunnels with low-turbulence intensity, so the parameters obtained in these experiments cannot be extrapolated for real flows. Initiation of transition is particularly sensible to adverse pressure gradient, and fluctuating pressure due to turbulence imposes this gradient generating transition for lower $Re$ than those that generate transition in smooth flows.
 
 
 The interaction between free stream turbulence and flow structures is extremely complicated, and many research has been done to address this problem. In some cases the interaction is really important, like in the cases previously mentioned, and in some cases, the effect is almost negligible. An example of the latter is the interaction between free stream turbulence and wake eddies for TrW1 and TrW2 regime. In TrW1 regime, the effect of turbulence is only relevant when the velocity fluctuations are of the order of the intensity of the free stream turbulence \citep{Zdravkovich1997}. In the TrW2 regime, the transition to turbulence is almost insensitive to the free stream turbulence due to a stable laminar shear layer surrounding it.
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.4\textwidth]{Images/federico/Figure09}
-\caption{Base pressure coefficient vs. turbulence intensity. (o): square plate, $L_t/h=2.4$. (black circle): cube, $L_t/h=0.24$ \cite{nakamura1993bluffbody}}
+\includegraphics[width=0.5\textwidth]{Images/federico/Figure09}
+\caption{Base pressure coefficient vs. turbulence intensity. (o): square plate, $L_t/h=2.4$. (\textcolor{red}{black circle}): cube, $L_t/h=0.24$ \cite{nakamura1993bluffbody}}
 \label{fig:Nakamura01}
 \end{center}
 \end{figure}
@@ -439,13 +434,13 @@ The effect of free stream turbulence depends also on the shape of the bluff body
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.8\textwidth]{Images/federico/Figure08}
+\includegraphics[width=0.9\textwidth]{Images/federico/Figure08}
 \caption{Base pressure coefficient vs. turbulence scale for rectangular cylinders for $u'/U = 10\%-10.8\%$. $d/h$: aspect ratio.}
 \label{fig:Nakamura02}
 \end{center}
 \end{figure}
 
-The interaction between free stream turbulence and flow structures in a bluff body is an extremely complicates phenomena, and it is almost impossible to generalize these effects. The most important parameters to take into account when analyzing free stream turbulence, are the turbulence intensity, the turbulence lengthscale, the regime of the flow (or the Reynolds number) and the geometry of the bluff body. These parameters will control the interaction and the effect of the free stream turbulence on the bluff body.
+The interaction between free stream turbulence and flow structures in a bluff body is an extremely complicated phenomena, and it is almost impossible to generalize these effects. The most important parameters to take into account when analyzing free stream turbulence, are the turbulence intensity, the turbulence lengthscale, the regime of the flow (or the Reynolds number) and the geometry of the bluff body. These parameters will control the interaction and the effect of the free stream turbulence on the bluff body.
 
 
 \clearpage
@@ -454,9 +449,9 @@ The interaction between free stream turbulence and flow structures in a bluff bo
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Historical study}
-The first methods to analyze flow around bluff bodies consisted in visual methods, utilizing some type of tracer to study the flow structures around bluff bodies. Bernard \cite{Bernard1908a} \cite{Bernard1908b}, was the first person to accurately describe the latter called Von-Karman street (or Bernard-Karman street), using a solution of sugar and water to identify the eddies. Zdravkovich \citep{Zdravkovich1968} used liquid kerosene in the form of a fog of fine droplets to visualize flow around a circular cylinder for a big number of $Re$. Gerrard (1978) \cite{Gerrard1978} used I.C.I Edicol food dye in a towing tank filled with water visualize the flow around a cylinder. Almosino and McAlister (1984) \citep{Almosnino1984} used several electrodes installed around a cylinder located in a water tunnel to generate hydrogen bubbles for the visualization of selected portions of the flow field.
+The first methods to analyze flow around bluff bodies consisted in visual methods, utilizing some type of tracer to study the flow structures around bluff bodies. Bernard \cite{Bernard1908a} \cite{Bernard1908b}, was the first person to accurately describe the latter called Von-Karman street (or Bernard-Karman street), using a solution of sugar and water to identify the eddies. Zdravkovich (1968) \citep{Zdravkovich1968} used liquid kerosene in the form of a fog of fine droplets to visualize flow around a circular cylinder for a big number of $Re$. Gerrard (1978) \cite{Gerrard1978} used I.C.I Edicol food dye in a towing tank filled with water visualize the flow around a cylinder. Almosino and McAlister (1984) \citep{Almosnino1984} used several electrodes installed around a cylinder located in a water tunnel to generate hydrogen bubbles for the visualization of selected portions of the flow field.
 
-Another types of measurements included sound measurements to detect force fluctuations and frequency of eddies shedding. Phillips (1956) \citep{Phillips1956} used Aeolian tones to relate the intensity of the radiated sound with the intensity of force fluctuations in a moving rigid body. Hot wire anemometers were really popular in the past, and were used to measure velocity fluctuations around bluff bodies. Bloor (1964) used a hot wire anemometer to detect transition eddies in the shear layers. Maerkawa and Mizuno (1967) used a hot-wire anemometer to measure velocity fluctuations in the free shear layer and in the near wake. Hot wire anemometers are still used nowadays. Mariotti and Buresti (2103) \cite{Mariotti2013} used a hot wire anemometer to measure the velocity in the boundary layer of a blunt body with a sampling frequency of 2 kHz.
+Another types of experimental methods included sound measurements to detect force fluctuations and frequency of eddies shedding. Phillips (1956) \citep{Phillips1956} used Aeolian tones to relate the intensity of the radiated sound with the intensity of force fluctuations in a moving rigid body. Hot wire anemometers were really popular in the past, and were used to measure velocity fluctuations around bluff bodies. Bloor (1964) used a hot wire anemometer to detect transition eddies in the shear layers. Maerkawa and Mizuno (1967) used a hot-wire anemometer to measure velocity fluctuations in the free shear layer and in the near wake. Hot wire anemometers are still used nowadays. Mariotti and Buresti (2103) \cite{Mariotti2013} used a hot wire anemometer to measure the velocity in the boundary layer of a blunt body with a sampling frequency of 2 kHz.
 
 \subsection{Current State of Experimental Methods for Bluff-Body Flows} \label{subsec:currentstateexperimental}
 
@@ -464,16 +459,16 @@ Probably the most used technique nowadays to measure flow velocity around bluff 
 
 Cenedese et. al (1993) \cite{Cenedese1993} used PIV to measure the velocity field near to a obstacle located at the wall of a cylinder filled with water, where the motion was generated trough a rotating disk at one end of the cylinder. Taylor et. al (2011, 2012) \cite{Taylor2011} \cite{Taylor2012} used PIV and pressure taps to measure the flow velocity and pressure distribution around elongated bodies. Each elongated body had 24 pressure taps with a sampling frequency of 200 Hz. The PIV measurements used atomized olive oil  to seed the flow, and measurements were taken with a frequency of 15 Hz.
 
-In order to illustrate the current state of the art, two new experimental studies are going to be discussed in detail. The first one is the study 'Experimental analysis of flow structures and forces in a 3D-bluff-body in constant cross-wind', by Gohlke et. al (2007) \cite{Gohlke2007}. This study has the interesting feature that many different experimental techniques are applied in the same bluff body. The second one is 'Flow and Turbulence Structure past a Cluster of Freshwater Mussels', where experimental studies and numerical simulations are compared for the same geometry.
+In order to illustrate the current state of the art, two new experimental studies are going to be discussed in detail. The first one is the study `Experimental analysis of flow structures and forces in a 3D-bluff-body in constant cross-wind', by Gohlke et. al (2007) \cite{Gohlke2007}. This study has the interesting feature that many different experimental techniques are applied in the same bluff body. The second one is `Flow and Turbulence Structure past a Cluster of Freshwater Mussels', where experimental studies and numerical simulations are compared for the same geometry.
 
 In the study by Gohlke et. al (2007), the flow and forces around a generic bluff body in cross-wind are studied with experimental techniques. The bluff body is a generic body that resembles the front of a high-speed train or truck. The experimental measurements include:
-\begin{itemize}
+\begin{enumerate}
 \item Force measurements: The aerodinamic forces are measured with a stain gauge balance, mounted with four columns. With this forces it is possible to get the drag and lift forces directly. The samples were taken with a frequency of 10 Hz.
-\item Pressure measurements: Pressure distribution was measured using 249 pressure tubes over one half of the model (see Figure \ref{fig:Exp} center). Data is samples with a frequency of 40 Hz. 
-\item Oil Flow visualization: This technique is useful to get time-averaged near wall flow distributions. This technique is useful to identify three dimensional separation and reattachment. Gravity influences the oil flow and it has to be taken into account. 
-\item Particle image velocimetry: Measurements in planes parallel to the X, Y and Z direction were done (see Figure \ref{fig:Exp} right). The used camera had a sampling frequency of 4.5 kHz and a resolution of 1,280 x 1,024 pixels. The seeding particles were olive oil droplets. In order to reduce reflection interference, the body was covered with a special paint that absorbs \%99 of the laser light, and only reflect one wavelength. A filter that filters this wavelength was fixed to the camera, to avoid interference. 
-\item Laser doppler velocimetry: Despite the special paint, laser reflection close to the body difficult PIV measurements close to the wall. To complement this technique a laser doppler velocimetry was used where the PIV cannot measure (See Figure \ref{fig:Exp} left). 
-\end{itemize}
+\item Pressure measurements: Pressure distribution was measured using 249 pressure tubes over one half of the model (see Figure \ref{fig:Exp} center). Data was sampled with a frequency of 40 Hz. 
+\item Oil Flow visualization: This technique is useful to get time-averaged flow distributions near wall. This technique is can be used to identify three dimensional separation and reattachment. Gravity influences the oil flow and it has to be taken into account. 
+\item Particle image velocimetry: Measurements in planes parallel to the X, Y and Z direction were done (see Figure \ref{fig:Exp} right). The used camera had a sampling frequency of 4.5 kHz and a resolution of 1,280 x 1,024 pixels. The seeding particles were olive oil droplets. In order to reduce reflection interference, the body was covered with a special paint that absorbs 99\% of the laser light, and only reflect one wavelength. A filter that filters this wavelength was fixed to the camera, to avoid interference. 
+\item Laser doppler velocimetry: Despite the special paint, laser reflection close to the body difficult PIV measurements in that zone. To complement this technique a laser doppler velocimetry was used where the PIV cannot measure (See Figure \ref{fig:Exp} left). 
+\end{enumerate}
 
 
 \begin{figure}[H]
@@ -512,7 +507,7 @@ The PIV measurements provided vector maps with a size of 167 x 127 vectors in a 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The study 'Flow and Turbulence Structure past a Cluster of Freshwater Mussels' \cite{Constantinescu2013} analyze the velocity distribution around a cluster of mussels to understand how they are dislocated from the bed under certain flow conditions. A large-eddy-simulation (LES) is validated with PIV measurements in a water flume. A real mussel was digitalizated using CAT scanning (Figure \ref{fig:ExpResults3} and then fabricated in a scale 1:1 using an injection modeling technique.
+The study 'Flow and Turbulence Structure past a Cluster of Freshwater Mussels' \cite{Constantinescu2013} analyze the velocity distribution around a cluster of mussels to understand how they are dislocated from the bed under certain flow conditions. A large-eddy-simulation (LES) is validated with PIV measurements in a water flume. A real mussel was digitalizated using CAT scanning (Figure \ref{fig:ExpResults3}) and then fabricated in a scale 1:1 using an injection modeling technique.
 
 
 \begin{figure}[H]
@@ -545,7 +540,7 @@ PIV was used to measure two-dimensional velocity fields. A 8cm x 8cm section was
 
 Figure \ref{fig:ExpResults6} (left) shows the velocity field downstream the leading mussel, showing the recirculation in the  HV zone. The same can be observed using a solution of rhodamine WT solution, confirming the presence of a necklace vortex in the upstream base of the mussel (Figure \ref{fig:ExpResults6} right). Figure \ref{fig:ExpResults7} shows a comparison between experimental and computational results, showing a very good agreement.
 
-This study shows how experimental and computational results can complement each other. While the experimental results provide accurate description of velocity and vorticity magnitudes in the transverse plane, and at the same time validate the computational methods, the CFD allows to study the three dimensionality of the vortical structures.  
+This study shows how experimental and computational results complement each other. While the experimental results provide accurate description of velocity and vorticity magnitudes in the transverse plane, and at the same time validate the computational methods, the CFD allows to study the three dimensionality of the vortical structures.  
 
 
 
